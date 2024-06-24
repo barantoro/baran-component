@@ -8,8 +8,26 @@ import ViteFonts from 'unplugin-fonts/vite'
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 
+import path from 'node:path'
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/index.js"),
+      name: 'baran-component',
+      fileName: (format) => `baran-component.${format}.js`
+    },
+    rollupOptions: {
+      external: ["vue", "vuetify"],
+      output: {
+        globals: {
+          vue: "Vue",
+          vuetify: "Vuetify"
+        }
+      }
+    }
+  },
   plugins: [
     Vue({
       template: { transformAssetUrls }
@@ -26,22 +44,4 @@ export default defineConfig({
       },
     }),
   ],
-  define: { 'process.env': {} },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
-    extensions: [
-      '.js',
-      '.json',
-      '.jsx',
-      '.mjs',
-      '.ts',
-      '.tsx',
-      '.vue',
-    ],
-  },
-  server: {
-    port: 3000,
-  },
 })

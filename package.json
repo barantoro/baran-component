@@ -1,11 +1,31 @@
 {
   "name": "baran-component",
-  "version": "0.0.0",
+  "version": "0.0.2",
+  "description": "A Vue 3 component library with Vuetify",
+  "main": "./dist/baran-component.umd.js",
+  "module": "./dist/baran-component.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/baran-component.es.js" ,
+      "require": "./dist/baran-component.umd.js" 
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "component",
+    "library"
+  ],
+  "author": "Baran Toro",
+  "license": "MIT",
   "dependencies": {
     "@mdi/font": "7.0.96",
     "roboto-fontface": "*",
