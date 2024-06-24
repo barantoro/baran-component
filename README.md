@@ -8,9 +8,14 @@ A Vue 3 component library built with Vite and Vuetify.
 
 ## ❗️ Important Links
 
-- 📄 [Docs](#)
+- 📄 [Docs](https://www.npmjs.com/package/baran-component#readme)
 
 ## 💿 Install
+
+Before you can use this project, make sure you have the following prerequisites installed:
+
+- [Vue.js](https://vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/)
 
 Set up your project using NPM. Use the corresponding command to install the dependencies:
 
@@ -18,17 +23,20 @@ Set up your project using NPM. Use the corresponding command to install the depe
 |---------------------------------------------------------------|----------------|
 | [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install baran-component`  |
 
-<!-- ## ✨ Features
-
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable. -->
-
 ## 💡 Usage
+
+After successfully installing dependencies, register component globally.
+
+```vue
+import vuetify from './vuetify'
+import BaranComponent from 'baran-component'
+import 'baran-component/dist/style.css' 
+
+export function registerPlugins (app) {
+  app.use(vuetify)
+  app.use(BaranComponent)
+}
+```
 
 ## TextField Component
 

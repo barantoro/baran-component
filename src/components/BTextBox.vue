@@ -135,10 +135,12 @@ const computedProps = computed(() => {
 })
 </script>
 
-<style scoped>
-/* input[type="date"]::-webkit-inner-spin-button,
+<style>
+input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-} */
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
 </style>
