@@ -2,7 +2,6 @@
   <v-text-field
     v-if="searchBar"
     v-model="search"
-    v-bind="computedProps"
     :label="searchLabel"
     :prepend-inner-icon="searchPrependIcon"
     hide-details
@@ -11,7 +10,6 @@
   
   <v-data-table
     v-model:items="selected"
-    v-bind="computedProps"
     :headers="headers"
     :items="items"
     :search="search"
@@ -31,7 +29,7 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps, computed, ref, watch } from 'vue'
+import { defineEmits, defineProps, ref, watch } from 'vue'
 
 const props = defineProps({
   headers: {
@@ -45,10 +43,6 @@ const props = defineProps({
   theme: {
     type: String,
     default: 'light'
-  },
-  density: {
-    type: String,
-    default: ''
   },
   height: {
     type: String,
@@ -69,10 +63,6 @@ const props = defineProps({
   searchLabel: {
     type: String,
     default: 'Search'
-  },
-  variant: {
-    type: String,
-    default: 'outlined'
   },
   searchBar: {
     type: Boolean,
@@ -114,15 +104,6 @@ const internalSortBy = ref(props.sortBy)
 
 const emit = defineEmits(['update:selected', 'update:sortBy'])
 
-const computedProps = computed(() => {
-  const densityOptions = ['comfortable', 'compact']
-  const variantOptions = ['outlined', 'underlined', 'solo', 'solo-filled', 'solo-inverted']
-
-  return {
-    density: densityOptions.includes(props.density) ? props.density : undefined,
-    variant: variantOptions.includes(props.variant) ? props.variant : undefined,
-  }
-})
 
 watch(selected, (newValue) => {
   emit('update:selected', newValue)

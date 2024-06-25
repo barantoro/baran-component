@@ -264,13 +264,11 @@ The `BTable` component is a customizable data table with an optional search bar 
 | `headers`         | Array   | `[]`          | The headers of the data table.                                             |
 | `items`           | Array   | `[]`          | The items to display in the data table.                                    |
 | `theme`           | String  | `light`       | The theme of the data table.                                               |
-| `density`         | String  | `''`          | The density of the data table (`comfortable`, `compact`).                  |
 | `height`          | String  | `''`          | The height of the data table.                                              |
 | `fixedHeader`     | Boolean | `false`       | Whether the header is fixed.                                               |
 | `itemsPerPage`    | Number  | `5`           | The number of items per page.                                              |
 | `searchPrependIcon` | String  | `mdi-magnify` | The icon to prepend inside the search bar.                                 |
 | `searchLabel`     | String  | `Search`      | The label for the search bar.                                              |
-| `variant`         | String  | `outlined`    | The variant of the search bar (`outlined`, `underlined`, `solo`, `solo-filled`, `solo-inverted`).    |
 | `searchBar`       | Boolean | `true`        | Whether to show the search bar.                                            |
 | `showSelect`      | Boolean | `false`       | Whether to show checkboxes for row selection.                              |
 | `itemValue`       | String  | `''`          | The property to use as the unique identifier for items.                    |
