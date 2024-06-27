@@ -1,19 +1,33 @@
-import BButton from './components/BButton.vue';
-import BCheckBox from './components/BCheckBox.vue';
-import BComboBox from './components/BComboBox.vue';
-import BTable from './components/BTable.vue';
-import BTextBox from './components/BTextBox.vue';
+import BaranButton from './components/BaranButton.vue';
+import BaranCheckbox from './components/BaranCheckbox.vue';
+import BaranCombobox from './components/BaranCombobox.vue';
+import BaranTable from './components/BaranTable.vue';
+import BaranTextbox from './components/BaranTextbox.vue';
+import BaranSidebar from './components/BaranSidebar.vue';
+import BaranSpeedDial from './components/BaranSpeedDial.vue';
+import BaranAvatarMenu from './components/BaranAvatarMenu.vue';
+import BaranChartWidget from './components/BaranChartWidget.vue';
+import BaranCarousel from './components/BaranCarousel.vue';
+import BaranActivityTimeline from './components/BaranActivityTimeline.vue';
 
-// export { BButton, BCheckBox, BComboBox, BTable, BTextBox };
+const components = {
+    BaranButton,
+    BaranCheckbox,
+    BaranCombobox,
+    BaranTable,
+    BaranTextbox,
+    BaranSidebar,
+    BaranSpeedDial,
+    BaranAvatarMenu,
+    BaranChartWidget,
+    BaranCarousel,
+    BaranActivityTimeline
+};
 
 export default {
-    install: (app, options) =>{
-        app.component("BButton", BButton);
-        app.component("BCheckBox", BCheckBox);
-        app.component("BComboBox", BComboBox);
-        app.component("BTable", BTable);
-        app.component("BTextBox", BTextBox);
+    install: (app, options) => {
+        Object.entries(components).forEach(([name, component]) => {
+            app.component(name, component);
+        });
     }
-}
-
- 
+};

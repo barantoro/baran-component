@@ -40,7 +40,7 @@ export function registerPlugins (app) {
 
 ## TextField Component
 
-The `BTextBox` component is a customizable text field with various props for configuration.
+The `BaranTextbox` component is a customizable text field with various props for configuration.
 
 ### Props
 
@@ -76,7 +76,7 @@ The `BTextBox` component is a customizable text field with various props for con
 
 ```vue
 <template>
-  <BTextBox
+  <BaranTextbox
     :label="'Username'"
     :value="username"
     :variant="'outlined'"
@@ -112,7 +112,7 @@ const onUsernameUpdate = (newValue) => {
 
 ### Button Component
 
-The `BButton` component is a customizable button with various props and events. Extended from Vuetify.
+The `BaranButton` component is a customizable button with various props and events. Extended from Vuetify.
 
 #### Props
 
@@ -150,7 +150,7 @@ The `BButton` component is a customizable button with various props and events. 
 
 ```vue
 <template>
-    <BButton
+    <BaranButton
       @click="onClick"
       elevation="4"
       color="#1814F3"
@@ -158,7 +158,7 @@ The `BButton` component is a customizable button with various props and events. 
       :disabled="!terms"
     >
       Add Card
-    </BButton>
+    </BaranButton>
 </template>
 
 <script setup>
@@ -193,7 +193,7 @@ The `MyCheckbox` component is a customizable checkbox with various props and eve
 
 ```vue
 <template>
-  <BCheckBox
+  <BaranCheckbox
     v-model:checked="isChecked"
     label="Accept Terms"
     color="primary"
@@ -203,7 +203,7 @@ The `MyCheckbox` component is a customizable checkbox with various props and eve
 
 <script setup>
 import { ref } from 'vue';
-import BCheckBox from 'my-component-library/BCheckBox.vue';
+import BaranCheckbox from 'my-component-library/BaranCheckbox.vue';
 
 const isChecked = ref(false);
 const isDisabled = ref(false);
@@ -212,7 +212,7 @@ const isDisabled = ref(false);
 
 ## Combobox Component
 
-The `BComboBox` component is a customizable combobox with various props and events.
+The `BaranCombobox` component is a customizable combobox with various props and events.
 
 ### Props
 
@@ -236,13 +236,13 @@ The `BComboBox` component is a customizable combobox with various props and even
 
 ```vue
 <template>
-  <BComboBox
+  <BaranCombobox
     :items="items"
     label="Choose an option"
     :multiple="true"
     :chips="true"
   >
-  </BComboBox>
+  </BaranCombobox>
 </template>
 
 <script setup>
@@ -255,7 +255,7 @@ const items = ref(['Option 1', 'Option 2', 'Option 3']);
 
 ## DataTable Component
 
-The `BTable` component is a customizable data table with an optional search bar and various props and events.
+The `BaranTable` component is a customizable data table with an optional search bar and various props and events.
 
 ### Props
 
@@ -289,7 +289,7 @@ The `BTable` component is a customizable data table with an optional search bar 
 
 ```vue
 <template>
-  <BTable
+  <BaranTable
     :headers="tableHeaders" 
     :items="tableItems"
     :showSelect="true"
@@ -317,3 +317,27 @@ const sortOrder = ref([{ key: 'name', order: 'asc' }]);
 
 </script>
 ```
+
+## Avatar Menu Component
+
+The `BaranAvatarMenu` component is a customizable user menu with various props for configuration.
+
+## Activity Timeline Component
+
+The `BaranActivityTimeline` component is a customizable timeline with various props for configuration.
+
+## Carousel Component
+
+The `BaranCarousel` component is a customizable simple carousel with various props for configuration.
+
+## Sidebar Component
+
+The `BaranActivityTimeline` component is a customizable sidebar with various props for configuration.
+
+## Chart Widget Component
+
+The `BaranChartWidget` component is a customizable chart widget with various props for configuration. (Extended from Apex)
+
+## Speed Dial Component
+
+The `BaranSpeedDial` component is a customizable speed dial with various props for configuration.

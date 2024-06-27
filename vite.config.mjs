@@ -19,11 +19,12 @@ export default defineConfig({
       fileName: (format) => `baran-component.${format}.js`
     },
     rollupOptions: {
-      external: ["vue", "vuetify"],
+      external: ["vue", "vuetify", "vue-router", "apexcharts", "vue3-apexcharts"],
       output: {
         globals: {
           vue: "Vue",
-          vuetify: "Vuetify"
+          vuetify: "Vuetify",
+          router: "Vue Router"
         }
       }
     }
