@@ -1,39 +1,52 @@
 <template>
-  <v-checkbox 
-    v-model="checked"
-    :label="label"
-    :color="color"
-    :disabled="disabled"
-  ></v-checkbox>
+	<v-checkbox
+		v-model="checked"
+		v-bind="checkboxProps"
+		class="baran-checkbox"
+	></v-checkbox>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { defineProps, defineEmits } from 'vue'
+import { ref, watch, defineProps, defineEmits, computed } from "vue";
 
 const props = defineProps({
-  label: {
-    type: String,
-    default: 'Check me',
-  },
-  checked: {
-    type: Boolean,
-    default: false,
-  },
-  color: {
-    type: String,
-    default: ''
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  }
-})
+	label: {
+		type: String,
+		default: "Check me",
+	},
+	checked: {
+		type: Boolean,
+		default: false,
+	},
+	color: {
+		type: String,
+		default: "#7367f0",
+	},
+	disabled: {
+		type: Boolean,
+		default: false,
+	},
+});
 
-const emit = defineEmits(['update:checked'])
-const checked = ref(props.checked)
+const checkboxProps = computed(() => {
+	return {
+		label: props.label,
+		checked: props.checked,
+		color: props.color,
+		disabled: props.disabled,
+	};
+});
+
+const emit = defineEmits(["update:checked"]);
+const checked = ref(props.checked);
 
 watch(checked, (newValue) => {
-  emit('update:checked', newValue)
-})
+	emit("update:checked", newValue);
+});
 </script>
+
+<style>
+.baran-checkbox label {
+	color: var(--text);
+}
+</style>
