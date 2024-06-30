@@ -24,7 +24,9 @@ export default defineConfig({
         globals: {
           vue: "Vue",
           vuetify: "Vuetify",
-          router: "Vue Router"
+          "vue-router": "VueRouter",
+          apexcharts: 'ApexCharts',
+          'vue3-apexcharts': 'Vue3ApexCharts'
         }
       }
     }
