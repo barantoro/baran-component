@@ -1,33 +1,39 @@
 <template>
-	<v-text-field
-		v-model="internalValue"
-		v-bind="computedProps"
-		class="baran-textbox"
-	>
-		<!-- <template v-if="prependIcon" #prepend-inner>
-      <v-icon>{{ prependIcon }}</v-icon>
-    </template>
-    <template v-if="appendIcon" #append>
-      <v-icon>{{ appendIcon }}</v-icon>
-    </template>
-    <template v-if="appendInnerIcon" #append-inner>
-      <v-icon>{{ appendInnerIcon }}</v-icon>
-    </template> -->
+	<v-text-field v-bind="computedProps" class="baran-textbox">
+		<template v-if="$slots['prepend']" #prepend>
+			<slot name="prepend"></slot>
+		</template>
+
+		<template v-if="$slots['prepend-inner']" #prepend-inner>
+			<slot name="prepend-inner"></slot>
+		</template>
+
+		<template v-if="$slots['label']" #label>
+			<slot name="label"></slot>
+		</template>
+
+		<template v-if="$slots.append" #append>
+			<slot name="append"></slot>
+		</template>
+
+		<template v-if="$slots['append-inner']" #append-inner>
+			<slot name="append-inner"></slot>
+		</template>
+
+		<template v-if="$slots['details']" #details>
+			<slot name="details"></slot>
+		</template>
+		
 	</v-text-field>
 </template>
 
 <script setup>
-import { ref, watch, computed } from "vue";
-import { defineProps, defineEmits } from "vue";
+import { defineProps, computed } from "vue";
 
 const props = defineProps({
 	label: {
 		type: String,
-		default: "Text",
-	},
-	value: {
-		type: [String, Number],
-		default: "",
+		default: "Text field",
 	},
 	variant: {
 		type: String,
@@ -37,22 +43,6 @@ const props = defineProps({
 		type: String,
 		default: "compact",
 	},
-	prependIcon: {
-		type: String,
-		default: "",
-	},
-	appendIcon: {
-		type: String,
-		default: "",
-	},
-	appendInnerIcon: {
-		type: String,
-		default: "",
-	},
-	clearable: {
-		type: Boolean,
-		default: false,
-	},
 	type: {
 		type: String,
 		default: "text",
@@ -61,97 +51,13 @@ const props = defineProps({
 		type: String,
 		default: "Type something",
 	},
-	hint: {
-		type: String,
-		default: "",
-	},
-	persistentHint: {
-		type: Boolean,
-		default: false,
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	readonly: {
-		type: Boolean,
-		default: false,
-	},
-	rules: {
-		type: Array,
-		default: () => [],
-	},
-	prefix: {
-		type: String,
-		default: "",
-	},
-	suffix: {
-		type: String,
-		default: "",
-	},
-	maxlength: {
-		type: [String, Number],
-		default: "",
-	},
-	counter: {
-		type: Boolean,
-		default: false,
-	},
-	singleLine: {
-		type: Boolean,
-		default: false,
-	},
 });
-
-const emit = defineEmits(["update:value"]);
-const internalValue = ref(props.value);
-
-watch(internalValue, (newValue) => {
-	emit("update:value", newValue);
-});
-
-watch(
-	() => props.value,
-	(newValue) => {
-		internalValue.value = newValue;
-	}
-);
 
 const computedProps = computed(() => {
-	const variantOptions = [
-		"outlined",
-		"underlined",
-		"solo",
-		"solo-filled",
-		"solo-inverted",
-		"plain",
-	];
-	const densityOptions = ["comfortable", "compact"];
-
+	const variantOptions = [ "outlined", "underlined", "solo", "solo-filled", "solo-inverted", "plain", ];
 	return {
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		density: densityOptions.includes(props.density)
-			? props.density
-			: undefined,
-		label: props.label,
-		placeholder: props.placeholder,
-		type: props.type,
-		hint: props.hint,
-		disabled: props.disabled,
-		readonly: props.readonly,
-		rules: props.rules,
-		prefix: props.prefix,
-		suffix: props.suffix,
-		maxlength: props.maxlength,
-		counter: props.counter,
-		clearable: props.clearable,
-		"persistent-hint": props.persistentHint,
-		"single-line": props.singleLine,
-		"prepend-icon": props.prependIcon,
-		"append-icon": props.appendIcon,
-		"append-inner-icon": props.appendInnerIcon,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : 'outlined',
 	};
 });
 </script>

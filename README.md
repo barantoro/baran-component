@@ -45,7 +45,6 @@ The `BaranButton` component is a customizable button with various props and even
 | `icon`        | String  | `''`      | The icon for a single icon button, using MDI icons.                        |
 | `prependIcon` | String  | `''`      | The icon to prepend to the button text, using MDI icons.                   |
 | `appendIcon`  | String  | `''`      | The icon to append to the button text, using MDI icons.                    |
-| `customClass` | String  | `''`      | Custom CSS class for the button wrapper.                                   |
 | `density`     | String  | `''`      | The density of the button ('default', `comfortable`, `compact`).           |
 | `size`        | String  | `medium`  | The size of the button (`x-small`, `small`, `medium`, `large`, `x-large`). |
 | `block`       | Boolean | `false`   | Whether the button should take the full width of its container.            |
@@ -53,13 +52,21 @@ The `BaranButton` component is a customizable button with various props and even
 | `elevation`   | Number  | `2`       | The elevation (shadow) level of the button.                                |
 | `ripple`      | Boolean | `true`    | Whether the button has a ripple effect when clicked.                       |
 | `loading`     | Boolean | `false`   | Whether the button shows a loading indicator.                              |
-| `iconColor`   | String  | `''`      | The color of the icon.                                                     |
 | `width`       | String  | `''`      | The width of the button.                                                   |
 | `maxWidth`    | String  | `''`      | The maximum width of the button.                                           |
 | `minWidth`    | String  | `''`      | The minimum width of the button.                                           |
 | `height`      | String  | `''`      | The height of the button.                                                  |
 | `maxHeight`   | String  | `''`      | The maximum height of the button.                                          |
 | `minHeight`   | String  | `''`      | The minimum height of the button.                                          |
+
+#### Slots
+
+| Slot Name | Description                      |
+| --------- | -------------------------------- |
+| `prepend` | Slot for custom prepend content. |
+| ``        |                                  |
+| `append`  | Slot for custom append content.  |
+| `loader`  | Slot for custom loader content.  |
 
 #### Events
 
@@ -89,35 +96,43 @@ The `BaranCard` component is a versatile card component with a customizable butt
 
 #### Props
 
-| Prop             | Type    | Default                                                                                                                                                                                                | Description                                                                         |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| text             | String  | 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et sodales quam, quis viverra arcu. Phasellus nunc magna, imperdiet eu malesuada lacinia, imperdiet vel leo. Fusce sed accumsan quam.' | The main text content of the card.                                                  |
-| buttonText       | String  | Click                                                                                                                                                                                                  | The text displayed on the button.                                                   |
-| buttonBackground | String  | #7367f0                                                                                                                                                                                                | The background color of the button.                                                 |
-| buttonColor      | String  | #fff                                                                                                                                                                                                   | The text color of the button.                                                       |
-| showButton       | Boolean | true                                                                                                                                                                                                   | Whether to show the button.                                                         |
-| title            | String  | Title                                                                                                                                                                                                  | The title of the card.                                                              |
-| target           | String  | \_blank                                                                                                                                                                                                | The target attribute for the link, if `href` is provided.                           |
-| subtitle         | String  | ''                                                                                                                                                                                                     | The subtitle of the card.                                                           |
-| variant          | String  | ''                                                                                                                                                                                                     | The variant of the card (`outlined`, `tonal`, `elevated`, `flat`, `text`, `plain`). |
-| loading          | Boolean | false                                                                                                                                                                                                  | Whether the card shows a loading state.                                             |
-| hover            | Boolean | false                                                                                                                                                                                                  | Whether the card has a hover effect.                                                |
-| href             | String  | ''                                                                                                                                                                                                     | The link URL for the card.                                                          |
-| rounded          | String  | xs                                                                                                                                                                                                     | The border radius of the card (e.g., `xs`, `sm`, `md`, `lg`, `xl`).                 |
-| elevation        | Number  | 2                                                                                                                                                                                                      | The elevation (shadow) level of the card.                                           |
-| image            | String  | ''                                                                                                                                                                                                     | The image URL for the card.                                                         |
-| color            | String  | ''                                                                                                                                                                                                     | The color of the card.                                                              |
-| disabled         | Boolean | false                                                                                                                                                                                                  | Whether the card is disabled.                                                       |
-| prependIcon      | String  | ''                                                                                                                                                                                                     | The icon to prepend to the card content.                                            |
-| appendIcon       | String  | ''                                                                                                                                                                                                     | The icon to append to the card content.                                             |
-| class            | String  | ''                                                                                                                                                                                                     | Custom CSS class for the card.                                                      |
-| density          | String  | ''                                                                                                                                                                                                     | The density of the card (`comfortable`, `compact`).                                 |
-| width            | String  | ''                                                                                                                                                                                                     | The width of the card.                                                              |
-| maxWidth         | String  | ''                                                                                                                                                                                                     | The maximum width of the card.                                                      |
-| minWidth         | String  | ''                                                                                                                                                                                                     | The minimum width of the card.                                                      |
-| height           | String  | ''                                                                                                                                                                                                     | The height of the card.                                                             |
-| maxHeight        | String  | ''                                                                                                                                                                                                     | The maximum height of the card.                                                     |
-| minHeight        | String  | ''                                                                                                                                                                                                     | The minimum height of the card.                                                     |
+| Prop             | Type    | Default | Description                                                                         |
+| ---------------- | ------- | ------- | ----------------------------------------------------------------------------------- |
+| text             | String  | ''      | The main text content of the card.                                                  |
+| buttonText       | String  | Click   | The text displayed on the button.                                                   |
+| buttonBackground | String  | #7367f0 | The background color of the button.                                                 |
+| buttonColor      | String  | #fff    | The text color of the button.                                                       |
+| showButton       | Boolean | false   | Whether to show the button.                                                         |
+| title            | String  | ''      | The title of the card.                                                              |
+| target           | String  | ''      | The target attribute for the link, if `href` is provided.                           |
+| subtitle         | String  | ''      | The subtitle of the card.                                                           |
+| variant          | String  | ''      | The variant of the card (`outlined`, `tonal`, `elevated`, `flat`, `text`, `plain`). |
+| loading          | Boolean | false   | Whether the card shows a loading state.                                             |
+| hover            | Boolean | false   | Whether the card has a hover effect.                                                |
+| href             | String  | ''      | The link URL for the card.                                                          |
+| rounded          | String  | xs      | The border radius of the card (e.g., `xs`, `sm`, `md`, `lg`, `xl`).                 |
+| elevation        | Number  | 1       | The elevation (shadow) level of the card.                                           |
+| image            | String  | ''      | The image URL for the card.                                                         |
+| color            | String  | ''      | The color of the card.                                                              |
+| disabled         | Boolean | false   | Whether the card is disabled.                                                       |
+| prependIcon      | String  | ''      | The icon to prepend to the card content.                                            |
+| appendIcon       | String  | ''      | The icon to append to the card content.                                             |
+| density          | String  | ''      | The density of the card (`comfortable`, `compact`).                                 |
+| width            | String  | ''      | The width of the card.                                                              |
+| maxWidth         | String  | ''      | The maximum width of the card.                                                      |
+| minWidth         | String  | ''      | The minimum width of the card.                                                      |
+| height           | String  | ''      | The height of the card.                                                             |
+| maxHeight        | String  | ''      | The maximum height of the card.                                                     |
+| minHeight        | String  | ''      | The minimum height of the card                                                      |
+
+#### Slots
+
+| Slot Name | Description                      |
+| --------- | -------------------------------- |
+| `prepend` | Slot for custom prepend content. |
+| ``        |                                  |
+| `append`  | Slot for custom append content.  |
+| `actions` | Slot for actions loader content. |
 
 #### Events
 
@@ -176,8 +191,14 @@ The `BaranChips` component represents a small interactive element used to repres
 | closable    | Boolean | false     | If true, displays a close icon for removing the chip.                 |
 | label       | Boolean | false     | If true, renders the chip as a label style.                           |
 | disabled    | Boolean | false     | If true, disables interactions with the chip.                         |
-| class       | String  | ''        | Custom CSS class to apply to the chip.                                |
 | density     | String  | ''        | Density of the chip (`comfortable`, `compact`).                       |
+
+#### Slots
+
+| Slot Name | Description                      |
+| --------- | -------------------------------- |
+| `prepend` | Slot for custom prepend content. |
+| `append`  | Slot for custom append content.  |
 
 #### Events
 
@@ -217,26 +238,21 @@ The `BaranExpansionPanel` component allows for displaying collapsible panels wit
 
 #### Props
 
-| Prop      | Type    | Default   | Description                                                                |
-| --------- | ------- | --------- | -------------------------------------------------------------------------- |
-| items     | Array   | See below | Array of objects defining each panel's title and text content.             |
-| variant   | String  | 'default' | Variant style of the expansion panels (default, accordion, inset, popout). |
-| rounded   | String  | 'xs'      | Rounded corner size of the panels.                                         |
-| elevation | Number  | 1         | Elevation level of the panels.                                             |
-| readonly  | Boolean | false     | Whether the panels are readonly.                                           |
-| color     | String  | ''        | Color of the expansion panels.                                             |
-| disabled  | Boolean | false     | Whether the panels are disabled.                                           |
-| class     | String  | ''        | Custom CSS classes for the panels wrapper.                                 |
+| Prop      | Type    | Default   | Description                                                                        |
+| --------- | ------- | --------- | ---------------------------------------------------------------------------------- |
+| items     | Array   | See below | Array of objects defining each panel's title and text content.                     |
+| variant   | String  | 'default' | Variant style of the expansion panels (`default`, `accordion`, `inset`, `popout`). |
+| rounded   | String  | 'xs'      | Rounded corner size of the panels.                                                 |
+| elevation | Number  | 1         | Elevation level of the panels.                                                     |
+| readonly  | Boolean | false     | Whether the panels are readonly.                                                   |
+| color     | String  | ''        | Color of the expansion panels.                                                     |
+| disabled  | Boolean | false     | Whether the panels are disabled.                                                   |
 
 #### Example Usage
 
 ```vue
 <template>
-	<BaranExpansionPanel :items="panelItems" variant="accordion" rounded="md" :elevation="3" :readonly="false" color="#7367f0" class="custom-expansion-panels">
-		<template v-slot:default="{ item }">
-			<p>{{ item.text }}</p>
-		</template>
-	</BaranExpansionPanel>
+	<BaranExpansionPanel :items="panelItems" variant="accordion" rounded="md" :elevation="3" :readonly="false" color="#7367f0" class="custom-expansion-panels" />
 </template>
 
 <script setup>
@@ -296,7 +312,6 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 | minHeight       | String  | ''               | Minimum height of the dialog.                                 |
 | buttonVariant   | String  | ''               | Variant style of the activator button.                        |
 | buttonDisabled  | Boolean | false            | Whether the activator button is disabled.                     |
-| buttonIcon      | String  | ''               | Icon displayed on the activator button.                       |
 | buttonDensity   | String  | 'comfortable'    | Density of the activator button.                              |
 | buttonClass     | String  | ''               | Custom CSS classes for the activator button.                  |
 | buttonSize      | String  | 'default'        | Size of the activator button.                                 |
@@ -312,31 +327,18 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 
 #### Slots
 
--   **activator**: Slot for replacing the default activator button. Provides props (`activatorProps`) to customize the activator button.
--   **default**: Slot for customizing the content inside the dialog. Receives the `isActive` prop indicating whether the dialog is currently active.
+| Slot Name   | Description                                                                                                                         |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `activator` | Slot for replacing the default activator button. Provides props (`activatorProps`) to customize the activator button.               |
+| `default`   | Slot for customizing the content inside the dialog. Receives the `isActive` prop indicating whether the dialog is currently active. |
 
 #### Example Usage
 
 ```vue
 <template>
-	<BaranDialog :title="dialogTitle" :text="dialogText" :closeButtonText="dialogCloseText" :rounded="dialogRounded" :buttonText="openButtonText" :buttonColor="buttonColor" :buttonElevation="buttonElevation" :persistent="false" :scrollable="true" :fullscreen="false" class="custom-dialog">
+	<BaranDialog width="auto" scrollable :title="dialogTitle" :text="dialogText">
 		<template v-slot:activator="{ props: activatorProps }">
-			<v-btn v-bind="activatorProps" :class="buttonClass">
-				{{ openButtonText }}
-			</v-btn>
-		</template>
-
-		<template v-slot:default="{ isActive }">
-			<v-card :title="title">
-				<v-card-text>
-					{{ text }}
-				</v-card-text>
-
-				<v-card-actions>
-					<v-spacer></v-spacer>
-					<v-btn :text="closeButtonText" @click="isActive.value = false"></v-btn>
-				</v-card-actions>
-			</v-card>
+			<BaranButton color="brown" prepend-icon="mdi-earth" text="Custom Modal Activator" variant="outlined" v-bind="activatorProps"></BaranButton>
 		</template>
 	</BaranDialog>
 </template>
@@ -344,12 +346,6 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 <script setup>
 const dialogTitle = "Example Dialog";
 const dialogText = "This is an example of a dialog component with custom slots and props.";
-const dialogCloseText = "Close";
-const dialogRounded = "md";
-const openButtonText = "Open Dialog";
-const buttonColor = "#42a5f5";
-const buttonElevation = 3;
-const buttonClass = "custom-button-class";
 </script>
 ```
 
@@ -364,10 +360,9 @@ The `BaranList` component renders a list of items with optional sub-groups, allo
 | lines         | String  | 'one'         | Number of lines for list items (one or two).                              |
 | items         | Array   | []            | Array of items to render in the list.                                     |
 | density       | String  | 'comfortable' | Density of the list items (comfortable or compact).                       |
-| elevation     | Number  | 2             | Elevation level of the list.                                              |
+| elevation     | Number  | 0             | Elevation level of the list.                                              |
 | variant       | String  | ''            | Variant style of the list (outlined, tonal, elevated, flat, text, plain). |
 | disabled      | Boolean | false         | Whether the list is disabled.                                             |
-| class         | String  | ''            | Custom CSS classes for the list wrapper.                                  |
 | listItemClass | String  | ''            | Custom CSS classes for each list item.                                    |
 | width         | String  | ''            | Width of the list wrapper.                                                |
 | maxWidth      | String  | ''            | Maximum width of the list wrapper.                                        |
@@ -589,11 +584,14 @@ The `BaranTextbox` component is a customizable text field component with various
 
 #### Slots
 
-| Slot Name       | Description                                   |
-| --------------- | --------------------------------------------- |
-| `prepend-inner` | Slot for customizing the inner prepend icon.  |
-| `append`        | Slot for customizing the appended icon.       |
-| `append-inner`  | Slot for customizing the inner appended icon. |
+| Slot Name       | Description                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| `prepend-inner` | Slot for customizing the inner prepend-inner icon.                                              |
+| `prepend`       | Slot for customizing the prepend icon.                                                          |
+| `append`        | Slot for customizing the appended icon.                                                         |
+| `append-inner`  | Slot for customizing the inner appended-inner icon.                                             |
+| `details`       | Slot for customizing the details. Used for displaying messages, hint, error-messages, and more. |
+| `label`         | Slot for customizing the label.                                                                 |
 
 #### Example Usage
 
@@ -634,13 +632,17 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 | multiple       | Boolean | false                          | Whether multiple items can be selected.                                                           |
 | chips          | Boolean | false                          | Whether to use chips for selected items display.                                                  |
 | readonly       | Boolean | false                          | Whether the combobox is in readonly mode.                                                         |
-| customSlot     | Boolean | false                          | Whether to use a custom slot for rendering selected item content.                                 |
 | hint           | String  | ''                             | Hint text displayed below the combobox.                                                           |
-| noData         | Boolean | false                          | Whether to show a message when no matching items are found.                                       |
 | hideSelected   | Boolean | false                          | Whether to hide the selected item(s) from the dropdown list.                                      |
 | variant        | String  | 'outlined'                     | Variant style of the combobox ('outlined', 'underlined', 'solo', 'solo-filled', 'solo-inverted'). |
-| class          | String  | ''                             | Custom CSS class for the combobox.                                                                |
 | persistentHint | Boolean | false                          | Whether the hint text is persistent (visible when the combobox is focused).                       |
+| hide-no-data   | Boolean | true                           | Whether to show a message when no matching items are found.                                       |
+
+#### Slots
+
+| Slot Name | Description                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| `no-data` | Slot for custom no-data content. Make sure hide-no-data props is false |
 
 #### Example Usage
 
@@ -654,9 +656,7 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 		:multiple="true"
 		:chips="true"
 		:readonly="false"
-		:customSlot="false"
 		hint="Select multiple fruits"
-		:noData="false"
 		:hideSelected="false"
 		variant="outlined"
 		class="custom-combobox"
@@ -679,7 +679,7 @@ import BaranCombobox from "@/components/BaranCombobox.vue";
 
 ## File Input Component
 
-The BaranFileInput component allows users to upload files with customizable options.
+The `BaranFileInput` component allows users to upload files with customizable options.
 
 #### Props
 
@@ -699,7 +699,6 @@ The BaranFileInput component allows users to upload files with customizable opti
 | disabled         | Boolean | false            | Whether the input is disabled.                                                       |
 | prependIcon      | String  | ''               | Icon prepended outside the input.                                                    |
 | appendIcon       | String  | ''               | Icon appended outside the input.                                                     |
-| class            | String  | ''               | Custom CSS classes for the input wrapper.                                            |
 | density          | String  | 'compact'        | Density of the input (comfortable or compact).                                       |
 | rounded          | String  | 'xs'             | Rounded corner size of the input.                                                    |
 | readonly         | Boolean | false            | Whether the input is readonly.                                                       |
@@ -720,7 +719,7 @@ The BaranFileInput component allows users to upload files with customizable opti
 		:chips="true"
 		:multiple="true"
 		prependIcon="mdi-file"
-		appendIcon="mdi-cloud-upload"
+		appendInnerIcon="mdi-cloud-upload"
 		class="custom-file-input"
 		density="compact"
 		rounded="sm"
@@ -891,7 +890,7 @@ The BaranOTPInput component does not emit any events directly.
 
 ## Checkbox Component
 
-The `MyCheckbox` component is a customizable checkbox with various props and events.
+The `BaranCheckbox` component is a customizable checkbox with various props and events.
 
 ### Props
 
@@ -899,7 +898,7 @@ The `MyCheckbox` component is a customizable checkbox with various props and eve
 | ---------- | ------- | ---------- | ----------------------------------------- |
 | `label`    | String  | `Check me` | The label displayed next to the checkbox. |
 | `checked`  | Boolean | `false`    | Whether the checkbox is checked.          |
-| `color`    | String  | `''`       | The color of the checkbox.                |
+| `color`    | String  | `#7367f0`  | The color of the checkbox.                |
 | `disabled` | Boolean | `false`    | Whether the checkbox is disabled.         |
 
 ### Events
@@ -1002,7 +1001,7 @@ const radioItems = ref([
 
 ## ColorPicker Component
 
-The `ColorPicker` component allows users to select colors with various configurations.
+The `BaranColorPicker` component allows users to select colors with various configurations.
 
 #### Props
 
@@ -1014,7 +1013,7 @@ The `ColorPicker` component allows users to select colors with various configura
 | hideInputs        | Boolean | false   | Hides color value input fields in the color picker.                                                |
 | elevation         | Number  | 2       | Elevation level of the color picker.                                                               |
 | swatchesMaxHeight | Number  | 0       | Maximum height of the color swatches. If set to 0, height is auto-calculated based on swatch size. |
-| width             | String  | '300px' | Width of the color picker.                                                                         |
+| width             | String  | ''      | Width of the color picker.                                                                         |
 | maxWidth          | String  | ''      | Maximum width of the color picker.                                                                 |
 | minWidth          | String  | ''      | Minimum width of the color picker.                                                                 |
 | height            | String  | ''      | Height of the color picker.                                                                        |
@@ -1039,24 +1038,21 @@ The `BaranDatePicker` component encapsulates a date picker with customizable pro
 
 #### Props
 
-| Prop               | Type    | Default   | Description                                                         |
-| ------------------ | ------- | --------- | ------------------------------------------------------------------- |
-| color              | String  | '#7367f0' | Color theme of the date picker.                                     |
-| disabled           | Boolean | false     | Whether the date picker is disabled.                                |
-| showAdjacentMonths | Boolean | false     | Whether to show adjacent months in the date picker.                 |
-| hideCanvas         | Boolean | false     | Whether to hide the canvas (main calendar area) in the date picker. |
-| hideInputs         | Boolean | false     | Whether to hide date input fields in the date picker.               |
-| elevation          | Number  | 2         | Elevation level of the date picker.                                 |
-| class              | String  | ''        | Custom CSS class for the date picker.                               |
-| rounded            | String  | ''        | Rounded corner size of the date picker.                             |
-| width              | String  | ''        | Width of the date picker.                                           |
-| maxWidth           | String  | ''        | Maximum width of the date picker.                                   |
-| minWidth           | String  | ''        | Minimum width of the date picker.                                   |
-| height             | String  | ''        | Height of the date picker.                                          |
-| maxHeight          | String  | ''        | Maximum height of the date picker.                                  |
-| minHeight          | String  | ''        | Minimum height of the date picker.                                  |
-| min                | String  | ''        | Minimum selectable date (format: 'YYYY-MM-DD').                     |
-| max                | String  | ''        | Maximum selectable date (format: 'YYYY-MM-DD').                     |
+| Prop               | Type    | Default   | Description                                         |
+| ------------------ | ------- | --------- | --------------------------------------------------- |
+| color              | String  | '#7367f0' | Color theme of the date picker.                     |
+| disabled           | Boolean | false     | Whether the date picker is disabled.                |
+| showAdjacentMonths | Boolean | false     | Whether to show adjacent months in the date picker. |
+| elevation          | Number  | 2         | Elevation level of the date picker.                 |
+| rounded            | String  | ''        | Rounded corner size of the date picker.             |
+| width              | String  | ''        | Width of the date picker.                           |
+| maxWidth           | String  | ''        | Maximum width of the date picker.                   |
+| minWidth           | String  | ''        | Minimum width of the date picker.                   |
+| height             | String  | ''        | Height of the date picker.                          |
+| maxHeight          | String  | ''        | Maximum height of the date picker.                  |
+| minHeight          | String  | ''        | Minimum height of the date picker.                  |
+| min                | String  | ''        | Minimum selectable date (format: 'YYYY-MM-DD').     |
+| max                | String  | ''        | Maximum selectable date (format: 'YYYY-MM-DD').     |
 
 #### Example Usage
 

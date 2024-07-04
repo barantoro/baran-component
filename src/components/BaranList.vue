@@ -2,8 +2,8 @@
 	<!-- 
         - All props are listed together for better readability
         - 2nd <v-list-item> element is conditionally rendered using v-if (sub group).
-        - v-if="icon": Determines whether the item have sub group or not.
-        - The reason of I didn't use directly :items props is, 
+        - v-if="item.subItems": Determines whether the item have sub group or not.
+        - The reason of didn't use directly :items props is, 
         this approach gives more flexibility for later development. 
     -->
 	<v-list v-bind="listProps" class="baran-list-wrapper">
@@ -32,10 +32,6 @@
 import { defineProps, defineEmits, computed } from "vue";
 
 const props = defineProps({
-	lines: {
-		type: String,
-		default: "one",
-	},
 	items: {
 		type: Array,
 		default: () => [
@@ -88,80 +84,21 @@ const props = defineProps({
 		type: String,
 		default: "comfortable",
 	},
-	elevation: {
-		type: Number,
-		default: 2,
-	},
 	variant: {
-		type: String,
-		default: "",
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	class: {
-		type: String,
-		default: "",
-	},
-	listItemClass: {
-		type: String,
-		default: "",
-	},
-	width: {
-		type: String,
-		default: "",
-	},
-	maxWidth: {
-		type: String,
-		default: "",
-	},
-	minWidth: {
-		type: String,
-		default: "",
-	},
-	height: {
-		type: String,
-		default: "",
-	},
-	maxHeight: {
-		type: String,
-		default: "",
-	},
-	minHeight: {
 		type: String,
 		default: "",
 	},
 });
 
 const listProps = computed(() => {
-	const variantOptions = [
-		"outlined",
-		"tonal",
-		"elevated",
-		"flat",
-		"text",
-		"plain",
-	];
+	const variantOptions = [ "outlined", "tonal", "elevated", "flat", "text", "plain" ];
 	const densityOptions = ["comfortable", "compact"];
 
 	return {
-		lines: props.lines,
-		disabled: props.disabled,
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		density: densityOptions.includes(props.density)
-			? props.density
-			: undefined,
-		class: props.class,
-		elevation: props.elevation,
-		width: props.width,
-		"max-width": props.maxWidth,
-		"min-width": props.minWidth,
-		height: props.height,
-		"max-height": props.maxHeight,
-		"min-height": props.minHeight,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : undefined,
+		density: densityOptions.includes(props.density) ? props.density : undefined,
+		 
 	};
 });
 

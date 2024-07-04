@@ -1,7 +1,12 @@
 <template>
 	<v-chip v-bind="chipsProps" @click="handleClick" class="baran-chips">
-		<slot name="prepend"></slot>
+		<template v-if="$slots['prepend']" #prepend>
+			<slot name="prepend"></slot>
+		</template>
 		<slot>{{ title }}</slot>
+		<template v-if="$slots['append']" #append>
+			<slot name="append"></slot>
+		</template>
 	</v-chip>
 </template>
 
@@ -21,37 +26,9 @@ const props = defineProps({
 		type: Number,
 		default: 0,
 	},
-	size: {
-		type: String,
-		default: "default",
-	},
 	variant: {
 		type: String,
 		default: "tonal",
-	},
-	prependIcon: {
-		type: String,
-		default: "",
-	},
-	appendIcon: {
-		type: String,
-		default: "",
-	},
-	closable: {
-		type: Boolean,
-		default: false,
-	},
-	label: {
-		type: Boolean,
-		default: false,
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	class: {
-		type: String,
-		default: "",
 	},
 	density: {
 		type: String,
@@ -64,21 +41,9 @@ const chipsProps = computed(() => {
 	const densityOptions = ["comfortable", "compact"];
 
 	return {
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		"prepend-icon": props.prependIcon,
-		"append-icon": props.appendIcon,
-		closable: props.closable,
-		color: props.color,
-		size: props.size,
-		label: props.label,
-		disabled: props.disabled,
-		density: densityOptions.includes(props.density)
-			? props.density
-			: undefined,
-		class: props.class,
-		elevation: props.elevation,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : undefined,
+		density: densityOptions.includes(props.density) ? props.density : undefined,
 	};
 });
 

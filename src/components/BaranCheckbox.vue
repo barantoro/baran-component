@@ -30,10 +30,7 @@ const props = defineProps({
 
 const checkboxProps = computed(() => {
 	return {
-		label: props.label,
-		checked: props.checked,
-		color: props.color,
-		disabled: props.disabled,
+		...props,
 	};
 });
 

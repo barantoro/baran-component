@@ -5,16 +5,8 @@
 		v-bind="computedProps"
 		class="baran-combobox"
 	>
-		<template v-slot:selection="data" v-if="customSlot">
-			<slot name="selectionContent" :data="data"></slot>
-		</template>
-		<template v-slot:no-data v-if="noData">
-			<v-list-item>
-				<v-list-item-title>
-					No results matching "<strong>{{ search }}</strong
-					>". Press <kbd>enter</kbd> to create a new one
-				</v-list-item-title>
-			</v-list-item>
+		<template v-if="$slots['no-data']" #no-data>
+			<slot name="no-data"></slot>
 		</template>
 	</v-combobox>
 </template>
@@ -35,49 +27,13 @@ const props = defineProps({
 		type: String,
 		default: "Select an item",
 	},
-	density: {
-		type: String,
-		default: "compact",
-	},
-	multiple: {
-		type: Boolean,
-		default: false,
-	},
-	chips: {
-		type: Boolean,
-		default: false,
-	},
-	readonly: {
-		type: Boolean,
-		default: false,
-	},
-	customSlot: {
-		type: Boolean,
-		default: false,
-	},
-	hint: {
-		type: String,
-		default: "",
-	},
-	noData: {
-		type: Boolean,
-		default: false,
-	},
-	hideSelected: {
-		type: Boolean,
-		default: false,
-	},
 	variant: {
 		type: String,
 		default: "outlined",
 	},
-	class: {
+	density: {
 		type: String,
-		default: "",
-	},
-	persistentHint: {
-		type: Boolean,
-		default: false,
+		default: "compact",
 	},
 });
 
@@ -85,33 +41,13 @@ const selectedItem = ref(null);
 const search = ref(null);
 
 const computedProps = computed(() => {
-	const variantOptions = [
-		"outlined",
-		"underlined",
-		"solo",
-		"solo-filled",
-		"solo-inverted",
-	];
+	const variantOptions = [ "outlined", "underlined", "solo", "solo-filled", "solo-inverted" ];
 	const densityOptions = ["comfortable", "compact"];
 
 	return {
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		density: densityOptions.includes(props.density)
-			? props.density
-			: undefined,
-		items: props.items,
-		label: props.label,
-		placeholder: props.placeholder,
-		multiple: props.multiple,
-		chips: props.chips,
-		readonly: props.readonly,
-		hint: props.hint,
-		"persistent-hint": props.persistentHint,
-		"hide-selected": props.hideSelected,
-		"hide-no-data": !props.noData,
-		class: props.class,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : 'outlined',
+		density: densityOptions.includes(props.density) ? props.density : 'compact',
 	};
 });
 </script>

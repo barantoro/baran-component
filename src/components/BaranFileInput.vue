@@ -9,134 +9,36 @@
 import { defineProps, computed } from "vue";
 
 const props = defineProps({
-	rules: {
-		tpye: Array,
-		default: () => [],
-	},
-	accept: {
+	label: {
 		type: String,
-		default: "",
+		default: "File",
 	},
 	variant: {
 		type: String,
 		default: "outlined",
 	},
-	clearable: {
-		type: Boolean,
-		default: false,
-	},
-	chips: {
-		type: Boolean,
-		default: false,
-	},
-	multiple: {
-		type: Boolean,
-		default: false,
-	},
-	prependInnerIcon: {
+	density: {
 		type: String,
-		default: "",
-	},
-	label: {
-		type: String,
-		default: "File",
+		default: "compact",
 	},
 	appendInnerIcon: {
 		type: String,
 		default: "mdi-attachment",
 	},
-	loading: {
-		type: Boolean,
-		default: false,
-	},
-	color: {
-		type: String,
-		default: "",
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	prependIcon: {
-		type: String,
-		default: "",
-	},
-	appendIcon: {
-		type: String,
-		default: "",
-	},
-	class: {
-		type: String,
-		default: "",
-	},
-	density: {
-		type: String,
-		default: "compact",
-	},
 	rounded: {
 		type: String,
 		default: "xs",
 	},
-	readonly: {
-		type: Boolean,
-		default: false,
-	},
-	persistentHint: {
-		type: Boolean,
-		default: false,
-	},
-	hint: {
-		type: String,
-		default: "",
-	},
-	counter: {
-		type: Boolean,
-		default: false,
-	},
-	showSize: {
-		type: Boolean,
-		default: false,
-	},
 });
 
 const fileInputProps = computed(() => {
-	// I collected all the props here to increase readability.
-	const variantOptions = [
-		"outlined",
-		"underlined",
-		"solo",
-		"solo-filled",
-		"solo-inverted",
-	];
+	const variantOptions = [ "outlined", "underlined", "solo", "solo-filled", "solo-inverted" ];
 	const densityOptions = ["comfortable", "compact"];
 
 	return {
-		accept: props.accept,
-		rules: props.rules,
-		label: props.label,
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		clearable: props.clearable,
-		chips: props.chips,
-		multiple: props.multiple,
-		color: props.color,
-		"prepend-icon": props.prependIcon,
-		"append-icon": props.appendIcon,
-		"prepend-inner-icon": props.prependInnerIcon,
-		"append-inner-icon": props.appendInnerIcon,
-		disabled: props.disabled,
-		rounded: props.rounded,
-		loading: props.loading,
-		density: densityOptions.includes(props.density)
-			? props.density
-			: undefined,
-		class: props.class,
-		readonly: props.readonly,
-		hint: props.hint,
-		"persistent-hint": props.persistentHint,
-		counter: props.counter,
-		"show-size": props.showSize,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : 'outlined',
+		density: densityOptions.includes(props.density) ? props.density : 'compact',
 	};
 });
 </script>

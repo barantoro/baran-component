@@ -10,22 +10,7 @@
 				</v-btn>
 			</slot>
 		</template>
-
-		<!-- <template v-slot:default="{ isActive }">
-            <v-card title="Dialog">
-                <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </v-card-text>
-            
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                      text="Close Dialog"
-                      @click="isActive.value = false"
-                    ></v-btn>
-                </v-card-actions>
-            </v-card>
-        </template> -->
+		
 		<template v-slot:default="{ isActive }">
 			<slot :isActive="isActive">
 				<v-card :title="title">
@@ -81,54 +66,6 @@ const props = defineProps({
 	buttonElevation: {
 		type: Number,
 		default: 2,
-	},
-	persistent: {
-		type: Boolean,
-		default: false,
-	},
-	transition: {
-		type: String,
-		default: "",
-	},
-	scrollable: {
-		type: Boolean,
-		default: false,
-	},
-	fullscreen: {
-		type: Boolean,
-		default: false,
-	},
-	class: {
-		type: String,
-		default: "",
-	},
-	density: {
-		type: String,
-		default: "",
-	},
-	width: {
-		type: String,
-		default: "",
-	},
-	maxWidth: {
-		type: String,
-		default: "",
-	},
-	minWidth: {
-		type: String,
-		default: "",
-	},
-	height: {
-		type: String,
-		default: "",
-	},
-	maxHeight: {
-		type: String,
-		default: "",
-	},
-	minHeight: {
-		type: String,
-		default: "",
 	},
 	buttonVariant: {
 		type: String,
@@ -194,30 +131,20 @@ const props = defineProps({
 
 const dialogProps = computed(() => {
 	return {
-		persistent: props.persistent,
-		transition: props.transition?.length > 0 ? props.transition : undefined,
-		scrollable: props.scrollable,
-		fullscreen: props.fullscreen,
-		class: props.class,
-		width: props.width,
-		"max-width": props.maxWidth,
-		"min-width": props.minWidth,
-		height: props.height,
-		"max-height": props.maxHeight,
-		"min-height": props.minHeight,
+		...props
 	};
 });
 
 const btnProps = computed(() => {
+	const variantOptions = ["outlined", "tonal", "text", "plain"];
 	const densityOptions = ["comfortable", "compact"];
+
 	return {
 		color: props.buttonColor,
-		// variant: props.buttonVariant,
 		disabled: props.buttonDisabled,
 		icon: props?.buttonIcon?.length > 0 ? props.buttonIcon : undefined,
-		density: densityOptions.includes(props.buttonDensity)
-			? props.buttonDensity
-			: undefined,
+		variant: variantOptions.includes(props.buttonVariant) ? props.buttonVariant : undefined,
+		density: densityOptions.includes(props.buttonDensity) ? props.buttonDensity : 'compact',
 		class: props.buttonClass,
 		size: props.buttonSize,
 		block: props.buttonBlock,

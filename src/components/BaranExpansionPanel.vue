@@ -9,7 +9,6 @@
 			:title="item.title"
 			:text="item.text"
 		>
-			<slot></slot>
 		</v-expansion-panel>
 	</v-expansion-panels>
 </template>
@@ -38,43 +37,15 @@ const props = defineProps({
 	rounded: {
 		type: String,
 		default: "xs",
-	},
-	elevation: {
-		type: Number,
-		default: 1,
-	},
-	readonly: {
-		type: Boolean,
-		default: false,
-	},
-	color: {
-		type: String,
-		default: "",
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	class: {
-		type: String,
-		default: "",
-	},
+	}
 });
 
 const expansionPanelProps = computed(() => {
-	// I collected all the props here to increase readability.
 	const variantOptions = ["default", "accordion", "inset", "popout"];
 
 	return {
-		readonly: props.readonly,
-		color: props.color,
-		disabled: props.disabled,
-		variant: variantOptions.includes(props.variant)
-			? props.variant
-			: undefined,
-		class: props.class,
-		rounded: props.rounded,
-		elevation: props.elevation,
+		...props,
+		variant: variantOptions.includes(props.variant) ? props.variant : undefined,
 	};
 });
 </script>
