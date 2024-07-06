@@ -19,9 +19,7 @@
 								class="image-container"
 								location="top"
 								:text="participant.name"
-								v-for="(
-									participant, index
-								) in item.participants.slice(0, 5)"
+								v-for="(participant, index) in item.participants.slice(0, 5)"
 								:key="index"
 							>
 								<template v-slot:activator="{ props }">
@@ -35,9 +33,7 @@
 							<template v-if="item.participants.length > 5">
 								<v-tooltip
 									location="top"
-									:text="
-										item.participants.length - 5 + ' more'
-									"
+									:text="item.participants.length - 5 + ' more'"
 								>
 									<template v-slot:activator="{ props }">
 										<v-avatar

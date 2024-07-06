@@ -434,116 +434,110 @@ const listItems = ref([
 
 ## Tabs Component
 
-The BaranTabs component is a customizable tab interface with various props and slots for content and tab customization.
+The `BaranTabs` component is a customizable tab component with support for icons, dynamic tab content, and various styling options. It allows for flexible props, slots, and a simple API to manage the tabs.
 
 #### Props
 
-| Prop          | Type    | Default                                                                                                                                | Description                                                               |
-| ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| items         | Array   | `[{ id: 1, tabText: '1st Tab', tabContent: 'Content for 1st Tab' }, { id: 2, tabText: '2nd Tab', tabContent: 'Content for 2nd Tab' }]` | An array of tab items, each containing `id`, `tabText`, and `tabContent`. |
-| tabBackground | String  | #7367f0                                                                                                                                | The background color of the tabs.                                         |
-| alignTabs     | String  | start                                                                                                                                  | Alignment of the tabs (e.g., start, center, end).                         |
-| showArrows    | Boolean | true                                                                                                                                   | Whether to show navigation arrows on the tabs.                            |
-| rounded       | String  | xs                                                                                                                                     | The border radius of the tabs wrapper (e.g., 0, xs, sm, md, lg, xl).      |
-| elevation     | Number  | 2                                                                                                                                      | The elevation (shadow) level of the tabs wrapper.                         |
-| activeColor   | String  |                                                                                                                                        | The color of the active tab.                                              |
-| disabled      | Boolean | false                                                                                                                                  | Whether the tabs are disabled.                                            |
-| class         | String  |                                                                                                                                        | Custom CSS class for the tabs wrapper.                                    |
-| density       | String  | compact                                                                                                                                | The density of the tabs ('comfortable', 'compact').                       |
-| centerActive  | Boolean | false                                                                                                                                  | Whether to center the active tab.                                         |
-| prevIcon      | String  |                                                                                                                                        | The icon for the previous navigation button.                              |
-| nextIcon      | String  |                                                                                                                                        | The icon for the next navigation button.                                  |
-| grow          | Boolean | false                                                                                                                                  | Whether the tabs should grow to fill the available space.                 |
-| vertical      | Boolean | false                                                                                                                                  | Whether to display the tabs vertically.                                   |
-| stacked       | Boolean | false                                                                                                                                  | Whether to stack the tabs.                                                |
-| width         | String  |                                                                                                                                        | The width of the tabs wrapper.                                            |
-| maxWidth      | String  |                                                                                                                                        | The maximum width of the tabs wrapper.                                    |
-| minWidth      | String  |                                                                                                                                        | The minimum width of the tabs wrapper.                                    |
-| height        | String  |                                                                                                                                        | The height of the tabs wrapper.                                           |
-| maxHeight     | String  |                                                                                                                                        | The maximum height of the tabs wrapper.                                   |
-| minHeight     | String  |                                                                                                                                        | The minimum height of the tabs wrapper.                                   |
+| Prop      | Type    | Default                                                                                                                                                  | Description                                                                                     |
+| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| items     | Array   | `[{ id: 1, tabText: "1st Tab", tabContent: "Content for 1st Tab" }, { id: 2, tabText: "2nd Tab", tabContent: "Content for 2nd Tab", icon: "$vuetify" }]` | Array of tab items, each containing an `id`, `tabText`, `tabContent`, and optionally an `icon`. |
+| bgColor   | String  | #7367f0                                                                                                                                                  | Background color for the tab component.                                                         |
+| alignTabs | String  | start                                                                                                                                                    | Alignment of the tabs (start, center, end).                                                     |
+| rounded   | String  | xs                                                                                                                                                       | Border radius for the tab component (xs, sm, md, lg, xl).                                       |
+| elevation | Number  | 2                                                                                                                                                        | Elevation for the tab component (range from 0 to 24).                                           |
+| density   | String  | comfortable                                                                                                                                              | Density of the tabs (comfortable, compact).                                                     |
+| disabled  | Boolean | false                                                                                                                                                    | Whether the tabs are disabled.                                                                  |
+| width     | String  |                                                                                                                                                          | The width of the tabs wrapper.                                                                  |
+| maxWidth  | String  |                                                                                                                                                          | The maximum width of the tabs wrapper.                                                          |
+| minWidth  | String  |                                                                                                                                                          | The minimum width of the tabs wrapper.                                                          |
+| height    | String  |                                                                                                                                                          | The height of the tabs wrapper.                                                                 |
+| maxHeight | String  |                                                                                                                                                          | The maximum height of the tabs wrapper.                                                         |
+| minHeight | String  |                                                                                                                                                          | The minimum height of the tabs wrapper.                                                         |
 
 #### Slots
 
-| Slot Name         | Description                                                                      |
-| ----------------- | -------------------------------------------------------------------------------- |
-| `tab`             | Slot for custom tab content. Receives `item` as a scoped slot prop.              |
-| `tabContent-{id}` | Slot for custom tab content for each tab. Receives `item` as a scoped slot prop. |
+| Slot Name         | Description                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| `tab-{id}`        | Slot for customizing the tab with the specific `id`. Receives `item` as a scoped slot prop.         |
+| `tabContent-{id}` | Slot for customizing the tab content with the specific `id`. Receives `item` as a scoped slot prop. |
 
 #### Example Usage
 
 ```vue
 <template>
-	<BaranTabs :items="tabs" tabBackground="primary" alignTabs="center" :showArrows="true" rounded="md" elevation="3">
-		<template #tab="{ item }">
-			<v-icon v-if="item.icon">{{ item.icon }}</v-icon>
+	<BaranTabs :items="tabs" bgColor="#4caf50" alignTabs="center" rounded="md" elevation="4" density="compact">
+		<template #tab-1="{ item }">
+			<span>Custom Tab Content for {{ item.tabText }}</span>
 		</template>
 		<template #tabContent-1="{ item }">
-			<p>{{ item.tabContent }}</p>
-		</template>
-		<template #tabContent-2="{ item }">
-			<p>{{ item.tabContent }}</p>
+			<div>Custom Content for {{ item.tabContent }}</div>
 		</template>
 	</BaranTabs>
 </template>
 
 <script setup>
-const tabs = [
-	{
-		id: 1,
-		tabText: "Tab 1",
-		tabContent: "This is the content for Tab 1",
-		icon: "mdi-home",
-	},
-	{
-		id: 2,
-		tabText: "Tab 2",
-		tabContent: "This is the content for Tab 2",
-		icon: "mdi-account",
-	},
-];
+import { ref } from "vue";
+
+const tabs = ref([
+	{ id: 1, tabText: "1st Tab", tabContent: "Content for 1st Tab" },
+	{ id: 2, tabText: "2nd Tab", tabContent: "Content for 2nd Tab", icon: "$vuetify" },
+]);
 </script>
 ```
 
 ## Speed Dial Component
 
-The BaranSpeedDial component provides a customizable speed dial menu with various items. Extended from Vuetify.
+The `BaranSpeedDial` component provides a customizable speed dial menu with various items. Extended from Vuetify.
 
 #### Props
 
-| Prop     | Type   | Default            | Description                                                              |
-| -------- | ------ | ------------------ | ------------------------------------------------------------------------ |
-| items    | Array  | See Example        | An array of objects, each representing an item in the speed dial menu.   |
-| position | Array  | ['left', 'center'] | The position of the speed dial menu (horizontal and vertical alignment). |
-| icon     | String | 'mdi-translate'    | The icon for the speed dial activator button.                            |
-| color    | String | '#7367f0'          | The color of the speed dial activator button.                            |
+| Prop     | Type   | Default              | Description                                                              |
+| -------- | ------ | -------------------- | ------------------------------------------------------------------------ |
+| items    | Array  | See Example          | An array of objects, each representing an item in the speed dial menu.   |
+| position | Array  | ['bottom', 'center'] | The position of the speed dial menu (horizontal and vertical alignment). |
+| icon     | String | 'mdi-translate'      | The icon for the speed dial activator button.                            |
+| color    | String | '#7367f0'            | The color of the speed dial activator button.                            |
+| variant  | String | 'tonal'              | The variant style of the activator button.                               |
+| density  | String | 'comfortable'        | The density of the activator button.                                     |
+
+#### Slots
+
+| Slot Name   | Description                                |
+| ----------- | ------------------------------------------ |
+| `activator` | Slot for customizing the activator button. |
 
 #### Events
 
-The BaranSpeedDial component emits a 'click' event when any item in the speed dial menu is clicked. The clicked item object is passed as the event payload.
+The `BaranSpeedDial` component emits a 'click' event when any item in the speed dial menu is clicked. The clicked item object is passed as the event payload.
 
 #### Example Usage
 
 ```vue
 <template>
-	<BaranSpeedDial :items="speedDialItems" :position="['left', 'bottom']" icon="mdi-plus" color="#42b983" @click="handleSpeedDialClick" />
+	<BaranSpeedDial :items="speedDialItems" :position="['bottom', 'center']" icon="mdi-plus" color="#42b983" @click="handleSpeedDialClick">
+		<template v-slot:activator="{ props }">
+			<!-- Custom activator button -->
+			<v-btn v-bind="{ ...props, color: 'secondary', dark: true }"> Custom Activator </v-btn>
+		</template>
+	</BaranSpeedDial>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import BaranSpeedDial from "./components/BaranSpeedDial.vue";
 
 const speedDialItems = ref([
 	{
 		icon: "mdi-pencil",
 		variant: "tonal",
 		color: "#7367f0",
-		text: "Edit",
+		onClick: () => console.log("Edit clicked"),
 	},
 	{
 		icon: "mdi-delete",
 		variant: "tonal",
 		color: "#f04e54",
-		text: "Delete",
+		onClick: () => console.log("Delete clicked"),
 	},
 ]);
 
@@ -581,6 +575,7 @@ The `BaranTextbox` component is a customizable text field component with various
 | `maxlength`       | [String, Number] | ''               | Maximum length of the input.                                            |
 | `counter`         | Boolean          | false            | Whether to display the character counter.                               |
 | `singleLine`      | Boolean          | false            | Whether the text field is single-line.                                  |
+| `money`           | Object           | `{}`             | Input mask rules.                                                       |
 
 #### Slots
 
@@ -614,6 +609,14 @@ The `BaranTextbox` component is a customizable text field component with various
 import { ref } from "vue";
 
 const inputValue = ref("");
+const money = ref({
+	decimal: ",",
+	thousands: ".",
+	prefix: "€ ",
+	suffix: " #",
+	precision: 2,
+	masked: false,
+});
 </script>
 ```
 
@@ -752,7 +755,7 @@ const fileRules = ref([
 
 ## Select Component
 
-The BaranSelect component provides a customizable select dropdown with various props and configurations.
+The `BaranSelect` component provides a customizable select dropdown with various props and configurations.
 
 #### Props
 
@@ -771,7 +774,6 @@ The BaranSelect component provides a customizable select dropdown with various p
 | disabled         | Boolean | false       | Whether the select is disabled.                                                     |
 | prependIcon      | String  | ''          | The icon to prepend to the select.                                                  |
 | appendIcon       | String  | ''          | The icon to append to the select.                                                   |
-| class            | String  | ''          | Custom CSS class for the select wrapper.                                            |
 | density          | String  | 'compact'   | The density of the select ('comfortable', 'compact').                               |
 | rounded          | String  | 'xs'        | The border radius of the select.                                                    |
 | readonly         | Boolean | false       | Whether the select is readonly.                                                     |
@@ -798,7 +800,7 @@ const selectItems = ref(["Option 1", "Option 2", "Option 3"]);
 
 ## Number Input Component
 
-The BaranNumberInput component integrates the Vuetify VNumberInput to provide a customizable number input field.
+The `BaranNumberInput` component integrates the Vuetify VNumberInput to provide a customizable number input field.
 
 #### Props
 
@@ -813,7 +815,6 @@ The BaranNumberInput component integrates the Vuetify VNumberInput to provide a 
 | disabled       | Boolean | false      | Whether the number input is disabled.                                              |
 | prependIcon    | String  | ''         | The icon to prepend to the input field.                                            |
 | appendIcon     | String  | ''         | The icon to append to the input field.                                             |
-| class          | String  | ''         | Custom CSS classes for the number input wrapper.                                   |
 | density        | String  | 'compact'  | The density of the input (comfortable, compact).                                   |
 | hideInput      | Boolean | false      | Whether to hide the input field.                                                   |
 | inset          | Boolean | false      | Whether the input is inset.                                                        |
@@ -852,7 +853,7 @@ The BaranNumberInput component integrates the Vuetify VNumberInput to provide a 
 
 ## OTP Input Component
 
-The BaranOTPInput component provides an input field for entering OTP (One-Time Password) codes with customizable configurations.
+The `BaranOTPInput` component provides an input field for entering OTP (One-Time Password) codes with customizable configurations.
 
 #### Props
 
@@ -862,7 +863,6 @@ The BaranOTPInput component provides an input field for entering OTP (One-Time P
 | variant         | String  | 'outlined' | The variant style of the input (solo, solo-filled, underlined). |
 | backgroundColor | String  | ''         | The background color of the OTP input.                          |
 | disabled        | Boolean | false      | Whether the OTP input is disabled.                              |
-| class           | String  | ''         | Custom CSS classes for the OTP input wrapper.                   |
 | loading         | Boolean | false      | Whether the OTP input is in loading state.                      |
 | focusAll        | Boolean | false      | Whether to focus all OTP input fields.                          |
 | placeholder     | String  | '-'        | The placeholder text for the OTP input fields.                  |
@@ -882,7 +882,7 @@ The BaranOTPInput component does not emit any events directly.
 
 ```vue
 <template>
-	<BaranOTPInput :length="6" variant="underlined" background-color="#42b983" :disabled="false" class="otp-input" :loading="false" :focus-all="false" placeholder="-" divider=" " width="200px" height="50px" />
+	<BaranOTPInput :length="6" variant="underlined" background-color="#42b983" :disabled="false" class="otp-input" :loading="false" :focus-all="false" placeholder="-" divider="•" width="100%" height="100%" />
 </template>
 
 <script setup></script>
@@ -925,7 +925,7 @@ const isDisabled = ref(false);
 
 ## Switch Component
 
-The BaranSwitch component is a customizable switch with various props and events. Extended from Vuetify.
+The `BaranSwitch` component is a customizable switch with various props and events. Extended from Vuetify.
 
 #### Props
 
@@ -937,11 +937,16 @@ The BaranSwitch component is a customizable switch with various props and events
 | loading       | Boolean | false     | Whether the switch is in a loading state.                      |
 | prependIcon   | String  | ''        | The icon to prepend to the switch.                             |
 | appendIcon    | String  | ''        | The icon to append to the switch.                              |
-| class         | String  | ''        | Custom CSS class for the switch.                               |
 | inset         | Boolean | false     | Whether the switch is inset (positioned inside its container). |
 | color         | String  | '#7367f0' | The color of the switch.                                       |
 | falseValue    | String  | false     | The value of the switch when it's unchecked.                   |
 | trueValue     | String  | true      | The value of the switch when it's checked.                     |
+
+#### Slots
+
+| Slot Name | Description                    |
+| --------- | ------------------------------ |
+| `label`   | Slot for custom label content. |
 
 #### Events
 
@@ -952,6 +957,13 @@ The BaranSwitch component does not emit any specific events directly.
 ```vue
 <template>
 	<BaranSwitch v-model="switchValue" label="Enable Notifications" color="#42b983" class="mt-2" :disabled="isDisabled" />
+
+	<BaranSwitch v-model="switchValue" :disabled="isDisabled" :indeterminate="false">
+		<template v-slot:label>
+			Turn on the progress:
+			<v-progress-circular :indeterminate="switchValue" class="ms-2" size="24"></v-progress-circular>
+		</template>
+	</BaranSwitch>
 </template>
 
 <script setup>
@@ -964,16 +976,16 @@ const isDisabled = ref(false);
 
 ## Radio Group Component
 
-The BaranRadio component allows selection from a group of radio buttons, with support for custom HTML labels and various configurations.
+The `BaranRadio` component allows selection from a group of radio buttons, with support for custom HTML labels and various configurations.
 
 #### Props
 
-| Prop       | Type    | Default     | Description                                                                  |
-| ---------- | ------- | ----------- | ---------------------------------------------------------------------------- |
-| items      | Array   | See Example | An array of objects representing the radio buttons and their configurations. |
-| color      | String  | '#7367f0'   | The color of the radio buttons.                                              |
-| inline     | Boolean | false       | Whether the radio buttons should display inline.                             |
-| groupLabel | String  | ''          | The label for the radio group.                                               |
+| Prop   | Type    | Default     | Description                                                                  |
+| ------ | ------- | ----------- | ---------------------------------------------------------------------------- |
+| items  | Array   | See Example | An array of objects representing the radio buttons and their configurations. |
+| color  | String  | '#7367f0'   | The color of the radio buttons.                                              |
+| inline | Boolean | false       | Whether the radio buttons should display inline.                             |
+| label  | String  | ''          | The label for the radio group.                                               |
 
 #### Events
 
@@ -1074,46 +1086,72 @@ import BaranDatePicker from "@/components/BaranDatePicker.vue";
 </style>
 ```
 
-### Table Component
+## Table Component
 
 The `BaranTable` component is a versatile data table with search functionality, sorting, and customizable headers and items. It supports various props, slots, and events to provide flexibility.
 
 #### Props
 
-| Prop              | Type    | Default                                                                                                                                                                                          | Description                                                   |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| headers           | Array   | `[{ key: 'id', title: 'INVOICE ID' }, { key: 'name', title: 'RECIPIENT NAME' }, { key: 'date', title: 'DATE' }, { key: 'amount', title: 'AMOUNT' }, { key: 'status', title: 'STATUS' }]`         | Array of header objects, each containing a `key` and `title`. |
-| items             | Array   | `[{ id: 1, name: 'Eric Cartman', date: '23 Jun, 2024', amount: '$119.99', status: 'Completed' }, { id: 2, name: 'Kenny McCormick', date: '14 Jun, 2024', amount: '$39.99', status: 'Pending' }]` | Array of item objects to display in the table.                |
-| theme             | String  | light                                                                                                                                                                                            | The theme of the table (light, dark).                         |
-| itemsPerPage      | Number  | 5                                                                                                                                                                                                | Number of items to display per page.                          |
-| searchPrependIcon | String  | mdi-magnify                                                                                                                                                                                      | Icon for the search bar prepend.                              |
-| searchLabel       | String  | Search                                                                                                                                                                                           | Label for the search bar.                                     |
-| searchColor       | String  | #7367f0                                                                                                                                                                                          | Color of the search bar.                                      |
-| searchVariant     | String  | underlined                                                                                                                                                                                       | Variant of the search bar (e.g., outlined, underlined).       |
-| searchBar         | Boolean | true                                                                                                                                                                                             | Whether to display the search bar.                            |
-| selected          | Array   | `[]`                                                                                                                                                                                             | Array of selected items.                                      |
-| sortBy            | Array   | `[]`                                                                                                                                                                                             | Array of sorting options.                                     |
-| density           | String  | compact                                                                                                                                                                                          | Density of the table (comfortable, compact).                  |
-| hideDefaultFooter | Boolean | false                                                                                                                                                                                            | Whether to hide the default footer.                           |
-| hideDefaultHeader | Boolean | false                                                                                                                                                                                            | Whether to hide the default header.                           |
-| height            | String  |                                                                                                                                                                                                  | Height of the table.                                          |
-| fixedHeader       | Boolean | false                                                                                                                                                                                            | Whether the header should be fixed.                           |
-| showSelect        | Boolean | false                                                                                                                                                                                            | Whether to show selection checkboxes.                         |
-| itemValue         | String  |                                                                                                                                                                                                  | The value property of each item.                              |
-| selectableKey     | String  |                                                                                                                                                                                                  | The key used to determine if an item is selectable.           |
-| selectStrategy    | String  |                                                                                                                                                                                                  | The strategy for item selection.                              |
-| multiSort         | Boolean | false                                                                                                                                                                                            | Whether to allow multiple column sorting.                     |
+| Prop                   | Type                                          | Default                                                                                                                                                                                          | Description                                                                                                                                                                                                                        |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| headers                | Array                                         | `[{ key: 'id', title: 'INVOICE ID' }, { key: 'name', title: 'RECIPIENT NAME' }, { key: 'date', title: 'DATE' }, { key: 'amount', title: 'AMOUNT' }, { key: 'status', title: 'STATUS' }]`         | Array of header objects, each containing a `key` and `title`.                                                                                                                                                                      |
+| items                  | Array                                         | `[{ id: 1, name: 'Eric Cartman', date: '23 Jun, 2024', amount: '$119.99', status: 'Completed' }, { id: 2, name: 'Kenny McCormick', date: '14 Jun, 2024', amount: '$39.99', status: 'Pending' }]` | Array of item objects to display in the table.                                                                                                                                                                                     |
+| theme                  | String                                        | light                                                                                                                                                                                            | The theme of the table (light, dark).                                                                                                                                                                                              |
+| items-per-page         | Number                                        | 5                                                                                                                                                                                                | Number of items to display per page.                                                                                                                                                                                               |
+| sort-by                | Array                                         | `[]`                                                                                                                                                                                             | Array of sorting options.                                                                                                                                                                                                          |
+| density                | String                                        | compact                                                                                                                                                                                          | Density of the table (comfortable, compact).                                                                                                                                                                                       |
+| hide-default-footer    | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default footer.                                                                                                                                                                                                |
+| hide-default-header    | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default header.                                                                                                                                                                                                |
+| hide-default-body      | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default body.                                                                                                                                                                                                  |
+| height                 | String                                        |                                                                                                                                                                                                  | Height of the table.                                                                                                                                                                                                               |
+| fixed-header           | Boolean                                       | false                                                                                                                                                                                            | Whether the header should be fixed. Make sure specify height.                                                                                                                                                                      |
+| show-select            | Boolean                                       | false                                                                                                                                                                                            | Whether to show selection checkboxes.                                                                                                                                                                                              |
+| selectableKey          | String                                        |                                                                                                                                                                                                  | The key used to determine if an item is selectable.                                                                                                                                                                                |
+| select-strategy        | String                                        | page                                                                                                                                                                                             | The strategy for item selection. `page`, `single`, `all`                                                                                                                                                                           |
+| multi-sort             | Boolean                                       | false                                                                                                                                                                                            | Whether to allow multiple column sorting.                                                                                                                                                                                          |
+| groupBy                | Boolean                                       | false                                                                                                                                                                                            | Whether to enable grouping of items.                                                                                                                                                                                               |
+| loading                | Boolean                                       | false                                                                                                                                                                                            | Whether to show the loading state.                                                                                                                                                                                                 |
+| disable-sort           | Boolean                                       | false                                                                                                                                                                                            | Disables sorting completely.                                                                                                                                                                                                       |
+| expanded               | string[]                                      | []                                                                                                                                                                                               | Whether the item is expanded or not.                                                                                                                                                                                               |
+| expand-on-click        | boolean                                       | false                                                                                                                                                                                            | Expands item when the row is clicked.                                                                                                                                                                                              |
+| filter-keys            | string - string[]                             | undefined                                                                                                                                                                                        | Array of specific keys to filter on the item.                                                                                                                                                                                      |
+| first-icon             | string                                        | '$first'                                                                                                                                                                                         | First icon.                                                                                                                                                                                                                        |
+| first-page-label       | string                                        | '$vuetify.dataFooter.firstPage'                                                                                                                                                                  | Label for first page.                                                                                                                                                                                                              |
+| fixed-footer           | boolean                                       | false                                                                                                                                                                                            | Use the fixed-footer prop together with the height prop to fix the footer to the bottom of the table.                                                                                                                              |
+| hide-no-data           | boolean                                       | false                                                                                                                                                                                            | Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open. |
+| hover                  | boolean                                       | false                                                                                                                                                                                            | Adds a hover effects to a table rows.                                                                                                                                                                                              |
+| items-per-page-options | (number - { title: string; value: number })[] | `[ {value: 10, title: '10'}, {value: 25, title: '25'}, {value: 50, title: '50'}, {value: 100, title: '100'}, {value: -1, title: '$vuetify.dataFooter.itemsPerPageAll'} ]`                        | Array of options to show in the items-per-page dropdown.                                                                                                                                                                           |
+| items-per-page-text    | string                                        | '$vuetify.dataFooter.itemsPerPageText'                                                                                                                                                           | Text for items-per-page dropdown.                                                                                                                                                                                                  |
+| item-value             | SelectItemKey<any>                            | 'id'                                                                                                                                                                                             | Property on supplied items that contains its value.                                                                                                                                                                                |
+| last-icon              | string                                        | '$last'                                                                                                                                                                                          | Last icon.                                                                                                                                                                                                                         |
+| last-page-label        | string                                        | '$vuetify.dataFooter.lastPage'                                                                                                                                                                   | Label for last page.                                                                                                                                                                                                               |
+| next-icon              | string                                        | '$next'                                                                                                                                                                                          | Next icon.                                                                                                                                                                                                                         |
+| next-page-label        | string                                        | '$vuetify.dataFooter.nextPage'                                                                                                                                                                   | Label for next page.                                                                                                                                                                                                               |
+| page-text              | string                                        | '$vuetify.dataFooter.pageText'                                                                                                                                                                   | Label for page number.                                                                                                                                                                                                             |
+| prev-icon              | string                                        | '$prev'                                                                                                                                                                                          | Previous icon.                                                                                                                                                                                                                     |
+| prev-page-label        | string                                        | '$vuetify.dataFooter.prevPage'                                                                                                                                                                   | Label for previous page.                                                                                                                                                                                                           |
+| return-object          | boolean                                       | false                                                                                                                                                                                            | Changes the selection behavior to return the object directly rather than the value specified with item-value.                                                                                                                      |
+| search                 | string                                        | undefined                                                                                                                                                                                        | Text input used to filter items.                                                                                                                                                                                                   |
+| show-current-page      | boolean                                       | false                                                                                                                                                                                            | Show current page number between prev/next icons.                                                                                                                                                                                  |
+| show-expand            | boolean                                       | false                                                                                                                                                                                            | Shows the expand toggle in default rows.                                                                                                                                                                                           |
+| sort-asc-icon          | any                                           | '$sortAsc'                                                                                                                                                                                       | Icon used for ascending sort button.                                                                                                                                                                                               |
+| sort-desc-icon         | any                                           | '$sortDesc'                                                                                                                                                                                      | Icon used for descending sort button.                                                                                                                                                                                              |
+| sticky                 | boolean                                       | false                                                                                                                                                                                            | Sticks the header to the top of the table.                                                                                                                                                                                         |
+| tag                    | string                                        | 'div'                                                                                                                                                                                            | Specify a custom tag used on the root element.                                                                                                                                                                                     |
 
 #### Slots
 
-| Slot Name       | Description                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `header.id`     | Slot for customizing the header of a column with key `id`.                                                                  |
-| `headers`       | Slot for customizing the headers row. Receives `columns`, `isSorted`, `getSortIcon`, and `toggleSort` as scoped slot props. |
-| `item`          | Slot for customizing an item row. Receives `item` as a scoped slot prop.                                                    |
-| `item.calories` | Slot for customizing the `calories` column of an item. Receives `value` as a scoped slot prop.                              |
-| `group-header`  | Slot for customizing the group header. Receives `item`, `columns`, `toggleGroup`, and `isGroupOpen` as scoped slot props.   |
-| `loading`       | Slot for customizing the loading state.                                                                                     |
+| Slot Name      | Description                                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `header.id`    | Slot for customizing the header of a column with key `id`.                                                                  |
+| `headers`      | Slot for customizing the headers row. Receives `columns`, `isSorted`, `getSortIcon`, and `toggleSort` as scoped slot props. |
+| `item`         | Slot for customizing an item row. Receives `item` as a scoped slot prop.                                                    |
+| `item.actions` | Slot for customizing actions for each item. Receives `item` as a scoped slot prop.                                          |
+| `group-header` | Slot for customizing the group header. Receives `item`, `columns`, `toggleGroup`, and `isGroupOpen` as scoped slot props.   |
+| `top`          | Slot for placing content above the table.                                                                                   |
+| `activator`    | Slot for customizing the activator button of a row.                                                                         |
+| `expanded-row` | Slot for customizing the expanded row content. Receives `item` and `columns` as scoped slot props.                          |
+| `loading`      | Slot for customizing the loading state.                                                                                     |
 
 #### Events
 
@@ -1126,7 +1164,7 @@ The `BaranTable` component is a versatile data table with search functionality, 
 
 ```vue
 <template>
-	<BaranTable :headers="headers" :items="items" searchBar theme="dark" itemsPerPage="10" :selected="selectedItems" @update:selected="updateSelectedItems" @update:sortBy="updateSortOptions">
+	<BaranTable :headers="headers" item-value="name" show-select :items="items" v-model="selectedItems" @update:selected="updateSelectedItems" @update:sortBy="updateSortOptions">
 		<template #headers="{ columns, isSorted, getSortIcon, toggleSort }">
 			<tr>
 				<th v-for="column in columns" :key="column.key" @click="toggleSort(column)">
@@ -1135,15 +1173,7 @@ The `BaranTable` component is a versatile data table with search functionality, 
 				</th>
 			</tr>
 		</template>
-		<template #item="{ item }">
-			<tr>
-				<td>{{ item.id }}</td>
-				<td>{{ item.name }}</td>
-				<td>{{ item.date }}</td>
-				<td>{{ item.amount }}</td>
-				<td>{{ item.status }}</td>
-			</tr>
-		</template>
+
 		<template #loading>
 			<tr>
 				<td colspan="5">Loading...</td>
@@ -1351,6 +1381,123 @@ const sidebarMenu = ref([
 </script>
 ```
 
-## Chart Widget Component
+## BaranChartWidget Component
 
-The `BaranChartWidget` component is a customizable chart widget with various props for configuration. (Extended from Apex)
+The `BaranChartWidget` component is a flexible and customizable chart component using ApexCharts. It provides various props to configure the chart and card appearance, including dynamic data and styles.
+
+### Props
+
+| Prop       | Type   | Default | Description                                                           |
+| ---------- | ------ | ------- | --------------------------------------------------------------------- |
+| chartProps | Object |         | Configuration object for the ApexCharts chart. This prop is required. |
+| series     | Array  | `[]`    | Data series for the chart.                                            |
+| bgColor    | String | `#fff`  | Background color of the card.                                         |
+| elevation  | Number | `0`     | Elevation of the card (range from 0 to 24).                           |
+
+### `chartProps` Object Properties
+
+| Property               | Type    | Description                                                  |
+| ---------------------- | ------- | ------------------------------------------------------------ |
+| chartId                | String  | Unique identifier for the chart.                             |
+| chartType              | String  | Type of the chart (e.g., `line`, `bar`, `pie`).              |
+| toolbarShow            | Boolean | Whether to show the chart toolbar.                           |
+| fillColors             | Array   | Colors for filling the chart.                                |
+| fillType               | String  | Fill type (e.g., `solid`, `gradient`).                       |
+| gradientShade          | String  | Gradient shade type (e.g., `light`, `dark`).                 |
+| gradientType           | String  | Gradient type (e.g., `vertical`, `horizontal`).              |
+| gradientShadeIntensity | Number  | Intensity of the gradient shade.                             |
+| gradientOpacityFrom    | Number  | Starting opacity for the gradient.                           |
+| gradientOpacityTo      | Number  | Ending opacity for the gradient.                             |
+| gridShow               | Boolean | Whether to show the grid.                                    |
+| gridPadding            | Object  | Padding for the grid.                                        |
+| xaxisLabelsShow        | Boolean | Whether to show labels on the x-axis.                        |
+| xaxisCategories        | Array   | Categories for the x-axis.                                   |
+| xaxisAxisBorderShow    | Boolean | Whether to show the x-axis border.                           |
+| xaxisAxisTicksShow     | Boolean | Whether to show ticks on the x-axis.                         |
+| dataLabelsEnabled      | Boolean | Whether to enable data labels.                               |
+| strokeCurve            | String  | Curve type for the stroke (e.g., `smooth`, `straight`).      |
+| strokeWidth            | Number  | Width of the stroke.                                         |
+| titleText              | String  | Title text of the chart.                                     |
+| titleAlign             | String  | Alignment of the title (e.g., `left`, `center`, `right`).    |
+| titleMargin            | Number  | Margin for the title.                                        |
+| titleOffsetX           | Number  | Horizontal offset for the title.                             |
+| titleOffsetY           | Number  | Vertical offset for the title.                               |
+| titleFloating          | Boolean | Whether the title is floating.                               |
+| titleStyle             | Object  | Style object for the title.                                  |
+| subtitleText           | String  | Subtitle text of the chart.                                  |
+| subtitleAlign          | String  | Alignment of the subtitle (e.g., `left`, `center`, `right`). |
+| subtitleMargin         | Number  | Margin for the subtitle.                                     |
+| subtitleOffsetX        | Number  | Horizontal offset for the subtitle.                          |
+| subtitleOffsetY        | Number  | Vertical offset for the subtitle.                            |
+| subtitleFloating       | Boolean | Whether the subtitle is floating.                            |
+| subtitleStyle          | Object  | Style object for the subtitle.                               |
+| yaxisLabelsShow        | Boolean | Whether to show labels on the y-axis.                        |
+| legendShow             | Boolean | Whether to show the legend.                                  |
+| responsiveOptions      | Array   | Array of responsive options.                                 |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranChart :chartProps="chartProps" :series="series" bgColor="#f5f5f5" :elevation="4" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+
+const chartProps = ref({
+	chartId: "example-chart",
+	chartType: "line",
+	toolbarShow: true,
+	fillColors: ["#7367f0", "#28c76f"],
+	fillType: "gradient",
+	gradientShade: "dark",
+	gradientType: "vertical",
+	gradientShadeIntensity: 0.5,
+	gradientOpacityFrom: 0.7,
+	gradientOpacityTo: 0.3,
+	gridShow: true,
+	gridPadding: { top: 0, right: 0, bottom: 0, left: 0 },
+	xaxisLabelsShow: true,
+	xaxisCategories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+	xaxisAxisBorderShow: true,
+	xaxisAxisTicksShow: true,
+	dataLabelsEnabled: true,
+	strokeCurve: "smooth",
+	strokeWidth: 2,
+	titleText: "Monthly Sales",
+	titleAlign: "center",
+	titleMargin: 10,
+	titleOffsetX: 0,
+	titleOffsetY: 0,
+	titleFloating: false,
+	titleStyle: { fontSize: "18px", fontWeight: "bold", color: "#263238" },
+	subtitleText: "For the year 2024",
+	subtitleAlign: "center",
+	subtitleMargin: 10,
+	subtitleOffsetX: 0,
+	subtitleOffsetY: 30,
+	subtitleFloating: false,
+	subtitleStyle: { fontSize: "14px", fontWeight: "regular", color: "#607d8b" },
+	yaxisLabelsShow: true,
+	legendShow: true,
+	responsiveOptions: [
+		{
+			breakpoint: 1000,
+			options: {
+				chart: {
+					width: "100%",
+				},
+			},
+		},
+	],
+});
+
+const series = ref([
+	{
+		name: "Sales",
+		data: [30, 40, 45, 50, 49, 60],
+	},
+]);
+</script>
+```

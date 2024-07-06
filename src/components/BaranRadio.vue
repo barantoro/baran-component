@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { defineProps, computed, ref, watch, defineEmits } from "vue";
+import { defineProps, computed, ref } from "vue";
 
 const props = defineProps({
 	items: {
@@ -35,21 +35,11 @@ const props = defineProps({
 		type: String,
 		default: "#7367f0",
 	},
-	inline: {
-		type: Boolean,
-		default: false,
-	},
-	groupLabel: {
-		type: String,
-		default: "",
-	},
 });
 
 const radiosProps = computed(() => {
 	return {
-		inline: props.inline,
-		label: props.groupLabel,
-		color: props.color,
+		...props
 	};
 });
 

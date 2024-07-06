@@ -1,78 +1,67 @@
 <template>
-	<div>
-		<v-text-field
-			v-if="searchBar"
-			v-model="search"
-			v-bind="tableSearchProps"
-			class="baran-table-search"
-		></v-text-field>
+	<v-data-table v-bind="tableProps">
+		<!-- Group Header Slot -->
+		<template v-if="$slots['group-header']" v-slot:group-header="{ item, columns, toggleGroup, isGroupOpen }">
+			<slot
+			name="group-header"
+			:item="item"
+			:columns="columns"
+			:toggleGroup="toggleGroup"
+			:isGroupOpen="isGroupOpen"
+			></slot>
+		</template>
+		
+		<!-- Header Slot -->
+		<template v-if="$slots['header.id']" v-slot:header.id="{ column }">
+			<slot name="header.id" :column="column"></slot>
+		</template>
 
-		<v-data-table
-			v-bind="tableProps"
-			class="baran-table"
-			@update:sort-by="updateSortBy"
-		>
-			<!-- Header Slot -->
-			<template v-if="$slots['header.id']" v-slot:header.id="{ column }">
-				<slot name="header.id" :column="column"></slot>
-			</template>
+		<!-- Headers Slot -->
+		<template v-if="$slots.headers" v-slot:headers="{ columns, isSorted, getSortIcon, toggleSort }">
+			<slot
+				name="headers"
+				:columns="columns"
+				:isSorted="isSorted"
+				:getSortIcon="getSortIcon"
+				:toggleSort="toggleSort"
+			></slot>
+		</template>
 
-			<!-- Headers Slot -->
-			<template
-				v-if="$slots.headers"
-				v-slot:headers="{ columns, isSorted, getSortIcon, toggleSort }"
-			>
-				<slot
-					name="headers"
-					:columns="columns"
-					:isSorted="isSorted"
-					:getSortIcon="getSortIcon"
-					:toggleSort="toggleSort"
-				></slot>
-			</template>
+		<!-- Item Slot -->
+		<template v-if="$slots.item" v-slot:item="{ item }">
+			<slot name="item" :item="item"></slot>
+		</template>
 
-			<!-- Item Slot -->
-			<template v-if="$slots.item" v-slot:item="{ item }">
-				<slot name="item" :item="item"></slot>
-			</template>
+		<!-- Item Actions Slot -->
+		<template v-slot:item.actions="{ item }">
+			<slot name="item.actions" :item="item"></slot>
+		</template>
 
-			<!-- Item Key Slot -->
-			<template
-				v-if="$slots['item.calories']"
-				v-slot:item.calories="{ value }"
-			>
-				<slot name="item.calories" :value="value"></slot>
-			</template>
+		<!-- Top Slot -->
+		<template v-if="$slots.top" v-slot:top>
+			<slot name="top"></slot>
+		</template>
 
-			<!-- Group Header Slot -->
-			<template
-				v-if="$slots['group-header']"
-				v-slot:group-header="{
-					item,
-					columns,
-					toggleGroup,
-					isGroupOpen,
-				}"
-			>
-				<slot
-					name="group-header"
-					:item="item"
-					:columns="columns"
-					:toggleGroup="toggleGroup"
-					:isGroupOpen="isGroupOpen"
-				></slot>
-			</template>
+		<!-- Activator Slot -->
+		<template v-if="$slots.activator" v-slot:activator>
+			<slot name="activator"></slot>
+		</template>
 
-			<!-- Loading Slot -->
-			<template v-if="$slots.loading" v-slot:loading>
-				<slot name="loading"></slot>
-			</template>
-		</v-data-table>
-	</div>
+		<!-- Expanded Row Slot -->
+		<template v-slot:expanded-row="{ columns, item }">
+			<slot name="expanded-row" :item="item" :columns="columns"></slot>
+		</template>
+
+		<!-- Loading Slot -->
+		<template v-if="$slots.loading" v-slot:loading>
+			<slot name="loading"></slot>
+		</template>
+	</v-data-table>
 </template>
 
+
 <script setup>
-import { defineProps, defineEmits, ref, watch, computed } from "vue";
+import { defineProps, computed } from "vue";
 
 const props = defineProps({
 	headers: {
@@ -104,6 +93,10 @@ const props = defineProps({
 			},
 		],
 	},
+	density: {
+		type: String,
+		default: "compact",
+	},
 	theme: {
 		type: String,
 		default: "light",
@@ -112,130 +105,13 @@ const props = defineProps({
 		type: Number,
 		default: 5,
 	},
-	searchPrependIcon: {
-		type: String,
-		default: "mdi-magnify",
-	},
-	searchLabel: {
-		type: String,
-		default: "Search",
-	},
-	searchColor: {
-		type: String,
-		default: "#7367f0",
-	},
-	searchVariant: {
-		type: String,
-		default: "underlined",
-	},
-	searchBar: {
-		type: Boolean,
-		default: true,
-	},
-	selected: {
-		type: Array,
-		default: () => [],
-	},
-	sortBy: {
-		type: Array,
-		default: () => [],
-	},
-	density: {
-		type: String,
-		default: "compact",
-	},
-	hideDefaultFooter: {
-		type: Boolean,
-		default: false,
-	},
-	hideDefaultHeader: {
-		type: Boolean,
-		default: false,
-	},
-	height: {
-		type: String,
-		default: "",
-	},
-	fixedHeader: {
-		type: Boolean,
-		default: false,
-	},
-	showSelect: {
-		type: Boolean,
-		default: false,
-	},
-	itemValue: {
-		type: String,
-		default: "",
-	},
-	selectableKey: {
-		type: String,
-		default: "",
-	},
-	selectStrategy: {
-		type: String,
-		default: "",
-	},
-	multiSort: {
-		type: Boolean,
-		default: false,
-	},
 });
 
-const tableProps = computed(() => {
-	return {
-		headers: props.headers,
-		items: props.items,
-		"items-per-page": props.itemsPerPage,
-		"show-select": props.showSelect,
-		"item-value": props.itemValue,
-		theme: props.theme,
-		height: props.height,
-		"fixed-header": props.fixedHeader,
-		"return-object": true,
-		"item-selectable": props.selectableKey,
-		"select-strategy": props.selectStrategy,
-		"sort-by": internalSortBy.value,
-		"multi-sort": props.multiSort,
-		density: props.density,
-		"hide-default-footer": props.hideDefaultFooter,
-		"hide-default-header": props.hideDefaultHeader,
-	};
-});
-
-const tableSearchProps = computed(() => {
-	return {
-		label: props.searchLabel,
-		"prepend-inner-icon": props.searchPrependIcon,
-		color: props.searchColor,
-		variant: props.searchVariant,
-		"hide-details": true,
-		"single-line": true,
-		density: "comfortable",
-	};
-});
-
-const search = ref("");
-const selected = ref(props.selected);
-const internalSortBy = ref(props.sortBy);
-
-const emit = defineEmits(["update:selected", "update:sortBy"]);
-
-watch(selected, (newValue) => {
-	emit("update:selected", newValue);
-});
-
-watch(
-	() => props.sortBy,
-	(newVal) => {
-		internalSortBy.value = newVal;
-	}
-);
-
-const updateSortBy = (newVal) => {
-	emit("update:sortBy", newVal);
-};
+const tableProps = computed(() => ({
+  ...props
+}));
 </script>
+
 
 <style>
 .baran-table-search .v-field--variant-outlined {

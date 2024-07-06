@@ -1,5 +1,5 @@
 <template>
-	<v-text-field v-bind="computedProps" class="baran-textbox">
+	<v-text-field v-bind="computedProps" class="baran-textbox" v-money="money">
 		<template v-if="$slots['prepend']" #prepend>
 			<slot name="prepend"></slot>
 		</template>
@@ -23,12 +23,12 @@
 		<template v-if="$slots['details']" #details>
 			<slot name="details"></slot>
 		</template>
-		
 	</v-text-field>
 </template>
 
 <script setup>
-import { defineProps, computed } from "vue";
+import { defineProps, computed, watch } from "vue";
+import { VMoney } from 'v-money'
 
 const props = defineProps({
 	label: {
@@ -51,6 +51,10 @@ const props = defineProps({
 		type: String,
 		default: "Type something",
 	},
+	money: {
+		type: Object,
+		default: () => {}
+	}
 });
 
 const computedProps = computed(() => {

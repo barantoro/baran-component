@@ -1,7 +1,7 @@
 <template>
 	<v-switch v-bind="switchProps" v-model="model" class="baran-switch">
-		<template v-slot:label v-if="$slots.default">
-			<slot></slot>
+		<template v-if="$slots['label']" #label>
+			<slot name="label"></slot>
 		</template>
 	</v-switch>
 </template>
@@ -17,30 +17,6 @@ const props = defineProps({
 	label: {
 		type: String,
 		default: "Switch",
-	},
-	disabled: {
-		type: Boolean,
-		default: false,
-	},
-	loading: {
-		type: Boolean,
-		default: false,
-	},
-	prependIcon: {
-		type: String,
-		default: "",
-	},
-	appendIcon: {
-		type: String,
-		default: "",
-	},
-	class: {
-		type: String,
-		default: "",
-	},
-	inset: {
-		type: Boolean,
-		default: false,
 	},
 	color: {
 		type: String,
@@ -58,17 +34,7 @@ const props = defineProps({
 
 const switchProps = computed(() => {
 	return {
-		label: props.label,
-		indeterminate: props.indeterminate,
-		inset: props.inset,
-		color: props.color,
-		"false-value": props.falseValue,
-		"true-value": props.trueValue,
-		disabled: props.disabled,
-		"prepend-icon": props.prependIcon,
-		"append-icon": props.appendIcon,
-		class: props.class,
-		loading: props.loading ? "warning" : undefined,
+		...props
 	};
 });
 
