@@ -27,8 +27,13 @@ Set up your project using NPM. Use the corresponding command to install the depe
 
 After successfully installing dependencies, register component globally.
 
-```vue
-import vuetify from './vuetify' import BaranComponent from 'baran-component' import 'baran-component/dist/style.css' export function registerPlugins (app) { app.use(vuetify) app.use(BaranComponent) }
+```
+import vuetify from './vuetify' import BaranComponent from 'baran-component'
+import 'baran-component/dist/style.css'
+
+export function registerPlugins (app) {
+	app.use(vuetify) app.use(BaranComponent)
+}
 ```
 
 ## Button Component
@@ -303,7 +308,6 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 | transition      | String  | ''               | Transition name for dialog animation.                         |
 | scrollable      | Boolean | false            | Whether the dialog content is scrollable.                     |
 | fullscreen      | Boolean | false            | Whether the dialog should occupy the full screen.             |
-| class           | String  | ''               | Custom CSS classes for the dialog wrapper.                    |
 | width           | String  | ''               | Width of the dialog.                                          |
 | maxWidth        | String  | ''               | Maximum width of the dialog.                                  |
 | minWidth        | String  | ''               | Minimum width of the dialog.                                  |
@@ -553,29 +557,30 @@ The `BaranTextbox` component is a customizable text field component with various
 
 #### Props
 
-| Prop              | Type             | Default          | Description                                                             |
-| ----------------- | ---------------- | ---------------- | ----------------------------------------------------------------------- |
-| `label`           | String           | 'Text'           | The label of the text field.                                            |
-| `value`           | [String, Number] | ''               | The value of the text field.                                            |
-| `variant`         | String           | 'outlined'       | The variant of the text field (e.g., outlined, underlined, solo, etc.). |
-| `density`         | String           | 'compact'        | The density of the text field (e.g., comfortable, compact).             |
-| `prependIcon`     | String           | ''               | The icon to prepend to the text field.                                  |
-| `appendIcon`      | String           | ''               | The icon to append to the text field.                                   |
-| `appendInnerIcon` | String           | ''               | The inner icon to append to the text field.                             |
-| `clearable`       | Boolean          | false            | Whether the text field is clearable.                                    |
-| `type`            | String           | 'text'           | The type of the input (e.g., text, password, email).                    |
-| `placeholder`     | String           | 'Type something' | The placeholder text.                                                   |
-| `hint`            | String           | ''               | Hint text to display.                                                   |
-| `persistentHint`  | Boolean          | false            | Whether the hint text should always be visible.                         |
-| `disabled`        | Boolean          | false            | Whether the text field is disabled.                                     |
-| `readonly`        | Boolean          | false            | Whether the text field is read-only.                                    |
-| `rules`           | Array            | `[]`             | Array of validation rules.                                              |
-| `prefix`          | String           | ''               | Prefix text to display inside the text field.                           |
-| `suffix`          | String           | ''               | Suffix text to display inside the text field.                           |
-| `maxlength`       | [String, Number] | ''               | Maximum length of the input.                                            |
-| `counter`         | Boolean          | false            | Whether to display the character counter.                               |
-| `singleLine`      | Boolean          | false            | Whether the text field is single-line.                                  |
-| `money`           | Object           | `{}`             | Input mask rules.                                                       |
+| Prop              | Type             | Default          | Description                                                                   |
+| ----------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------- |
+| `label`           | String           | 'Text'           | The label of the text field.                                                  |
+| `value`           | [String, Number] | ''               | The value of the text field.                                                  |
+| `variant`         | String           | 'outlined'       | The variant of the text field (e.g., outlined, underlined, solo, etc.).       |
+| `density`         | String           | 'compact'        | The density of the text field (e.g., comfortable, compact).                   |
+| `prependIcon`     | String           | ''               | The icon to prepend to the text field.                                        |
+| `appendIcon`      | String           | ''               | The icon to append to the text field.                                         |
+| `appendInnerIcon` | String           | ''               | The inner icon to append to the text field.                                   |
+| `clearable`       | Boolean          | false            | Whether the text field is clearable.                                          |
+| `type`            | String           | 'text'           | The type of the input (e.g., text, password, email).                          |
+| `placeholder`     | String           | 'Type something' | The placeholder text.                                                         |
+| `hint`            | String           | ''               | Hint text to display.                                                         |
+| `persistentHint`  | Boolean          | false            | Whether the hint text should always be visible.                               |
+| `disabled`        | Boolean          | false            | Whether the text field is disabled.                                           |
+| `readonly`        | Boolean          | false            | Whether the text field is read-only.                                          |
+| `rules`           | Array            | `[]`             | Array of validation rules.                                                    |
+| `prefix`          | String           | ''               | Prefix text to display inside the text field.                                 |
+| `suffix`          | String           | ''               | Suffix text to display inside the text field.                                 |
+| `maxlength`       | [String, Number] | ''               | Maximum length of the input.                                                  |
+| `counter`         | Boolean          | false            | Whether to display the character counter.                                     |
+| `singleLine`      | Boolean          | false            | Whether the text field is single-line.                                        |
+| `money`           | Object           | `{}`             | Input mask rules.                                                             |
+| `moneyCurrency`   | String           | ''               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
 
 #### Slots
 
@@ -639,7 +644,7 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 | hideSelected   | Boolean | false                          | Whether to hide the selected item(s) from the dropdown list.                                      |
 | variant        | String  | 'outlined'                     | Variant style of the combobox ('outlined', 'underlined', 'solo', 'solo-filled', 'solo-inverted'). |
 | persistentHint | Boolean | false                          | Whether the hint text is persistent (visible when the combobox is focused).                       |
-| hide-no-data   | Boolean | true                           | Whether to show a message when no matching items are found.                                       |
+| hideNoData     | Boolean | true                           | Whether to show a message when no matching items are found.                                       |
 
 #### Slots
 

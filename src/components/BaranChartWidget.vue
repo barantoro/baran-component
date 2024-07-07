@@ -13,16 +13,16 @@ const props = defineProps({
     required: true,
   },
   series: {
-	type: Array,
-	default: () => []
+    type: Array,
+    default: () => []
   },
   bgColor: {
-	type: String,
-	default: '#fff'
+    type: String,
+    default: '#fff'
   },
   elevation: {
-	type: Number,
-	default: 0
+    type: Number,
+    default: 0
   }
 });
 

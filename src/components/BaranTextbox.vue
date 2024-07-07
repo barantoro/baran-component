@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { defineProps, computed, watch } from "vue";
+import { defineProps, computed, watch, ref } from "vue";
 import { VMoney } from 'v-money'
 
 const props = defineProps({
@@ -51,11 +51,61 @@ const props = defineProps({
 		type: String,
 		default: "Type something",
 	},
+	moneyCurrency: {
+		type: String,
+		default: ''
+	},
 	money: {
 		type: Object,
 		default: () => {}
 	}
 });
+
+const money = ref(props.money);
+ 
+watch(() => props.moneyCurrency, (newVal) => {
+	if (newVal === 'EUR') {
+    	money.value = {
+			decimal: ',',
+			thousands: '.',
+			prefix: '€ ',
+			suffix: '',
+			precision: 2,
+			masked: false
+      	};
+    } else if (newVal === 'TRY') {
+		money.value = {
+			decimal: ',',
+			thousands: '.',
+			prefix: '₺ ',
+			suffix: '',
+			precision: 2,
+			masked: false
+		};
+    } else if (newVal === 'USD') {
+      money.value = {
+        decimal: '.',
+        thousands: ',',
+        prefix: '$ ',
+        suffix: '',
+        precision: 2,
+        masked: false
+      };
+    } else if (newVal === 'GBP') {
+		money.value = {
+			decimal: '.',
+			thousands: ',',
+			prefix: '£ ',
+			suffix: '',
+			precision: 2,
+			masked: false
+		};
+    } else {
+		money.value = undefined
+    }
+  },
+  { immediate: true } // Runs watcher at first
+);
 
 const computedProps = computed(() => {
 	const variantOptions = [ "outlined", "underlined", "solo", "solo-filled", "solo-inverted", "plain", ];
