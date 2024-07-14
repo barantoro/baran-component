@@ -40,7 +40,7 @@ export function registerPlugins (app) {
 
 The `BaranButton` component is a customizable button with various props and events. Extended from Vuetify.
 
-#### Props
+### Props
 
 | Prop          | Type    | Default   | Description                                                                |
 | ------------- | ------- | --------- | -------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ The `BaranButton` component is a customizable button with various props and even
 | `maxHeight`   | String  | `''`      | The maximum height of the button.                                          |
 | `minHeight`   | String  | `''`      | The minimum height of the button.                                          |
 
-#### Slots
+### Slots
 
 | Slot Name | Description                      |
 | --------- | -------------------------------- |
@@ -73,13 +73,13 @@ The `BaranButton` component is a customizable button with various props and even
 | `append`  | Slot for custom append content.  |
 | `loader`  | Slot for custom loader content.  |
 
-#### Events
+### Events
 
 | Event    | Description                              |
 | -------- | ---------------------------------------- |
 | `@click` | Event emitted when the button is clicked |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -99,7 +99,7 @@ function onClick() {
 
 The `BaranCard` component is a versatile card component with a customizable button. It is built using Vuetify's card and button components and offers various customization options for appearance and behavior.
 
-#### Props
+### Props
 
 | Prop             | Type    | Default | Description                                                                         |
 | ---------------- | ------- | ------- | ----------------------------------------------------------------------------------- |
@@ -130,7 +130,7 @@ The `BaranCard` component is a versatile card component with a customizable butt
 | maxHeight        | String  | ''      | The maximum height of the card.                                                     |
 | minHeight        | String  | ''      | The minimum height of the card                                                      |
 
-#### Slots
+### Slots
 
 | Slot Name | Description                      |
 | --------- | -------------------------------- |
@@ -139,13 +139,13 @@ The `BaranCard` component is a versatile card component with a customizable butt
 | `append`  | Slot for custom append content.  |
 | `actions` | Slot for actions loader content. |
 
-#### Events
+### Events
 
 | Event  | Description                               |
 | ------ | ----------------------------------------- |
 | @click | Event emitted when the button is clicked. |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -182,7 +182,7 @@ The `BaranCard` component is a versatile card component with a customizable butt
 
 The `BaranChips` component represents a small interactive element used to represent information such as tags, categories, or actions.
 
-#### Props
+### Props
 
 | Prop        | Type    | Default   | Description                                                           |
 | ----------- | ------- | --------- | --------------------------------------------------------------------- |
@@ -198,20 +198,20 @@ The `BaranChips` component represents a small interactive element used to repres
 | disabled    | Boolean | false     | If true, disables interactions with the chip.                         |
 | density     | String  | ''        | Density of the chip (`comfortable`, `compact`).                       |
 
-#### Slots
+### Slots
 
 | Slot Name | Description                      |
 | --------- | -------------------------------- |
 | `prepend` | Slot for custom prepend content. |
 | `append`  | Slot for custom append content.  |
 
-#### Events
+### Events
 
 | Event Name | Description                         | Payload    |
 | ---------- | ----------------------------------- | ---------- |
 | click      | Triggered when the chip is clicked. | MouseEvent |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -241,7 +241,7 @@ const handleChipClick = (event) => {
 
 The `BaranExpansionPanel` component allows for displaying collapsible panels with customizable options.
 
-#### Props
+### Props
 
 | Prop      | Type    | Default   | Description                                                                        |
 | --------- | ------- | --------- | ---------------------------------------------------------------------------------- |
@@ -253,7 +253,7 @@ The `BaranExpansionPanel` component allows for displaying collapsible panels wit
 | color     | String  | ''        | Color of the expansion panels.                                                     |
 | disabled  | Boolean | false     | Whether the panels are disabled.                                                   |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -293,7 +293,7 @@ const panelItems = ref([
 
 The `BaranDialog` component provides a dialog with an activator slot for flexibility in triggering the dialog.
 
-#### Props
+### Props
 
 | Prop            | Type    | Default          | Description                                                   |
 | --------------- | ------- | ---------------- | ------------------------------------------------------------- |
@@ -329,14 +329,14 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 | buttonMaxHeight | String  | ''               | Maximum height of the activator button.                       |
 | buttonMinHeight | String  | ''               | Minimum height of the activator button.                       |
 
-#### Slots
+### Slots
 
 | Slot Name   | Description                                                                                                                         |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `activator` | Slot for replacing the default activator button. Provides props (`activatorProps`) to customize the activator button.               |
 | `default`   | Slot for customizing the content inside the dialog. Receives the `isActive` prop indicating whether the dialog is currently active. |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -357,7 +357,7 @@ const dialogText = "This is an example of a dialog component with custom slots a
 
 The `BaranList` component renders a list of items with optional sub-groups, allowing customization of each list item.
 
-#### Props
+### Props
 
 | Prop          | Type    | Default       | Description                                                               |
 | ------------- | ------- | ------------- | ------------------------------------------------------------------------- |
@@ -375,7 +375,7 @@ The `BaranList` component renders a list of items with optional sub-groups, allo
 | maxHeight     | String  | ''            | Maximum height of the list wrapper.                                       |
 | minHeight     | String  | ''            | Minimum height of the list wrapper.                                       |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -440,7 +440,7 @@ const listItems = ref([
 
 The `BaranTabs` component is a customizable tab component with support for icons, dynamic tab content, and various styling options. It allows for flexible props, slots, and a simple API to manage the tabs.
 
-#### Props
+### Props
 
 | Prop      | Type    | Default                                                                                                                                                  | Description                                                                                     |
 | --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -458,14 +458,14 @@ The `BaranTabs` component is a customizable tab component with support for icons
 | maxHeight | String  |                                                                                                                                                          | The maximum height of the tabs wrapper.                                                         |
 | minHeight | String  |                                                                                                                                                          | The minimum height of the tabs wrapper.                                                         |
 
-#### Slots
+### Slots
 
 | Slot Name         | Description                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------- |
 | `tab-{id}`        | Slot for customizing the tab with the specific `id`. Receives `item` as a scoped slot prop.         |
 | `tabContent-{id}` | Slot for customizing the tab content with the specific `id`. Receives `item` as a scoped slot prop. |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -493,7 +493,7 @@ const tabs = ref([
 
 The `BaranSpeedDial` component provides a customizable speed dial menu with various items. Extended from Vuetify.
 
-#### Props
+### Props
 
 | Prop     | Type   | Default              | Description                                                              |
 | -------- | ------ | -------------------- | ------------------------------------------------------------------------ |
@@ -504,17 +504,17 @@ The `BaranSpeedDial` component provides a customizable speed dial menu with vari
 | variant  | String | 'tonal'              | The variant style of the activator button.                               |
 | density  | String | 'comfortable'        | The density of the activator button.                                     |
 
-#### Slots
+### Slots
 
 | Slot Name   | Description                                |
 | ----------- | ------------------------------------------ |
 | `activator` | Slot for customizing the activator button. |
 
-#### Events
+### Events
 
 The `BaranSpeedDial` component emits a 'click' event when any item in the speed dial menu is clicked. The clicked item object is passed as the event payload.
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -555,7 +555,7 @@ const handleSpeedDialClick = (item) => {
 
 The `BaranTextbox` component is a customizable text field component with various props, computed properties, and reactive data bindings. This component leverages Vuetify's `v-text-field` and offers additional flexibility through props and slots.
 
-#### Props
+### Props
 
 | Prop              | Type             | Default          | Description                                                                   |
 | ----------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------- |
@@ -582,7 +582,7 @@ The `BaranTextbox` component is a customizable text field component with various
 | `money`           | Object           | `{}`             | Input mask rules.                                                             |
 | `moneyCurrency`   | String           | ''               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
 
-#### Slots
+### Slots
 
 | Slot Name       | Description                                                                                     |
 | --------------- | ----------------------------------------------------------------------------------------------- |
@@ -593,7 +593,7 @@ The `BaranTextbox` component is a customizable text field component with various
 | `details`       | Slot for customizing the details. Used for displaying messages, hint, error-messages, and more. |
 | `label`         | Slot for customizing the label.                                                                 |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -629,7 +629,7 @@ const money = ref({
 
 The `BaranCombobox` component provides a customizable combobox interface for selecting items with various configurations.
 
-#### Props
+### Props
 
 | Prop           | Type    | Default                        | Description                                                                                       |
 | -------------- | ------- | ------------------------------ | ------------------------------------------------------------------------------------------------- |
@@ -646,13 +646,13 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 | persistentHint | Boolean | false                          | Whether the hint text is persistent (visible when the combobox is focused).                       |
 | hideNoData     | Boolean | true                           | Whether to show a message when no matching items are found.                                       |
 
-#### Slots
+### Slots
 
 | Slot Name | Description                                                            |
 | --------- | ---------------------------------------------------------------------- |
 | `no-data` | Slot for custom no-data content. Make sure hide-no-data props is false |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -689,7 +689,7 @@ import BaranCombobox from "@/components/BaranCombobox.vue";
 
 The `BaranFileInput` component allows users to upload files with customizable options.
 
-#### Props
+### Props
 
 | Prop             | Type    | Default          | Description                                                                          |
 | ---------------- | ------- | ---------------- | ------------------------------------------------------------------------------------ |
@@ -715,7 +715,7 @@ The `BaranFileInput` component allows users to upload files with customizable op
 | counter          | Boolean | false            | Whether to show file counter.                                                        |
 | showSize         | Boolean | false            | Whether to show file size.                                                           |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -762,7 +762,7 @@ const fileRules = ref([
 
 The `BaranSelect` component provides a customizable select dropdown with various props and configurations.
 
-#### Props
+### Props
 
 | Prop             | Type    | Default     | Description                                                                         |
 | ---------------- | ------- | ----------- | ----------------------------------------------------------------------------------- |
@@ -789,7 +789,7 @@ The `BaranSelect` component provides a customizable select dropdown with various
 | itemTitle        | String  | ''          | The property name for the title of items in the select dropdown.                    |
 | itemValue        | String  | ''          | The property name for the value of items in the select dropdown.                    |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -807,7 +807,7 @@ const selectItems = ref(["Option 1", "Option 2", "Option 3"]);
 
 The `BaranNumberInput` component integrates the Vuetify VNumberInput to provide a customizable number input field.
 
-#### Props
+### Props
 
 | Prop           | Type    | Default    | Description                                                                        |
 | -------------- | ------- | ---------- | ---------------------------------------------------------------------------------- |
@@ -828,7 +828,7 @@ The `BaranNumberInput` component integrates the Vuetify VNumberInput to provide 
 | max            | Number  | undefined  | The maximum value allowed in the input.                                            |
 | step           | Number  | undefined  | The step value for incrementing/decrementing the input value.                      |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -860,7 +860,7 @@ The `BaranNumberInput` component integrates the Vuetify VNumberInput to provide 
 
 The `BaranOTPInput` component provides an input field for entering OTP (One-Time Password) codes with customizable configurations.
 
-#### Props
+### Props
 
 | Prop            | Type    | Default    | Description                                                     |
 | --------------- | ------- | ---------- | --------------------------------------------------------------- |
@@ -879,11 +879,11 @@ The `BaranOTPInput` component provides an input field for entering OTP (One-Time
 | maxHeight       | String  | ''         | The maximum height of the OTP input.                            |
 | minHeight       | String  | ''         | The minimum height of the OTP input.                            |
 
-#### Events
+### Events
 
 The BaranOTPInput component does not emit any events directly.
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -932,7 +932,7 @@ const isDisabled = ref(false);
 
 The `BaranSwitch` component is a customizable switch with various props and events. Extended from Vuetify.
 
-#### Props
+### Props
 
 | Prop          | Type    | Default   | Description                                                    |
 | ------------- | ------- | --------- | -------------------------------------------------------------- |
@@ -947,17 +947,17 @@ The `BaranSwitch` component is a customizable switch with various props and even
 | falseValue    | String  | false     | The value of the switch when it's unchecked.                   |
 | trueValue     | String  | true      | The value of the switch when it's checked.                     |
 
-#### Slots
+### Slots
 
 | Slot Name | Description                    |
 | --------- | ------------------------------ |
 | `label`   | Slot for custom label content. |
 
-#### Events
+### Events
 
 The BaranSwitch component does not emit any specific events directly.
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -983,7 +983,7 @@ const isDisabled = ref(false);
 
 The `BaranRadio` component allows selection from a group of radio buttons, with support for custom HTML labels and various configurations.
 
-#### Props
+### Props
 
 | Prop   | Type    | Default     | Description                                                                  |
 | ------ | ------- | ----------- | ---------------------------------------------------------------------------- |
@@ -992,11 +992,11 @@ The `BaranRadio` component allows selection from a group of radio buttons, with 
 | inline | Boolean | false       | Whether the radio buttons should display inline.                             |
 | label  | String  | ''          | The label for the radio group.                                               |
 
-#### Events
+### Events
 
 The BaranRadio component does not emit any events directly.
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1020,7 +1020,7 @@ const radioItems = ref([
 
 The `BaranColorPicker` component allows users to select colors with various configurations.
 
-#### Props
+### Props
 
 | Prop              | Type    | Default | Description                                                                                        |
 | ----------------- | ------- | ------- | -------------------------------------------------------------------------------------------------- |
@@ -1037,7 +1037,7 @@ The `BaranColorPicker` component allows users to select colors with various conf
 | maxHeight         | String  | ''      | Maximum height of the color picker.                                                                |
 | minHeight         | String  | ''      | Minimum height of the color picker.                                                                |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1053,7 +1053,7 @@ import ColorPicker from "@/components/ColorPicker.vue";
 
 The `BaranDatePicker` component encapsulates a date picker with customizable properties for enhanced flexibility.
 
-#### Props
+### Props
 
 | Prop               | Type    | Default   | Description                                         |
 | ------------------ | ------- | --------- | --------------------------------------------------- |
@@ -1071,7 +1071,7 @@ The `BaranDatePicker` component encapsulates a date picker with customizable pro
 | min                | String  | ''        | Minimum selectable date (format: 'YYYY-MM-DD').     |
 | max                | String  | ''        | Maximum selectable date (format: 'YYYY-MM-DD').     |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1095,7 +1095,7 @@ import BaranDatePicker from "@/components/BaranDatePicker.vue";
 
 The `BaranTable` component is a versatile data table with search functionality, sorting, and customizable headers and items. It supports various props, slots, and events to provide flexibility.
 
-#### Props
+### Props
 
 | Prop                   | Type                                          | Default                                                                                                                                                                                          | Description                                                                                                                                                                                                                        |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1144,7 +1144,7 @@ The `BaranTable` component is a versatile data table with search functionality, 
 | sticky                 | boolean                                       | false                                                                                                                                                                                            | Sticks the header to the top of the table.                                                                                                                                                                                         |
 | tag                    | string                                        | 'div'                                                                                                                                                                                            | Specify a custom tag used on the root element.                                                                                                                                                                                     |
 
-#### Slots
+### Slots
 
 | Slot Name      | Description                                                                                                                 |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -1158,14 +1158,14 @@ The `BaranTable` component is a versatile data table with search functionality, 
 | `expanded-row` | Slot for customizing the expanded row content. Receives `item` and `columns` as scoped slot props.                          |
 | `loading`      | Slot for customizing the loading state.                                                                                     |
 
-#### Events
+### Events
 
 | Event              | Description                                    |
 | ------------------ | ---------------------------------------------- |
 | `@update:selected` | Event emitted when the selected items change.  |
 | `@update:sortBy`   | Event emitted when the sorting options change. |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1231,7 +1231,7 @@ function updateSortOptions(newSortOptions) {
 
 The `BaranCarousel` component is a versatile carousel that can display images, text, or a mix of both. It is built with Vuetify's carousel functionality and offers various customization options.
 
-#### Props
+### Props
 
 | Prop                    | Type    | Default                                                                         | Description                                                                        |
 | ----------------------- | ------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -1251,7 +1251,7 @@ The `BaranCarousel` component is a versatile carousel that can display images, t
 | hideDelimiterBackground | Boolean | true                                                                            | Whether to hide the background of the delimiter icons.                             |
 | hideDelimiters          | Boolean | false                                                                           | Whether to hide the delimiter icons.                                               |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1289,7 +1289,7 @@ The `BaranCarousel` component is a versatile carousel that can display images, t
 
 The AvatarMenu component is a dropdown menu activated by clicking on an avatar image. It includes a navigation drawer with a list of items and integrates with Vue Router for navigation.
 
-#### Props
+### Props
 
 | Prop       | Type   | Default                                                                                                                                            | Description                                             |
 | ---------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -1299,20 +1299,20 @@ The AvatarMenu component is a dropdown menu activated by clicking on an avatar i
 | title      | String | `Frontend Developer`                                                                                                                               | The title to be displayed in the menu.                  |
 | menuHeight | Number | `225`                                                                                                                                              | The height of the main menu section.                    |
 
-#### Slots
+### Slots
 
 | Slot      | Description                    |
 | --------- | ------------------------------ |
 | activator | Slot for the avatar activator. |
 | prepend   | Slot for prepending an icon.   |
 
-#### Events
+### Events
 
 | Event  | Description                                                              |
 | ------ | ------------------------------------------------------------------------ |
 | @click | Event emitted when a menu item is clicked, navigates to the item's href. |
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1343,7 +1343,7 @@ The `BaranActivityTimeline` component displays a list of activities using a time
 
 The BaranSidebar component provides a sidebar navigation with collapsible menu items and customizable appearance.
 
-#### Props
+### Props
 
 | Prop             | Type   | Default   | Description                                                               |
 | ---------------- | ------ | --------- | ------------------------------------------------------------------------- |
@@ -1352,11 +1352,11 @@ The BaranSidebar component provides a sidebar navigation with collapsible menu i
 | menu             | Array  | []        | An array of objects representing the menu items and their configurations. |
 | currentPathColor | String | '#7367f0' | The color used to highlight the current active menu item.                 |
 
-#### Events
+### Events
 
 The BaranSidebar component does not emit any events directly.
 
-#### Example Usage
+### Example Usage
 
 ```vue
 <template>
@@ -1504,5 +1504,1325 @@ const series = ref([
 		data: [30, 40, 45, 50, 49, 60],
 	},
 ]);
+</script>
+```
+
+# P2
+
+## Tooltip Component
+
+The `BaranTooltip` component is a customizable tooltip with various props and events. Tooltips can wrap any element.
+
+### Props
+
+| Prop          | Type                       | Default     | Description                                                                                                                                                                        |
+| ------------- | -------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `text`        | String                     | `Tooltip!`  | The text of tooltip content.                                                                                                                                                       |
+| `location`    | String                     | `left`      | The location of the tooltip.                                                                                                                                                       |
+| `model-value` | Boolean                    | `false`     | Always show.                                                                                                                                                                       |
+| `bgColor`     | String                     | `#424242`   | Background color of the tooltip.                                                                                                                                                   |
+| `color`       | String                     | `#fff`      | Text color of the tooltip.                                                                                                                                                         |
+| `disabled`    | Boolean                    | `false`     | Whether the tooltip is disabled.                                                                                                                                                   |
+| `width`       | String                     | `''`        | The width of the tooltip.                                                                                                                                                          |
+| `maxWidth`    | String                     | `''`        | The maximum width of the tooltip.                                                                                                                                                  |
+| `minWidth`    | String                     | `''`        | The minimum width of the tooltip.                                                                                                                                                  |
+| `height`      | String                     | `''`        | The height of the tooltip.                                                                                                                                                         |
+| `maxHeight`   | String                     | `''`        | The maximum height of the tooltip.                                                                                                                                                 |
+| `minHeight`   | String                     | `''`        | The minimum height of the tooltip.                                                                                                                                                 |
+| `openDelay`   | [String, Number]           | `undefined` | Delay (in ms) after which tooltip opens (when open-on-hover prop is set to true).                                                                                                  |
+| `closeDelay`  | [String, Number]           | `undefined` | Delay (in ms) after which menu closes (when open-on-hover prop is set to true).                                                                                                    |
+| `openOnClick` | Boolean                    | `false`     | Designates whether the tooltip should open on activator click.                                                                                                                     |
+| `openOnFocus` | Boolean                    | `undefined` | Activate the component when the activator is focused.                                                                                                                              |
+| `openOnHover` | Boolean                    | `true`      | Designates whether the tooltip should open on activator hover.                                                                                                                     |
+| `z-index`     | [String, Number]           | `2000`      | The z-index used for the component.                                                                                                                                                |
+| `id`          | String                     | `undefined` | HTML id attribute of the tooltip overlay. If not set, a globally unique id will be used.                                                                                           |
+| `attach`      | [String, Boolean, Element] | `false`     | Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or true to disable teleporting. Uses body by default. |
+
+### Slots
+
+| Slot Name | Description                 |
+| --------- | --------------------------- |
+| ``        | Slot for tooltip activator. |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranTooltip text="Another Tooltip" model-value>
+		<div class="custom-div">Hover over me!</div>
+	</BaranTooltip>
+</template>
+
+<script setup>
+import BaranTooltip from "my-component-library/BaranTooltip.vue";
+</script>
+```
+
+## Breadcrumb Component
+
+The `BaranBreadcrumbs` component is a customizable breadcrumb with various props and events.
+
+### Props
+
+| Prop          | Type                     | Default     | Description                                                                                                                                                                                                                                                          |
+| ------------- | ------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `activeClass` | String                   | `undefined` | The class applied to the component when it is in an active state.                                                                                                                                                                                                    |
+| `activeColor` | String                   | `undefined` | The applied color when the component is in an active state.                                                                                                                                                                                                          |
+| `bgColor`     | String                   | `undefined` | Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `color`       | String                   | `undefined` | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                    |
+| `density`     | String                   | `default`   | Adjusts the vertical height used by the component.                                                                                                                                                                                                                   |
+| `disabled`    | Boolean                  | `galse`     | Removes the ability to click or target the component.                                                                                                                                                                                                                |
+| `divider`     | String                   | `/`         | Specifies the dividing character between items.                                                                                                                                                                                                                      |
+| `icon`        | Any                      | `undefined` | Apply a specific icon using the v-icon.                                                                                                                                                                                                                              |
+| `items`       | Array                    | `[]`        | An array of strings or objects used for automatically generating children components..                                                                                                                                                                               |
+| `rounded`     | [String, Number Boolean] | `undefined` | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.                                                            |
+| `tag`         | String                   | `ul`        | Specify a custom tag used on the root element.                                                                                                                                                                                                                       |
+| `tile`        | Boolean                  | `false`     | Removes any applied border-radius from the component.                                                                                                                                                                                                                |
+
+### Slots
+
+| Slot Name | Description                      |
+| --------- | -------------------------------- |
+| `prepend` | Slot for custom prepend content. |
+| `divider` | Slot for divider.                |
+| `title`   | Slot for item title.             |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranBreadcrumbs :items="['Foo', 'Bar', 'Fizz']" bg-color="red">
+		<template v-slot:title="{ item }">
+			{{ item.title.toUpperCase() }}
+		</template>
+		<template v-slot:divider>
+			<v-icon icon="mdi-chevron-right"></v-icon>
+		</template>
+	</BaranBreadcrumbs>
+</template>
+
+<script setup>
+import BaranBreadcrumbs from "my-component-library/BaranBreadcrumbs.vue";
+</script>
+```
+
+## Pagination Component
+
+The `BaranPagination` component is a customizable pagination with various props and events.
+
+### Props
+
+| Prop                      | Type                      | Default                                       | Description                                                                                                                                                                                                    |
+| ------------------------- | ------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `active-color`            | String                    | `undefined`                                   | The applied color when the component is in an active state.                                                                                                                                                    |
+| `aria-label`              | String                    | `'$vuetify.pagination.ariaLabel.root'`        | Label for the root element.                                                                                                                                                                                    |
+| `border`                  | [String, Number, Boolean] | `false`                                       | Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.                                                                                                                         |
+| `color`                   | String                    | `undefined`                                   | Applies specified color to the selected page button - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `current-page-aria-label` | String                    | `'$vuetify.pagination.ariaLabel.currentPage'` | Label for the currently selected page.                                                                                                                                                                         |
+| `density`                 | String                    | `'default'`                                   | Adjusts the vertical height used by the component ('default', `comfortable`, `compact`).                                                                                                                       |
+| `disabled`                | Boolean                   | `false`                                       | Removes the ability to click or target the component.                                                                                                                                                          |
+| `elevation`               | [String, Number]          | `undefined`                                   | Designates an elevation applied to the component between 0 and 24.                                                                                                                                             |
+| `ellipsis`                | String                    | `'...'`                                       | Text to show between page buttons when truncating the list.                                                                                                                                                    |
+| `first-aria-label`        | String                    | `'$vuetify.pagination.ariaLabel.first'`       | Label for the go to first button.                                                                                                                                                                              |
+| `first-icon`              | Any                       | `'$first'`                                    | The icon to use for the first button.                                                                                                                                                                          |
+| `last-aria-label`         | String                    | `'$vuetify.pagination.ariaLabel.last'`        | Label for the go to last button.                                                                                                                                                                               |
+| `last-icon`               | Any                       | `'$last'`                                     | The icon to use for the last button.                                                                                                                                                                           |
+| `length`                  | [String, Number]          | `1`                                           | The number of pages.                                                                                                                                                                                           |
+| `model-value`             | Number                    | `undefined`                                   | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                  |
+| `next-aria-label`         | String                    | `'$vuetify.pagination.ariaLabel.next'`        | Label for the next button.                                                                                                                                                                                     |
+| `next-icon`               | Any                       | `'$next'`                                     | The icon to use for the next button.                                                                                                                                                                           |
+| `page-aria-label`         | String                    | `'$vuetify.pagination.ariaLabel.page'`        | Label for each page button.                                                                                                                                                                                    |
+| `prev-icon`               | Any                       | `'$prev'`                                     | The icon to use for the prev button.                                                                                                                                                                           |
+| `previous-aria-label`     | String                    | `'$vuetify.pagination.ariaLabel.previous'`    | Label for the previous button.                                                                                                                                                                                 |
+| `rounded`                 | [String, Number, Boolean] | `undefined`                                   | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.      |
+| `show-first-last-page`    | Boolean                   | `false`                                       | Show buttons for going to first and last page.                                                                                                                                                                 |
+| `size`                    | [String, Number]          | `'default'`                                   | Sets the height and width of the component. Default unit is px. Can also use the following predefined sizes: x-small, small, default, large, and x-large.                                                      |
+| `start`                   | [String, Number]          | `1`                                           | Specify the starting page.                                                                                                                                                                                     |
+| `tag`                     | String                    | `'nav'`                                       | Specify a custom tag used on the root element.                                                                                                                                                                 |
+| `theme`                   | String                    | `undefined`                                   | Specify a theme for this component and all of its children.                                                                                                                                                    |
+| `tile`                    | Boolean                   | `false`                                       | Removes any applied border-radius from the component.                                                                                                                                                          |
+| `total-visible`           | [String, Number]          | `undefined`                                   | Specify the total visible pagination numbers.                                                                                                                                                                  |
+| `variant`                 | String                    | `'text'`                                      | Applies a distinct style to the component. (`flat`, `elevated`, `tonal`, `outlined`, `text`, `plain`)                                                                                                          |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranPagination :length="5" v-model="currenctPage"> </BaranPagination>
+</template>
+
+<script setup>
+import BaranPagination from "my-component-library/BaranPagination.vue";
+
+const currenctPage = ref(1);
+</script>
+```
+
+## Slider Component
+
+The `BaranSlider` component is a customizable slider with various props and events.
+
+### Props
+
+| Prop                | Type                                                                                                                                    | Default        | Description                                                                                                                                                                                                                                                                                                       |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `append-icon`       | Any                                                                                                                                     | `undefined`    | Creates a v-icon component after default content in the append slot.                                                                                                                                                                                                                                              |
+| `center-affix`      | Boolean                                                                                                                                 | `true`         | Vertically align appendInner, prependInner, clearIcon and label in the center.                                                                                                                                                                                                                                    |
+| `color`             | String                                                                                                                                  | `undefined`    | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                                                                 |
+| `density`           | String                                                                                                                                  | `'default'`    | Adjusts the vertical height used by the component. ('default', `comfortable`, `compact`)                                                                                                                                                                                                                          |
+| `direction`         | String                                                                                                                                  | `'horizontal'` | Changes the direction of the input. (`horizontal`, `vertical`)                                                                                                                                                                                                                                                    |
+| `disabled`          | Boolean                                                                                                                                 | `null`         | Removes the ability to click or target the component.                                                                                                                                                                                                                                                             |
+| `elevation`         | [String, Number]                                                                                                                        | `2`            | Designates an elevation applied to the component between 0 and 24.                                                                                                                                                                                                                                                |
+| `error`             | Boolean                                                                                                                                 | `false`        | Puts the input in a manual error state.                                                                                                                                                                                                                                                                           |
+| `error-messages`    | String \| String[]                                                                                                                      | `[]`           | Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the rules prop. This field will not trigger validation.                                                                                                                          |
+| `focused`           | Boolean                                                                                                                                 | `false`        | Forces a focused state styling on the component.                                                                                                                                                                                                                                                                  |
+| `hide-details`      | Boolean \| 'auto'                                                                                                                       | `false`        | Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.                                                                                                                                                       |
+| `hide-spin-buttons` | Boolean                                                                                                                                 | `false`        | Hides spin buttons on the input when type is set to number.                                                                                                                                                                                                                                                       |
+| `hint`              | string                                                                                                                                  | `undefined`    | Displays hint text below the input when focused. Force this always open with the persistent-hint property.                                                                                                                                                                                                        |
+| `id`                | string                                                                                                                                  | `undefined`    | Sets the DOM id on the component.                                                                                                                                                                                                                                                                                 |
+| `label`             | string                                                                                                                                  | `undefined`    | Sets the text of the v-label or v-field-label component.                                                                                                                                                                                                                                                          |
+| `max`               | [String, Number]                                                                                                                        | `100`          | Sets the maximum allowed value.                                                                                                                                                                                                                                                                                   |
+| `max-errors`        | [String, Number]                                                                                                                        | `1`            | Control the maximum number of shown errors from validation.                                                                                                                                                                                                                                                       |
+| `max-width`         | [String, Number]                                                                                                                        | `undefined`    | Sets the maximum width for the component.                                                                                                                                                                                                                                                                         |
+| `messages`          | String \| String[]                                                                                                                      | `[]`           | Displays a list of messages or a single message if using a string.                                                                                                                                                                                                                                                |
+| `min`               | [String, Number]                                                                                                                        | `0`            | Sets the minimum allowed value.                                                                                                                                                                                                                                                                                   |
+| `min-width`         | [String, Number]                                                                                                                        | `undefined`    | Sets the minimum width for the component.                                                                                                                                                                                                                                                                         |
+| `model-value`       | [String, Number]                                                                                                                        | `0`            | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                                                                                     |
+| `name`              | string                                                                                                                                  | `undefined`    | Sets the component’s name attribute.                                                                                                                                                                                                                                                                              |
+| `persistent-hint`   | Boolean                                                                                                                                 | `false`        | Forces hint to always be visible.                                                                                                                                                                                                                                                                                 |
+| `prepend-icon`      | any                                                                                                                                     | `undefined`    | Prepends an icon to the component, uses the same syntax as v-icon.                                                                                                                                                                                                                                                |
+| `readonly`          | Boolean                                                                                                                                 | `null`         | Puts input in readonly state.                                                                                                                                                                                                                                                                                     |
+| `reverse`           | Boolean                                                                                                                                 | `false`        | Reverses the slider direction.                                                                                                                                                                                                                                                                                    |
+| `ripple`            | Boolean                                                                                                                                 | `true`         | Applies the v-ripple directive.                                                                                                                                                                                                                                                                                   |
+| `rounded`           | [String, Number, Boolean]                                                                                                               | `undefined`    | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.                                                                                                         |
+| `rules`             | ValidationRule[]                                                                                                                        | `[]`           | Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string. |
+| `show-ticks`        | Boolean \| 'always'                                                                                                                     | `false`        | Show track ticks. If true it shows ticks when using slider. If set to 'always' it always shows ticks.                                                                                                                                                                                                             |
+| `step`              | [String, Number]                                                                                                                        | `0`            | If greater than 0, sets step interval for ticks.                                                                                                                                                                                                                                                                  |
+| `theme`             | String                                                                                                                                  | `undefined`    | Specify a theme for this component and all of its children.                                                                                                                                                                                                                                                       |
+| `thumb-color`       | String                                                                                                                                  | `undefined`    | Sets the thumb and thumb label color.                                                                                                                                                                                                                                                                             |
+| `thumb-label`       | Boolean \| 'always'                                                                                                                     | `undefined`    | Show thumb label. If true it shows label when using slider. If set to 'always' it always shows label.                                                                                                                                                                                                             |
+| `thumb-size`        | [String, Number]                                                                                                                        | `20`           | Controls the size of the thumb label.                                                                                                                                                                                                                                                                             |
+| `ticks`             | Number[] \| Record<number, string>                                                                                                      | `undefined`    | Show track ticks. If true it shows ticks when using slider. If set to 'always' it always shows ticks.                                                                                                                                                                                                             |
+| `tick-size`         | [String, Number]                                                                                                                        | `2`            | Controls the size of ticks.                                                                                                                                                                                                                                                                                       |
+| `tile`              | Boolean                                                                                                                                 | `false`        | Removes any applied border-radius from the component.                                                                                                                                                                                                                                                             |
+| `track-color`       | String                                                                                                                                  | `undefined`    | Sets the track’s color.                                                                                                                                                                                                                                                                                           |
+| `track-fill-color`  | String                                                                                                                                  | `undefined`    | Sets the track’s fill color.                                                                                                                                                                                                                                                                                      |
+| `track-size`        | [String, Number]                                                                                                                        | `4`            | Sets the track’s size (height).                                                                                                                                                                                                                                                                                   |
+| `validate-on`       | 'blur' \| 'input' \| 'submit' \| 'blur lazy' \| 'input lazy' \| 'submit lazy' \| 'lazy blur' \| 'lazy input' \| 'lazy submit' \| 'lazy' | `undefined`    | Change what type of event triggers validation to run.                                                                                                                                                                                                                                                             |
+| `validation-value`  | Any                                                                                                                                     | `undefined`    | The value used when applying validation rules.                                                                                                                                                                                                                                                                    |
+| `width`             | [String, Number]                                                                                                                        | `undefined`    | Sets the width for the component.                                                                                                                                                                                                                                                                                 |
+
+### Slots
+
+| Slot Name | Description                      |
+| --------- | -------------------------------- |
+| `prepend` | Slot for custom prepend content. |
+| `append`  | Slot for custom append content.  |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranSlider v-model="volume" step="1" show-ticks color="orange" track-color="green" thumb-color="red">
+		<template v-slot:prepend>
+			<v-btn color="#7367f0" icon="mdi-minus" size="small" variant="text" @click="volume--"></v-btn>
+		</template>
+
+		<template v-slot:append>
+			<v-btn color="#7367f0" icon="mdi-plus" size="small" variant="text" @click="volume++"></v-btn>
+		</template>
+	</BaranSlider>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranSlider from "my-component-library/BaranSlider.vue";
+const volume = ref(0);
+</script>
+```
+
+## Textarea Component
+
+The `BaranTextarea` component is a customizable textarea with various props and events.
+
+### Props
+
+| Prop                     | Type                                                                                                                                    | Default          | Description                                                                                                                                                                                                                                                                                                                        |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `active`                 | boolean                                                                                                                                 | `false`          | Controls the active state of the item. This is typically used to highlight the component.                                                                                                                                                                                                                                          |
+| `append-icon`            | any                                                                                                                                     | `undefined`      | Creates a v-icon component after default content in the append slot.                                                                                                                                                                                                                                                               |
+| `append-inner-icon`      | any                                                                                                                                     | `undefined`      | Creates a v-icon component in the append-inner slot.                                                                                                                                                                                                                                                                               |
+| `autofocus`              | boolean                                                                                                                                 | `false`          | MISSING DESCRIPTION (edit in github)                                                                                                                                                                                                                                                                                               |
+| `auto-grow`              | boolean                                                                                                                                 | `false`          | Automatically grow the textarea depending on amount of text.                                                                                                                                                                                                                                                                       |
+| `base-color`             | string                                                                                                                                  | `undefined`      | Sets the color of the input when it is not focused.                                                                                                                                                                                                                                                                                |
+| `bg-color`               | string                                                                                                                                  | `undefined`      | Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                               |
+| `clearable`              | boolean                                                                                                                                 | `false`          | Allows for the component to be cleared.                                                                                                                                                                                                                                                                                            |
+| `clear-icon`             | any                                                                                                                                     | `'$clear'`       | The icon used when the clearable prop is set to true.                                                                                                                                                                                                                                                                              |
+| `color`                  | string                                                                                                                                  | `undefined`      | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                                                                                  |
+| `counter`                | string \| number \| true                                                                                                                | `false`          | Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation.                                                                                                                                                                                                                     |
+| `counter-value`          | (value: any) => number                                                                                                                  | `compact`        | Display the input length but do not provide any validation.                                                                                                                                                                                                                                                                        |
+| `density`                | String                                                                                                                                  | `'compact'`      | Adjusts the vertical height used by the component. ('default' \| 'comfortable' \| 'compact')                                                                                                                                                                                                                                       |
+| `direction`              | 'horizontal' \| 'vertical'                                                                                                              | `'horizontal'`   | Changes the direction of the input.                                                                                                                                                                                                                                                                                                |
+| `dirty`                  | boolean                                                                                                                                 | `false`          | Manually apply the dirty state styling.                                                                                                                                                                                                                                                                                            |
+| `disabled`               | boolean                                                                                                                                 | `null`           | Removes the ability to click or target the input.                                                                                                                                                                                                                                                                                  |
+| `error`                  | boolean                                                                                                                                 | `false`          | Puts the input in a manual error state.                                                                                                                                                                                                                                                                                            |
+| `error-messages`         | string \| string[]                                                                                                                      | `[]`             | Puts the input in an error state and passes through custom error messages. Will be combined with any validations that occur from the rules prop. This field will not trigger validation.                                                                                                                                           |
+| `flat`                   | boolean                                                                                                                                 | `false`          | Removes box shadow when using a variant with elevation.                                                                                                                                                                                                                                                                            |
+| `focused`                | boolean                                                                                                                                 | `false`          | Forces a focused state styling on the component.                                                                                                                                                                                                                                                                                   |
+| `hide-details`           | boolean \| 'auto'                                                                                                                       | `false`          | Hides hint and validation errors. When set to auto messages will be rendered only if there’s a message (hint, error message, counter value etc) to display.                                                                                                                                                                        |
+| `hide-spin-buttons`      | boolean                                                                                                                                 | `false`          | Hides spin buttons on the input when type is set to number.                                                                                                                                                                                                                                                                        |
+| `hint`                   | string                                                                                                                                  | `undefined`      | Displays hint text below the input when focused. Force this always open with the persistent-hint property.                                                                                                                                                                                                                         |
+| `id`                     | string                                                                                                                                  | `undefined`      | Sets the DOM id on the component.                                                                                                                                                                                                                                                                                                  |
+| `label`                  | string                                                                                                                                  | `Textarea`       | Sets the text of the v-label or v-field-label component.                                                                                                                                                                                                                                                                           |
+| `loading`                | string \| boolean                                                                                                                       | `false`          | Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color. |
+| `max-errors`             | string \| number                                                                                                                        | `1`              | Control the maximum number of shown errors from validation.                                                                                                                                                                                                                                                                        |
+| `max-rows`               | string \| number                                                                                                                        | `undefined`      | Specifies the maximum number of row count.                                                                                                                                                                                                                                                                                         |
+| `max-width`              | string \| number                                                                                                                        | `undefined`      | Sets the maximum width for the component.                                                                                                                                                                                                                                                                                          |
+| `messages`               | string \| string[]                                                                                                                      | `[]`             | Displays a list of messages or a single message if using a string.                                                                                                                                                                                                                                                                 |
+| `min-width`              | string \| number                                                                                                                        | `undefined`      | Sets the minimum width for the component.                                                                                                                                                                                                                                                                                          |
+| `model-value`            | any                                                                                                                                     | `undefined`      | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                                                                                                      |
+| `name`                   | string                                                                                                                                  | `undefined`      | Sets the component’s name attribute.                                                                                                                                                                                                                                                                                               |
+| `no-resize`              | boolean                                                                                                                                 | `false`          | Remove resize handle.                                                                                                                                                                                                                                                                                                              |
+| `persistent-clear`       | boolean                                                                                                                                 | `false`          | Always show the clearable icon when the input is dirty (By default it only shows on hover).                                                                                                                                                                                                                                        |
+| `persistent-counter`     | boolean                                                                                                                                 | `false`          | Forces counter to always be visible.                                                                                                                                                                                                                                                                                               |
+| `persistent-hint`        | boolean                                                                                                                                 | `false`          | Forces hint to always be visible.                                                                                                                                                                                                                                                                                                  |
+| `persistent-placeholder` | boolean                                                                                                                                 | `false`          | Forces placeholder to always be visible.                                                                                                                                                                                                                                                                                           |
+| `placeholder`            | string                                                                                                                                  | `Type something` | Sets the input’s placeholder text.                                                                                                                                                                                                                                                                                                 |
+| `prefix`                 | string                                                                                                                                  | `undefined`      | Displays prefix text.                                                                                                                                                                                                                                                                                                              |
+| `prepend-icon`           | any                                                                                                                                     | `undefined`      | Prepends an icon to the component, uses the same syntax as v-icon.                                                                                                                                                                                                                                                                 |
+| `prepend-inner-icon`     | any                                                                                                                                     | `undefined`      | Creates a v-icon component in the prepend-inner slot.                                                                                                                                                                                                                                                                              |
+| `readonly`               | boolean                                                                                                                                 | `null`           | Puts input in readonly state.                                                                                                                                                                                                                                                                                                      |
+| `reverse`                | boolean                                                                                                                                 | `false`          | Reverses the orientation.                                                                                                                                                                                                                                                                                                          |
+| `rounded`                | string \| number \| boolean                                                                                                             | `undefined`      | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.                                                                                                                          |
+| `rows`                   | string \| number                                                                                                                        | `5`              | Default row count.                                                                                                                                                                                                                                                                                                                 |
+| `rules`                  | ValidationRule[]                                                                                                                        | `[]`             | Accepts a mixed array of types function, boolean and string. Functions pass an input value as an argument and must return either true / false or a string containing an error message. The input field will enter an error state if a function returns (or any value in the array contains) false or is a string.                  |
+| `single-line`            | boolean                                                                                                                                 | `false`          | Label does not move on focus/dirty.                                                                                                                                                                                                                                                                                                |
+| `suffix`                 | string                                                                                                                                  | `undefined`      | Displays suffix text.                                                                                                                                                                                                                                                                                                              |
+| `theme`                  | string                                                                                                                                  | `undefined`      | Specify a theme for this component and all of its children.                                                                                                                                                                                                                                                                        |
+| `tile`                   | boolean                                                                                                                                 | `false`          | Removes any applied border-radius from the component.                                                                                                                                                                                                                                                                              |
+| `validate-on`            | 'blur' \| 'input' \| 'submit' \| 'blur lazy' \| 'input lazy' \| 'submit lazy' \| 'lazy blur' \| 'lazy input' \| 'lazy submit' \| 'lazy' | `undefined`      | Change what type of event triggers validation to run.                                                                                                                                                                                                                                                                              |
+| `validation-value`       | any                                                                                                                                     | `undefined`      | The value used when applying validation rules.                                                                                                                                                                                                                                                                                     |
+| `variant`                | String                                                                                                                                  | `'outlined'`     | Applies a distinct style to the component. ('underlined' \| 'outlined' \| 'filled' \| 'solo' \| 'solo-inverted' \| 'solo-filled' \| 'plain')                                                                                                                                                                                       |
+| `width`                  | string \| number                                                                                                                        | `undefined`      | Sets the width for the component.                                                                                                                                                                                                                                                                                                  |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranTextarea bgColor="light-blue" clearable label="Label" prepend-icon="$vuetify" variant="solo-inverted" v-model="value"></BaranTextarea>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranTextarea from "my-component-library/BaranTextarea.vue";
+const value = ref("");
+</script>
+```
+
+## Infinite Scroll Component
+
+The `BaranInfiniteScroll` component displays a potentially infinite list, by loading more items of the list when scrolling. It supports either vertical or horizontal scrolling.
+
+### Props
+
+| Prop                | Type                                                                                                                | Default                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `custom-filter`     | FilterFunction                                                                                                      | `undefined`                                                 | Function to filter items.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `custom-key-filter` | unknown                                                                                                             | `undefined`                                                 | Function used on specific keys within the item object. `customFilter` is skipped for columns with `customKeyFilter` specified.                                                                                                                                                                                                                                                                                                                                                                                   |
+| `custom-key-sort`   | unknown                                                                                                             | `undefined`                                                 | Function used on specific keys within the item object. `customSort` is skipped for columns with `customKeySort` specified.                                                                                                                                                                                                                                                                                                                                                                                       |
+| `expanded`          | string[]                                                                                                            | `[]`                                                        | Array of expanded items. Can be used with `.sync` modifier.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `expand-on-click`   | boolean                                                                                                             | `false`                                                     | Expands item when the row is clicked.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `filter-keys`       | string \| string[]                                                                                                  | `undefined`                                                 | Array of specific keys to filter on the item.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `filter-mode`       | 'every' \| 'some' \| 'union' \| 'intersection'                                                                      | `'intersection'`                                            | Controls how the results of `customFilter` and `customKeyFilter` are combined. <br> **some:** There is at least one match from either the custom filter or the custom key filter. <br> **every:** All columns match either the custom filter or the custom key filter. <br> **union:** There is at least one match from the custom filter, or all columns match the custom key filters. <br> **intersection:** There is at least one match from the custom filter, and all columns match the custom key filters. |
+| `group-by`          | SortItem[]                                                                                                          | `[]`                                                        | Changes which item property should be used for grouping items. Currently only supports a single grouping in the format: `group` or `['group']`. When using an array, only the first element is considered. Can be used with `.sync` modifier.                                                                                                                                                                                                                                                                    |
+| `items`             | unknown[]                                                                                                           | `[]`                                                        | An array of strings or objects used for automatically generating children components.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `item-selectable`   | SelectItemKey                                                                                                       | `null`                                                      | Property on supplied items that contains the boolean value indicating if the item is selectable.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `items-per-page`    | string \| number                                                                                                    | `5`                                                         | Changes how many items per page should be visible. Can be used with `.sync` modifier. Setting this prop to `-1` will display all items on the page.                                                                                                                                                                                                                                                                                                                                                              |
+| `item-value`        | SelectItemKey                                                                                                       | `'id'`                                                      | Property on supplied items that contains its value.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `loading`           | boolean                                                                                                             | `false`                                                     | If true and no items are provided, then a loading text will be shown.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `model-value`       | any[]                                                                                                               | `[]`                                                        | The `v-model` value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `multi-sort`        | boolean                                                                                                             | `false`                                                     | If true then one can sort on multiple properties.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `must-sort`         | boolean                                                                                                             | `false`                                                     | If true then one cannot disable sorting, it will always switch between ascending and descending.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `no-filter`         | boolean                                                                                                             | `false`                                                     | Disables all item filtering.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `page`              | string \| number                                                                                                    | `1`                                                         | The current displayed page number (1-indexed).                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `return-object`     | boolean                                                                                                             | `false`                                                     | Changes the selection behavior to return the object directly rather than the value specified with `item-value`.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `search`            | string                                                                                                              | `undefined`                                                 | Text input used to filter items.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `select-strategy`   | 'single' \| 'page' \| 'all'                                                                                         | `'page'`                                                    | Defines the strategy of selecting items in the list. Possible values are: ‘single’ (only one item can be selected at a time), ‘page’ (‘Select all’ button will select only items on the current page), ‘all’ (‘Select all’ button will select all items in the list).                                                                                                                                                                                                                                            |
+| `show-expand`       | boolean                                                                                                             | `false`                                                     | Shows the expand icon.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `show-select`       | boolean                                                                                                             | `false`                                                     | Shows the column with checkboxes for selecting items in the list.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `sort-by`           | SortItem[]                                                                                                          | `[]`                                                        | Changes which item property (or properties) should be used for sort order. Can be used with `.sync` modifier.                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `tag`               | string                                                                                                              | `'div'`                                                     | Specify a custom tag used on the root element.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `transition`        | { component: Component; hideOnLeave: boolean } \| string \| boolean \| (TransitionProps & { component: Component }) | `{component: {name: 'fade-transition'}, hideOnLeave: true}` | Sets the component transition. Can be one of the built-in or custom transition.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `value-comparator`  | (a: any, b: any) => boolean                                                                                         | `undefined`                                                 | Apply a custom comparison algorithm to compare `model-value` and values contains in the `items` prop.                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+### Slots
+
+| Slot Name   | Description                                                                  |
+| ----------- | ---------------------------------------------------------------------------- |
+| ``          | Default slot for content.                                                    |
+| `error`     | The slot is shown when the status is error.                                  |
+| `load-more` | The slot shown when the mode is set to manual and the status is not loading. |
+| `loading`   | The slot is shown when the mode is set to manual and status is loading.      |
+| `empty`     | The slot shown when the status is empty.                                     |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranInfiniteScroll height="300" @load="load">
+		<template v-for="(item, index) in items" :key="item">
+			<div :class="['pa-2', index % 2 === 0 ? 'bg-grey-lighten-2' : '']">Item #{{ item }}</div>
+		</template>
+		<template v-slot:empty>
+			<v-alert type="warning">No more items!</v-alert>
+		</template>
+	</BaranInfiniteScroll>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranInfiniteScroll from "my-component-library/BaranInfiniteScroll.vue";
+
+const items = ref(Array.from({ length: 30 }, (k, v) => v + 1));
+
+async function load({ done }) {
+	setTimeout(() => {
+		done("empty");
+	}, 1000);
+}
+</script>
+```
+
+## Sparkline Component
+
+The `BaranSparkline` component can be used to create simple graphs, like GitHub’s contribution chart.
+
+### Props
+
+| Prop                 | Type                                   | Default     | Description                                                                                                                                                                                       |
+| -------------------- | -------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `auto-draw`          | boolean                                | `false`     | Trace the length of the line when first rendered.                                                                                                                                                 |
+| `auto-draw-duration` | string \| number                       | `undefined` | Amount of time (in ms) to run the trace animation.                                                                                                                                                |
+| `auto-draw-easing`   | string                                 | `'ease'`    | The easing function to use for the trace animation.                                                                                                                                               |
+| `auto-line-width`    | boolean                                | `false`     | Automatically expand bars to use space efficiently.                                                                                                                                               |
+| `color`              | string                                 | `undefined` | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `fill`               | boolean                                | `false`     | Using the fill property allows you to better customize the look and feel of your sparkline.                                                                                                       |
+| `gradient`           | string[]                               | `[]`        | An array of colors to use as a linear-gradient.                                                                                                                                                   |
+| `gradient-direction` | 'top' \| 'bottom' \| 'left' \| 'right' | `'top'`     | The direction the gradient should run.                                                                                                                                                            |
+| `height`             | string \| number                       | `75`        | Height of the SVG trendline or bars.                                                                                                                                                              |
+| `id`                 | string                                 | `undefined` | MISSING DESCRIPTION (edit in github).                                                                                                                                                             |
+| `item-value`         | string                                 | `'value'`   | MISSING DESCRIPTION (edit in github).                                                                                                                                                             |
+| `labels`             | (number \| { value: number })[]        | `[]`        | An array of string labels that correspond to the same index as its data counterpart.                                                                                                              |
+| `label-size`         | string \| number                       | `7`         | The label font size.                                                                                                                                                                              |
+| `line-width`         | string \| number                       | `4`         | The thickness of the line, in px.                                                                                                                                                                 |
+| `max`                | string \| number                       | `undefined` | MISSING DESCRIPTION (edit in github).                                                                                                                                                             |
+| `min`                | string \| number                       | `undefined` | MISSING DESCRIPTION (edit in github).                                                                                                                                                             |
+| `model-value`        | (number \| { value: number })[]        | `[]`        | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                     |
+| `padding`            | string \| number                       | `8`         | Low smooth or high line-width values may result in cropping, increase padding to compensate.                                                                                                      |
+| `show-labels`        | boolean                                | `false`     | Show labels below each data point.                                                                                                                                                                |
+| `smooth`             | boolean                                | `false`     | Number of px to use as a corner radius. true defaults to 8, false is 0.                                                                                                                           |
+| `type`               | 'trend' \| 'bar'                       | `'trend'`   | Choose between a trendline or bars.                                                                                                                                                               |
+| `width`              | string \| number                       | `300`       | Width of the SVG trendline or bars.                                                                                                                                                               |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranSparkline :auto-line-width="false" :fill="false" :gradient="gradients[5]" gradient-direction="top" :line-width="2" :model-value="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]" :padding="8" :smooth="10 || false" stroke-linecap="round" type="trend" auto-draw />
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranSparkline from "my-component-library/BaranSparkline.vue";
+
+const gradients = [["#222"], ["#42b3f4"], ["red", "orange", "yellow"], ["purple", "violet"], ["#00c6ff", "#F0F", "#FF0"], ["#f72047", "#ffd200", "#1feaea"]];
+</script>
+```
+
+## Alert Component
+
+The `BaranAlert` component is used to convey important information to the user through the use of contextual types, icons, and colors.
+
+### Props
+
+| Prop           | Type                                                               | Default            | Description                                                                                                                                                                                               |
+| -------------- | ------------------------------------------------------------------ | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `border`       | boolean \| 'top' \| 'end' \| 'bottom' \| 'start'                   | `false`            | Adds a colored border to the component.                                                                                                                                                                   |
+| `border-color` | string                                                             | `undefined`        | Specifies the color of the border. Accepts any color value.                                                                                                                                               |
+| `closable`     | boolean                                                            | `false`            | Adds a close icon that can hide the alert.                                                                                                                                                                |
+| `close-icon`   | any                                                                | `'$close'`         | Change the default icon used for closable alerts.                                                                                                                                                         |
+| `close-label`  | string                                                             | `'$vuetify.close'` | Text used for aria-label on closable alerts. Can also be customized globally in Internationalization.                                                                                                     |
+| `color`        | string                                                             | `undefined`        | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.         |
+| `density`      | 'default' \| 'comfortable' \| 'compact'                            | `'default'`        | Adjusts the vertical height used by the component.                                                                                                                                                        |
+| `elevation`    | string \| number                                                   | `undefined`        | Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.                                                                                   |
+| `height`       | string \| number                                                   | `undefined`        | Sets the height for the component.                                                                                                                                                                        |
+| `icon`         | any                                                                | `null`             | Apply a specific icon using the v-icon component.                                                                                                                                                         |
+| `location`     | Anchor                                                             | `undefined`        | Specifies the component’s location. Can combine by using a space separated string.                                                                                                                        |
+| `max-height`   | string \| number                                                   | `undefined`        | Sets the maximum height for the component.                                                                                                                                                                |
+| `max-width`    | string \| number                                                   | `undefined`        | Sets the maximum width for the component.                                                                                                                                                                 |
+| `min-height`   | string \| number                                                   | `undefined`        | Sets the minimum height for the component.                                                                                                                                                                |
+| `min-width`    | string \| number                                                   | `undefined`        | Sets the minimum width for the component.                                                                                                                                                                 |
+| `model-value`  | boolean                                                            | `true`             | Controls whether the component is visible or hidden.                                                                                                                                                      |
+| `position`     | 'static' \| 'relative' \| 'fixed' \| 'absolute' \| 'sticky'        | `undefined`        | Sets the position for the component.                                                                                                                                                                      |
+| `prominent`    | boolean                                                            | `false`            | Displays a larger vertically centered icon to draw more attention.                                                                                                                                        |
+| `rounded`      | string \| number \| boolean                                        | `undefined`        | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page. |
+| `tag`          | string                                                             | `'div'`            | Specify a custom tag used on the root element.                                                                                                                                                            |
+| `text`         | string                                                             | `'...'`            | Specify content text for the component.                                                                                                                                                                   |
+| `theme`        | string                                                             | `undefined`        | Specify a theme for this component and all of its children.                                                                                                                                               |
+| `tile`         | boolean                                                            | `false`            | Removes the component’s border-radius.                                                                                                                                                                    |
+| `title`        | string                                                             | `undefined`        | Specify a title text for the component.                                                                                                                                                                   |
+| `type`         | 'success' \| 'info' \| 'warning' \| 'error'                        | `undefined`        | Create a specialized alert that uses a contextual color and has a pre-defined icon.                                                                                                                       |
+| `variant`      | 'text' \| 'flat' \| 'elevated' \| 'tonal' \| 'outlined' \| 'plain' | `'tonal'`          | Applies a distinct style to the component.                                                                                                                                                                |
+| `width`        | string \| number                                                   | `undefined`        | Sets the width for the component.                                                                                                                                                                         |
+
+### Slots
+
+| Slot Name | Description                             |
+| --------- | --------------------------------------- |
+| ``        | The default Vue slot.                   |
+| `append`  | Slot for icon at end of alert.          |
+| `close`   | Slot for icon used in dismissible prop. |
+| `prepend` | Slot for icon at beginning of alert.    |
+| `title`   | Slot for the component’s title content. |
+| `text`    | Slot for the component’s text content.  |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranAlert closable icon="$vuetify" title="Alert title" text="..." variant="tonal" class="mt-5">
+		<template v-slot:close>
+			<v-icon>mdi-close</v-icon>
+		</template>
+	</BaranAlert>
+</template>
+
+<script setup>
+import BaranAlert from "my-component-library/BaranAlert.vue";
+</script>
+```
+
+## Badge Component
+
+The `BaranBadge` component superscripts or subscripts an avatar-like icon or text onto content to highlight information to a user or to just draw attention to a specific element. Content within the badge usually contains numbers or icons.
+
+### Props
+
+| Prop          | Type                                                              | Default                     | Description                                                                                                                                                                                               |
+| ------------- | ----------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bordered`    | boolean                                                           | `false`                     | Applies a 2px by default and 1.5px border around the badge when using the dot property.                                                                                                                   |
+| `color`       | string                                                            | `#7367f0`                   | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.         |
+| `content`     | string \| number                                                  | `undefined`                 | Text content to show in the badge.                                                                                                                                                                        |
+| `dot`         | boolean                                                           | `false`                     | Reduce the size of the badge and hide its contents.                                                                                                                                                       |
+| `floating`    | boolean                                                           | `false`                     | Elevates the badge above the slotted content.                                                                                                                                                             |
+| `icon`        | any                                                               | `undefined`                 | Apply a specific icon using the v-icon component.                                                                                                                                                         |
+| `inline`      | boolean                                                           | `false`                     | Moves the badge to be inline with the wrapping element. Supports the usage of the left prop.                                                                                                              |
+| `label`       | string                                                            | `'$vuetify.badge'`          | The aria-label used for the badge.                                                                                                                                                                        |
+| `location`    | Anchor                                                            | `'top end'`                 | Specifies the component’s location. Can combine by using a space separated string.                                                                                                                        |
+| `max`         | string \| number                                                  | `undefined`                 | Sets the maximum number allowed when using the content prop with a number like value. If the content number exceeds the maximum value, a + suffix is added.                                               |
+| `model-value` | boolean                                                           | `true`                      | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                             |
+| `offset-x`    | string \| number                                                  | `undefined`                 | Offset the badge on the x-axis.                                                                                                                                                                           |
+| `offset-y`    | string \| number                                                  | `undefined`                 | Offset the badge on the y-axis.                                                                                                                                                                           |
+| `rounded`     | string \| number \| boolean                                       | `undefined`                 | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page. |
+| `tag`         | string                                                            | `'div'`                     | Specify a custom tag used on the root element.                                                                                                                                                            |
+| `text-color`  | string                                                            | `undefined`                 | Applies a specified color to the control text - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.  |
+| `theme`       | string                                                            | `undefined`                 | Specify a theme for this component and all of its children.                                                                                                                                               |
+| `tile`        | boolean                                                           | `false`                     | Removes any applied border-radius from the component.                                                                                                                                                     |
+| `transition`  | string \| boolean \| (TransitionProps & { component: Component }) | `'scale-rotate-transition'` | Sets the component transition. Can be one of the built-in or custom transition.                                                                                                                           |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranBadge :content="48" floating>
+		<v-icon icon="$vuetify" size="x-large"></v-icon>
+	</BaranBadge>
+</template>
+
+<script setup>
+import BaranBadge from "my-component-library/BaranBadge.vue";
+</script>
+```
+
+## Banner Component
+
+The `BaranBanner` component is used as a middle-interrupting message to the user with one to two actions.
+
+### Props
+
+| Prop                | Type                                                              | Default                     | Description                                                                                                                                                                                                      |
+| ------------------- | ----------------------------------------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `avatar`            | string                                                            | `undefined`                 | Designates a specific src image to pass to the thumbnail.                                                                                                                                                        |
+| `bg-color`          | string                                                            | `undefined`                 | Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). |
+| `border`            | string \| number \| boolean                                       | `false`                     | Designates the border-radius applied to the component. This can be xs, sm, md, lg, xl.                                                                                                                           |
+| `color`             | string                                                            | `undefined`                 | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                |
+| `density`           | 'default' \| 'comfortable' \| 'compact'                           | `'default'`                 | Adjusts the vertical height used by the component.                                                                                                                                                               |
+| `elevation`         | string \| number                                                  | `undefined`                 | Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.                                                                                          |
+| `height`            | string \| number                                                  | `undefined`                 | Sets the height for the component.                                                                                                                                                                               |
+| `icon`              | any                                                               | `undefined`                 | Apply a specific icon using the v-icon component.                                                                                                                                                                |
+| `lines`             | 'one' \| 'two' \| 'three'                                         | `undefined`                 | The amount of visible lines of text before it truncates.                                                                                                                                                         |
+| `location`          | Anchor                                                            | `undefined`                 | Specifies the component’s location. Can combine by using a space separated string.                                                                                                                               |
+| `max-height`        | string \| number                                                  | `undefined`                 | Sets the maximum height for the component.                                                                                                                                                                       |
+| `max-width`         | string \| number                                                  | `undefined`                 | Sets the maximum width for the component.                                                                                                                                                                        |
+| `min-height`        | string \| number                                                  | `undefined`                 | Sets the minimum height for the component.                                                                                                                                                                       |
+| `min-width`         | string \| number                                                  | `undefined`                 | Sets the minimum width for the component.                                                                                                                                                                        |
+| `mobile`            | boolean                                                           | `null`                      | Applies the mobile banner styles.                                                                                                                                                                                |
+| `mobile-breakpoint` | number \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl'           | `undefined`                 | Overrides the display configuration default screen size that the component should be considered in mobile.                                                                                                       |
+| `position`          | 'sticky' \| 'static' \| 'relative' \| 'fixed' \| 'absolute'       | `undefined`                 | Sets the position for the component.                                                                                                                                                                             |
+| `rounded`           | string \| number \| boolean                                       | `undefined`                 | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.        |
+| `stacked`           | boolean                                                           | `false`                     | Forces the banner actions onto a new line. This is not applicable when the banner has lines="one".                                                                                                               |
+| `sticky`            | boolean                                                           | `false`                     | Applies position: sticky to the component with top: 0. You can find more information on the MDN documentation for sticky position.                                                                               |
+| `tag`               | string                                                            | `'div'`                     | Specify a custom tag used on the root element.                                                                                                                                                                   |
+| `text`              | string                                                            | `undefined`                 | Specify content text for the component.                                                                                                                                                                          |
+| `theme`             | string                                                            | `undefined`                 | Specify a theme for this component and all of its children.                                                                                                                                                      |
+| `tile`              | boolean                                                           | `false`                     | Removes any applied border-radius from the component.                                                                                                                                                            |
+| `width`             | string \| number                                                  | `undefined`                 | Sets the width for the component.                                                                                                                                                                                |
+| `transition`        | string \| boolean \| (TransitionProps & { component: Component }) | `'scale-rotate-transition'` | Sets the component transition. Can be one of the built-in or custom transition.                                                                                                                                  |
+
+### Slots
+
+| Slot Name | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| `actions` | The slot used for the action’s content such as a BaranButton. |
+| ``        | The default Vue slot                                          |
+| `prepend` | Adds an item outside the input and before input content.      |
+| `text`    | Slot for the component’s text content.                        |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranBanner color="success" icon="$vuetify" lines="three" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam earum, est illo quae fugit voluptatum fuga magni hic maiores ipsa, illum, tenetur accusamus cupiditate? Dolorem ad nisi eveniet officia voluptatibus." stacked>
+		<template v-slot:actions>
+			<BaranButton>Click me</BaranButton>
+		</template>
+	</BaranBanner>
+</template>
+
+<script setup>
+import BaranBanner from "my-component-library/BaranBanner.vue";
+</script>
+```
+
+## Skeleton Loader Component
+
+The `BaranSkeletonLoader` component provides a simple way to display loading placeholders in your application.
+
+### Props
+
+| Prop           | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Default              | Description                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `boilerplate`  | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `false`              | Remove the loading animation from the skeleton.                                                                                                                                                                                                                                                                                                                                                          |
+| `color`        | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `undefined`          | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                                                                                                                                                        |
+| `elevation`    | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page.                                                                                                                                                                                                                                                                                  |
+| `height`       | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the height for the component.                                                                                                                                                                                                                                                                                                                                                                       |
+| `loading`      | boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `false`              | Applies a loading animation with a on-hover loading cursor. A value of false will only work when there is content in the default slot.                                                                                                                                                                                                                                                                   |
+| `loading`-text | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `'$vuetify.loading'` | MISSING DESCRIPTION (edit in github).                                                                                                                                                                                                                                                                                                                                                                    |
+| `max-height`   | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the maximum height for the component.                                                                                                                                                                                                                                                                                                                                                               |
+| `max-width`    | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the maximum width for the component.                                                                                                                                                                                                                                                                                                                                                                |
+| `min-height`   | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the minimum height for the component.                                                                                                                                                                                                                                                                                                                                                               |
+| `min-width`    | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the minimum width for the component.                                                                                                                                                                                                                                                                                                                                                                |
+| `theme`        | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `undefined`          | Specify a theme for this component and all of its children.                                                                                                                                                                                                                                                                                                                                              |
+| `type`         | 'avatar' \| 'button' \| 'chip' \| 'divider' \| 'heading' \| 'image' \| 'text' \| 'sentences' \| 'paragraph' \| 'ossein' \| 'actions' \| 'article' \| 'card' \| 'card-avatar' \| 'date-picker' \| 'date-picker-options' \| 'date-picker-days' \| 'list-item' \| 'list-item-avatar' \| 'list-item-two-line' \| 'list-item-avatar-two-line' \| 'list-item-three-line' \| 'list-item-avatar-three-line' \| 'subtitle' \| 'table' \| 'table-heading' \| 'table-thead' \| 'table-tbody' \| 'table-row-divider' \| 'table-row' \| 'table-tfoot' \| (string & {}) \| ('avatar' \| 'button' \| 'chip' \| 'divider' \| 'heading' \| 'image' \| 'text' \| 'sentences' \| 'paragraph' \| 'ossein' \| 'actions' \| 'article' \| 'card' \| 'card-avatar' \| 'date-picker' \| 'date-picker-options' \| 'date-picker-days' \| 'list-item' \| 'list-item-avatar' \| 'list-item-two-line' \| 'list-item-avatar-two-line' \| 'list-item-three-line' \| 'list-item-avatar-three-line' \| 'subtitle' \| 'table' \| 'table-heading' \| 'table-thead' \| 'table-tbody' \| 'table-row-divider' \| 'table-row' \| 'table-tfoot' \| (string & {})[])[] | `'ossein'`           | A string delimited list of skeleton components to create such as type="text@3" or type="card, list-item". Will recursively generate a corresponding skeleton from the provided string. Also supports short-hand for multiple elements such as article@3 and paragraph@2 which will generate 3 article skeletons and 2 paragraph skeletons. Please see below for a list of available pre-defined options. |
+| `width`        | string \| number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined`          | Sets the width for the component.                                                                                                                                                                                                                                                                                                                                                                        |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranSkeletonLoader :elevation="10" color="success" type="card" />
+</template>
+
+<script setup>
+import BaranSkeletonLoader from "my-component-library/BaranSkeletonLoader.vue";
+</script>
+```
+
+## Snackbar Component
+
+The `BaranSnackbar` component provides a simple way to display loading placeholders in your application.
+
+### Props
+
+| Prop                     | Type                                                                                              | Default                   | Description                                                                                                                                                                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `absolute`               | boolean                                                                                           | `false`                   | Applies `position: absolute` to the content element.                                                                                                                                                                                               |
+| `activator`              | Element \| 'parent' \| (string & {}) \| ComponentPublicInstance                                   | `undefined`               | Explicitly sets the overlay’s activator.                                                                                                                                                                                                           |
+| `activator-props`        | unknown                                                                                           | `{}`                      | Apply custom properties to the activator.                                                                                                                                                                                                          |
+| `attach`                 | string \| boolean \| Element                                                                      | `false`                   | Specifies which DOM element the overlay content should teleport to. Can be a direct element reference, querySelector string, or `true` to disable teleporting. Uses `body` by default.                                                             |
+| `close-delay`            | string \| number                                                                                  | `undefined`               | Milliseconds to wait before closing component. Only applies to hover and focus events.                                                                                                                                                             |
+| `close-on-back`          | boolean                                                                                           | `true`                    | Closes the overlay content when the browser’s back button is pressed or `$router.back()` is called, cancelling the original navigation. Persistent overlays will cancel navigation and animate as if they were clicked outside instead of closing. |
+| `close-on-content-click` | boolean                                                                                           | `false`                   | Closes component when you click on its content.                                                                                                                                                                                                    |
+| `color`                  | string                                                                                            | `undefined`               | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                  |
+| `contained`              | boolean                                                                                           | `false`                   | Limits the size of the component and scrim to its offset parent. Implies `absolute` and `attach`. (Note: The parent element must have `position: relative`.)                                                                                       |
+| `disabled`               | Boolean                                                                                           | `false`                   | Removes the ability to click or target the component.                                                                                                                                                                                              |
+| `eager`                  | Boolean                                                                                           | `false`                   | Forces the component’s content to render when it mounts.                                                                                                                                                                                           |
+| `height`                 | String \| Number                                                                                  | `undefined`               | Sets the height for the component.                                                                                                                                                                                                                 |
+| `location`               | Anchor                                                                                            | `'bottom'`                | Specifies the anchor point for positioning the component, using directional cues to align it either horizontally, vertically, or both.                                                                                                             |
+| `location-strategy`      | `'static' \| 'connected' \| LocationStrategyFn`                                                   | `'static'`                | Specifies how the component should position relative to its activator.                                                                                                                                                                             |
+| `max-height`             | String \| Number                                                                                  | `undefined`               | Sets the maximum height for the component.                                                                                                                                                                                                         |
+| `max-width`              | String \| Number                                                                                  | `undefined`               | Sets the maximum width for the component.                                                                                                                                                                                                          |
+| `min-height`             | String \| Number                                                                                  | `undefined`               | Sets the minimum height for the component.                                                                                                                                                                                                         |
+| `min-width`              | String \| Number                                                                                  | `undefined`               | Sets the minimum width for the component.                                                                                                                                                                                                          |
+| `model-value`            | Boolean                                                                                           | `false`                   | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                      |
+| `multi-line`             | Boolean                                                                                           | `false`                   | Gives the snackbar a larger minimum height.                                                                                                                                                                                                        |
+| `offset`                 | String \| Number \| Number[]                                                                      | `undefined`               | A single value that offsets content away from the target based upon what side it is on.                                                                                                                                                            |
+| `opacity`                | String \| Number                                                                                  | `undefined`               | Sets the overlay opacity.                                                                                                                                                                                                                          |
+| `open-delay`             | String \| Number                                                                                  | `undefined`               | Milliseconds to wait before opening component. Only applies to hover and focus events.                                                                                                                                                             |
+| `open-on-click`          | Boolean                                                                                           | `undefined`               | Activate the component when the activator is clicked.                                                                                                                                                                                              |
+| `open-on-focus`          | Boolean                                                                                           | `undefined`               | Activate the component when the activator is focused.                                                                                                                                                                                              |
+| `open-on-hover`          | Boolean                                                                                           | `false`                   | Activate the component when the activator is hovered.                                                                                                                                                                                              |
+| `origin`                 | Anchor \| `'auto' \| 'overlap'`                                                                   | `'auto'`                  | Sets the transition origin on the element.                                                                                                                                                                                                         |
+| `position`               | `'static' \| 'relative' \| 'fixed' \| 'absolute' \| 'sticky'`                                     | `undefined`               | Sets the position for the component.                                                                                                                                                                                                               |
+| `rounded`                | String \| Number \| Boolean                                                                       | `undefined`               | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.                                          |
+| `target`                 | Element \| `'parent' \| 'cursor' \| (string & {}) \| ComponentPublicInstance \| [number, number]` | `undefined`               | For `locationStrategy="connected"`, specify an element or array of x,y coordinates that the overlay should position itself relative to. This will be the activator element by default.                                                             |
+| `text`                   | String                                                                                            | `undefined`               | Specify content text for the component.                                                                                                                                                                                                            |
+| `theme`                  | String                                                                                            | `undefined`               | Specify a theme for this component and all of its children.                                                                                                                                                                                        |
+| `tile`                   | Boolean                                                                                           | `false`                   | Removes any applied border-radius from the component.                                                                                                                                                                                              |
+| `timeout`                | String \| Number                                                                                  | `5000`                    | Time (in milliseconds) to wait until snackbar is automatically hidden. Use -1 to keep open indefinitely (0 in version < 2.3). It is recommended for this number to be between 4000 and 10000. Changes to this property will reset the timeout.     |
+| `timer`                  | String \| Boolean                                                                                 | `false`                   | Display a progress bar that counts down until the snackbar closes. Pass a string to set a custom color, otherwise uses info.                                                                                                                       |
+| `transition`             | String \| Boolean \| (TransitionProps & { component: Component })                                 | `'v-snackbar-transition'` | Sets the component transition. Can be one of the built in or custom transition.                                                                                                                                                                    |
+| `variant`                | `'text' \| 'flat' \| 'elevated' \| 'tonal' \| 'outlined' \| 'plain'`                              | `'elevated'`              | Applies a distinct style to the component.                                                                                                                                                                                                         |
+| `vertical`               | Boolean                                                                                           | `false`                   | Stacks snackbar content on top of the actions (button).                                                                                                                                                                                            |
+| `width`                  | String \| Number                                                                                  | `undefined`               | Sets the width for the component.                                                                                                                                                                                                                  |
+| `z-index`                | String \| Number                                                                                  | `2000`                    | The z-index used for the component.                                                                                                                                                                                                                |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranSnackbar v-model="snackbar" variant="tonal" timeout="2000" :timer="true"> Hello world! </BaranSnackbar>
+
+	<BaranButton @click="snackbar = !snackbar">Show Snack!</BaranButton>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranSnackbar from "my-component-library/BaranSnackbar.vue";
+
+const snackbar = ref(false);
+</script>
+```
+
+## Rating Component
+
+The `BaranRating` component is a specialized but important piece in building user widgets. Collecting user feedback via ratings is a simple analytic that can provide a lot of feedback to your product or application.
+
+### Props
+
+| Prop                  | Type                                      | Default                          | Description                                                                                                                                                                                       |
+| --------------------- | ----------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `active-color`        | String                                    | `undefined`                      | The applied color when the component is in an active state.                                                                                                                                       |
+| `clearable`           | Boolean                                   | `false`                          | Allows for the component to be cleared by clicking on the current value.                                                                                                                          |
+| `color`               | String                                    | `undefined`                      | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `density`             | `'default' \| 'comfortable' \| 'compact'` | `'default'`                      | Adjusts the vertical height used by the component.                                                                                                                                                |
+| `disabled`            | Boolean                                   | `false`                          | Removes the ability to click or target the component.                                                                                                                                             |
+| `empty-icon`          | Any                                       | `$ratingEmpty`                   | The icon displayed when empty.                                                                                                                                                                    |
+| `full-icon`           | Any                                       | `$ratingFull`                    | The icon displayed when full.                                                                                                                                                                     |
+| `half-increments`     | Boolean                                   | `false`                          | Allows the selection of half increments.                                                                                                                                                          |
+| `hover`               | Boolean                                   | `false`                          | Provides visual feedback when hovering over icons.                                                                                                                                                |
+| `item-aria-label`     | String                                    | `$vuetify.rating.ariaLabel.item` | Label for each rating item (description missing).                                                                                                                                                 |
+| `item-label-position` | String                                    | `'top'`                          | Position of item labels. Accepts 'top' and 'bottom'.                                                                                                                                              |
+| `item-labels`         | String[]                                  | `undefined`                      | Array of labels to display next to each item.                                                                                                                                                     |
+| `length`              | String \| Number                          | `5`                              | The amount of items to show.                                                                                                                                                                      |
+| `model-value`         | String \| Number                          | `0`                              | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                     |
+| `name`                | String                                    | `undefined`                      | Sets the component’s name attribute.                                                                                                                                                              |
+| `readonly`            | Boolean                                   | `false`                          | Removes all hover effects and pointer events.                                                                                                                                                     |
+| `ripple`              | Boolean                                   | `false`                          | Applies the v-ripple directive.                                                                                                                                                                   |
+| `size`                | String \| Number                          | `'default'`                      | Sets the height and width of the component. Default unit is px. Can also use the following predefined sizes: x-small, small, default, large, and x-large.                                         |
+| `tag`                 | String                                    | `'div'`                          | Specify a custom tag used on the root element.                                                                                                                                                    |
+| `theme`               | String                                    | `undefined`                      | Specify a theme for this component and all of its children.                                                                                                                                       |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranRating :item-labels="itemLabels" density="comfortable" clearable item-label-position="bottom" half-increments length="5" />
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranRating from "my-component-library/BaranRating.vue";
+
+const itemLabels = ref(["😞", "", "", "", "😀"]);
+</script>
+```
+
+## Timeline Component
+
+The `BaranTimeline` is useful for stylistically displaying chronological information.
+
+### Props
+
+| Prop             | Type                                      | Default      | Description                                                                     |
+| ---------------- | ----------------------------------------- | ------------ | ------------------------------------------------------------------------------- |
+| `align`          | `'center' \| 'start'`                     | `'center'`   | Places the timeline dot at the top or center of the timeline item.              |
+| `density`        | `'default' \| 'compact' \| 'comfortable'` | `'default'`  | Adjusts the vertical height used by the component.                              |
+| `direction`      | `'vertical' \| 'horizontal'`              | `'vertical'` | Display timeline in a vertical or horizontal direction.                         |
+| `dot-color`      | String                                    | `undefined`  | Color of the item dot.                                                          |
+| `fill-dot`       | Boolean                                   | `false`      | Remove outer border of item dot, making the color fill the entire dot.          |
+| `hide-opposite`  | Boolean                                   | `undefined`  | Hide opposite content if it exists.                                             |
+| `icon-color`     | String                                    | `undefined`  | Color of the icon.                                                              |
+| `justify`        | String                                    | `'auto'`     | Places timeline line at the center or automatically on the left or right side.  |
+| `line-color`     | String                                    | `undefined`  | Color of the timeline line.                                                     |
+| `line-inset`     | String \| Number                          | `0`          | Specifies the distance between the line and the dot of timeline items.          |
+| `line-thickness` | String \| Number                          | `2`          | Thickness of the timeline line.                                                 |
+| `side`           | `'start' \| 'end'`                        | `undefined`  | Display all timeline items on one side of the timeline, either before or after. |
+| `size`           | String \| Number                          | `'default'`  | Size of the item dot.                                                           |
+| `tag`            | String                                    | `'div'`      | Specify a custom tag used on the root element.                                  |
+| `theme`          | String                                    | `undefined`  | Specify a theme for this component and all of its children.                     |
+| `truncate-line`  | `'start' \| 'end' \| 'both'`              | `undefined`  | Truncate timeline directly at the start or end of the line, or on both ends.    |
+
+### Slots
+
+| Slot Name | Description           |
+| --------- | --------------------- |
+| ``        | The default Vue slot. |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranTimeline align="start" direction="vertical">
+		<BaranTimelineItem v-for="(year, i) in years" :key="i" :dot-color="year.color" size="small">
+			<template v-slot:opposite>
+				<div :class="`pt-1 headline font-weight-bold text-${year.color}`" v-text="year.year"></div>
+			</template>
+			<div>
+				<h2 :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`">Lorem ipsum</h2>
+				<div>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</div>
+			</div>
+		</BaranTimelineItem>
+	</BaranTimeline>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranTimeline from "my-component-library/BaranTimeline.vue";
+
+const years = ref([
+	{
+		color: "cyan",
+		year: "1960",
+	},
+	{
+		color: "green",
+		year: "1970",
+	},
+	{
+		color: "pink",
+		year: "1980",
+	},
+	{
+		color: "amber",
+		year: "1990",
+	},
+	{
+		color: "orange",
+		year: "2000",
+	},
+]);
+</script>
+```
+
+## Timeline Item Component
+
+The `BaranTimelineItem` is sub-component used to display a single timeline item.
+
+### Props
+
+| Prop            | Type                        | Default     | Description                                                                                                             |
+| --------------- | --------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `density`       | `'default' \| 'compact'`    | `undefined` | Adjusts the vertical height used by the component.                                                                      |
+| `dot-color`     | String                      | `undefined` | Color of the item dot.                                                                                                  |
+| `elevation`     | String \| Number            | `undefined` | Designates an elevation applied to the component between 0 and 24. You can find more information on the elevation page. |
+| `fill-dot`      | Boolean                     | `false`     | Remove outer border of item dot, making the color fill the entire dot.                                                  |
+| `height`        | String \| Number            | `undefined` | Sets the height for the component.                                                                                      |
+| `hide-dot`      | Boolean                     | `false`     | Hide the timeline item dot.                                                                                             |
+| `hide-opposite` | Boolean                     | `undefined` | Hide opposite content if it exists.                                                                                     |
+| `icon`          | Any                         | `undefined` | Apply a specific icon to the inside dot using the v-icon component.                                                     |
+| `icon-color`    | String                      | `undefined` | Color of the icon.                                                                                                      |
+| `line-inset`    | String \| Number            | `undefined` | Specifies the distance between the line and the dot of the item.                                                        |
+| `max-height`    | String \| Number            | `undefined` | Sets the maximum height for the component.                                                                              |
+| `max-width`     | String \| Number            | `undefined` | Sets the maximum width for the component.                                                                               |
+| `min-height`    | String \| Number            | `undefined` | Sets the minimum height for the component.                                                                              |
+| `min-width`     | String \| Number            | `undefined` | Sets the minimum width for the component.                                                                               |
+| `rounded`       | String \| Number \| Boolean | `undefined` | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped.   |
+| `size`          | String \| Number            | `'default'` | Size of the item dot.                                                                                                   |
+| `tag`           | String                      | `'div'`     | Specify a custom tag used on the root element.                                                                          |
+| `tile`          | Boolean                     | `false`     | Removes any applied border-radius from the component.                                                                   |
+| `width`         | String \| Number            | `undefined` | Sets the width for the component.                                                                                       |
+
+### Slots
+
+| Slot Name  | Description                                                                            |
+| ---------- | -------------------------------------------------------------------------------------- |
+| `icon`     | Insert avatars into dots with use of the icon slot and v-avatar.                       |
+| `opposite` | The opposite slot provides an additional layer of customization within your timelines. |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranTimeline align="start" direction="vertical">
+		<BaranTimelineItem v-for="(year, i) in years" :key="i" :dot-color="year.color" size="small">
+			<template v-slot:opposite>
+				<div :class="`pt-1 headline font-weight-bold text-${year.color}`" v-text="year.year"></div>
+			</template>
+			<div>
+				<h2 :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`">Lorem ipsum</h2>
+				<div>Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.</div>
+			</div>
+		</BaranTimelineItem>
+	</BaranTimeline>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranTimeline from "my-component-library/BaranTimeline.vue";
+
+const years = ref([
+	{
+		color: "cyan",
+		year: "1960",
+	},
+	{
+		color: "green",
+		year: "1970",
+	},
+	{
+		color: "pink",
+		year: "1980",
+	},
+	{
+		color: "amber",
+		year: "1990",
+	},
+	{
+		color: "orange",
+		year: "2000",
+	},
+]);
+</script>
+```
+
+## Hover Component
+
+The `BaranHover` component provides a simple interface for handling hover states for any component.
+
+### Props
+
+| Prop          | Type             | Default     | Description                                                                                                   |
+| ------------- | ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `close-delay` | String \| Number | `undefined` | Milliseconds to wait before closing component. Only applies to hover and focus events.                        |
+| `disabled`    | Boolean          | `false`     | Removes hover functionality.                                                                                  |
+| `model-value` | Boolean          | `null`      | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array. |
+| `open-delay`  | String \| Number | `undefined` | Milliseconds to wait before opening component. Only applies to hover and focus events.                        |
+
+### Slots
+
+| Slot Name | Description                                   |
+| --------- | --------------------------------------------- |
+| `default` | The default Vue slot. Recives (`isHovering`). |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranHover>
+		<template v-slot:default="{ isHovering, ...props }">
+			<BaranCard v-bind="props" :color="isHovering ? 'primary' : undefined" title="Hover over me" text="Lorem ipsum dolor sit amet consectetur adipisicing elit."></BaranCard>
+		</template>
+	</BaranHover>
+</template>
+
+<script setup>
+import BaranHover from "my-component-library/BaranHover.vue";
+import BaranCard from "my-component-library/BaranCard.vue";
+</script>
+```
+
+## Progress Circular Component
+
+The `BaranProgressCircular` component is used to convey data circularly to users. It also can be put into an indeterminate state to portray loading.
+
+### Props
+
+| Prop            | Type                          | Default     | Description                                                                                                                                                                                                                                                          |
+| --------------- | ----------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bg-color`      | String                        | `undefined` | Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `color`         | String                        | `#7367f0`   | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                    |
+| `indeterminate` | Boolean \| `'disable-shrink'` | `false`     | Constantly animates, use when loading progress is unknown. If set to the string 'disable-shrink' it will use a simpler animation that does not run on the main thread.                                                                                               |
+| `model-value`   | String \| Number              | `0`         | The percentage value for current progress.                                                                                                                                                                                                                           |
+| `rotate`        | String \| Number              | `0`         | Rotates the circle start point in degrees.                                                                                                                                                                                                                           |
+| `size`          | String \| Number              | `'default'` | Sets the diameter of the circle in pixels.                                                                                                                                                                                                                           |
+| `tag`           | String                        | `'div'`     | Specify a custom tag used on the root element.                                                                                                                                                                                                                       |
+| `theme`         | String                        | `undefined` | Specify a theme for this component and all of its children.                                                                                                                                                                                                          |
+| `width`         | String \| Number              | `4`         | Sets the stroke of the circle in pixels.                                                                                                                                                                                                                             |
+
+### Slots
+
+| Slot Name | Description                                                                  |
+| --------- | ---------------------------------------------------------------------------- |
+| `default` | The default Vue slot. Slot can be used to replace the text inside the loader |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranProgressCircular :model-value="50" :rotate="360" :size="100" :width="8" color="teal">
+		<template v-slot:default>
+			<span class="text-caption">50%</span>
+		</template>
+	</BaranProgressCircular>
+</template>
+
+<script setup>
+import BaranProgressCircular from "my-component-library/BaranProgressCircular.vue";
+</script>
+```
+
+## Progress Linear Component
+
+The `BaranProgressLinear` component is used to convey data visually to users. It supports both indeterminate amounts, such as loading or processing, and finite amounts of progress (including separate buffer values).
+
+### Props
+
+| Prop             | Type                        | Default     | Description                                                                                                                                                                                                                                                          |
+| ---------------- | --------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `absolute`       | boolean                     | `false`     | Applies `position: absolute` to the component.                                                                                                                                                                                                                       |
+| `active`         | boolean                     | `true`      | Reduce the height to 0, hiding component.                                                                                                                                                                                                                            |
+| `bg-color`       | string                      | `undefined` | Applies specified color to the control’s background. Used on components that also support the color prop. - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page. |
+| `bg-opacity`     | string \| number            | `undefined` | Background opacity, if null it defaults to 0.3 if background color is not specified or 1 otherwise.                                                                                                                                                                  |
+| `buffer-color`   | string                      | `undefined` | Sets the color of the buffer bar.                                                                                                                                                                                                                                    |
+| `buffer-opacity` | string \| number            | `undefined` | Set the opacity of the buffer bar.                                                                                                                                                                                                                                   |
+| `buffer-value`   | string \| number            | `0`         | The percentage value for the buffer.                                                                                                                                                                                                                                 |
+| `clickable`      | boolean                     | `false`     | Clicking on the progress track will automatically set the value.                                                                                                                                                                                                     |
+| `color`          | string                      | `#7367f0`   | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                    |
+| `height`         | string \| number            | `4`         | Sets the height for the component.                                                                                                                                                                                                                                   |
+| `indeterminate`  | boolean                     | `false`     | Constantly animates, use when loading progress is unknown.                                                                                                                                                                                                           |
+| `location`       | Anchor                      | `'top'`     | Specifies the component’s location. Can combine by using a space separated string.                                                                                                                                                                                   |
+| `max`            | string \| number            | `100`       | Sets the maximum value the progress can reach.                                                                                                                                                                                                                       |
+| `model-value`    | string \| number            | `0`         | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                                        |
+| `opacity`        | string \| number            | `undefined` | Set the opacity of the progress bar.                                                                                                                                                                                                                                 |
+| `reverse`        | boolean                     | `false`     | Displays reversed progress (right to left in LTR mode and left to right in RTL).                                                                                                                                                                                     |
+| `rounded`        | string \| number \| boolean | `undefined` | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page.                                                            |
+| `rounded-bar`    | boolean                     | `false`     | Applies a border radius to the progress bar.                                                                                                                                                                                                                         |
+| `stream`         | boolean                     | `false`     | An alternative style for portraying loading that works in tandem with `buffer-value`.                                                                                                                                                                                |
+| `striped`        | boolean                     | `false`     | Adds a stripe background to the filled portion of the progress component.                                                                                                                                                                                            |
+| `tag`            | string                      | `'div'`     | Specify a custom tag used on the root element.                                                                                                                                                                                                                       |
+| `theme`          | string                      | `undefined` | Specify a theme for this component and all of its children.                                                                                                                                                                                                          |
+| `tile`           | boolean                     | `false`     | Removes any applied border-radius from the component.                                                                                                                                                                                                                |
+
+### Slots
+
+| Slot Name | Description                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| `default` | The default Vue slot. Slot can be used to replace the text inside the bar |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranProgressLinear v-model="progress" height="25">
+		<strong>{{ Math.ceil(progress) }}%</strong>
+	</BaranProgressLinear>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import BaranProgressLinear from "my-component-library/BaranProgressLinear.vue";
+
+const progress = ref(50);
+</script>
+```
+
+## Avatar Component
+
+The `BaranAvatar` component is typically used to display circular user profile pictures. This component will allow you to dynamically size and add a border radius of responsive images, icons, and text. When rounded prop set to 0 will display an avatar without border radius.
+
+### Props
+
+| Prop      | Type                                                               | Default     | Description                                                                                                                                                                                               |
+| --------- | ------------------------------------------------------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `color`   | string                                                             | `#7367f0`   | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.         |
+| `density` | 'default' \| 'comfortable' \| 'compact'                            | `'default'` | Adjusts the vertical height used by the component.                                                                                                                                                        |
+| `end`     | boolean                                                            | `false`     | Applies margin at the start of the component.                                                                                                                                                             |
+| `icon`    | any                                                                | `undefined` | Apply a specific icon using the `v-icon` component.                                                                                                                                                       |
+| `image`   | string                                                             | `undefined` | Apply a specific image using `v-img`.                                                                                                                                                                     |
+| `rounded` | string \| number \| boolean                                        | `undefined` | Designates the border-radius applied to the component. This can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. Find more information on available border radius classes on the Border Radius page. |
+| `size`    | string \| number                                                   | `'default'` | Sets the height and width of the component. Default unit is px. Can also use the following predefined sizes: x-small, small, default, large, and x-large.                                                 |
+| `start`   | boolean                                                            | `false`     | Applies margin at the end of the component.                                                                                                                                                               |
+| `tag`     | string                                                             | `'div'`     | Specify a custom tag used on the root element.                                                                                                                                                            |
+| `text`    | string                                                             | `undefined` | Specify content text for the component.                                                                                                                                                                   |
+| `theme`   | string                                                             | `undefined` | Specify a theme for this component and all of its children.                                                                                                                                               |
+| `tile`    | boolean                                                            | `false`     | Removes any applied border-radius from the component.                                                                                                                                                     |
+| `variant` | 'flat' \| 'text' \| 'elevated' \| 'tonal' \| 'outlined' \| 'plain' | `'flat'`    | Applies a distinct style to the component.                                                                                                                                                                |
+
+### Slots
+
+| Slot Name | Description                                                                     |
+| --------- | ------------------------------------------------------------------------------- |
+| `default` | The default Vue slot. Slot can be used to replace the content inside the avatar |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranAvatar color="#7367f0" size="25" icon="$vuetify" />
+</template>
+
+<script setup>
+import BaranAvatar from "my-component-library/BaranAvatar.vue";
+</script>
+```
+
+## Server Side Table Component
+
+The `BaranServersideTable` component is are used for showing data coming from an API.
+
+### Props
+
+| Prop                     | Type                                                                                                                                                                                        | Default                                                                                                                                                               | Description                                                                                                                                                                                                                                                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cell-props`             | Record<string, any> \| ((data: Pick<ItemKeySlot<any>, 'value' \| 'item' \| 'index' \| 'internalItem' \| 'column'>) => Record<string, any>)                                                  | undefined                                                                                                                                                             | An object of additional props to be passed to each `<td>` in the table body. Also accepts a function that will be called for each cell. If the same prop is defined both here and in cellProps in a headers object, the value from the headers object will be used.                                                                |
+| `color`                  | string                                                                                                                                                                                      | undefined                                                                                                                                                             | Applies specified color to the control - supports utility colors (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)). Find a list of built-in classes on the colors page.                                                                                                                                  |
+| `custom-key-sort`        | unknown                                                                                                                                                                                     | undefined                                                                                                                                                             | Function used on specific keys within the item object. customSort is skipped for columns with customKeySort specified.                                                                                                                                                                                                             |
+| `density`                | 'default' \| 'comfortable' \| 'compact'                                                                                                                                                     | 'default'                                                                                                                                                             | Adjusts the vertical height used by the component.                                                                                                                                                                                                                                                                                 |
+| `disable-sort`           | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Toggles rendering of sort button.                                                                                                                                                                                                                                                                                                  |
+| `expanded`               | string[]                                                                                                                                                                                    | []                                                                                                                                                                    | Whether the item is expanded or not.                                                                                                                                                                                                                                                                                               |
+| `expand-on-click`        | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Expands item when the row is clicked.                                                                                                                                                                                                                                                                                              |
+| `first-icon`             | any                                                                                                                                                                                         | '$first'                                                                                                                                                              | First icon.                                                                                                                                                                                                                                                                                                                        |
+| `first-page-label`       | string                                                                                                                                                                                      | '$vuetify.dataFooter.firstPage'                                                                                                                                       | Label for first page.                                                                                                                                                                                                                                                                                                              |
+| `fixed-footer`           | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Use the fixed-footer prop together with the height prop to fix the footer to the bottom of the table.                                                                                                                                                                                                                              |
+| `fixed-header`           | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Use the fixed-header prop together with the height prop to fix the header to the top of the table.                                                                                                                                                                                                                                 |
+| `group-by`               | SortItem[]                                                                                                                                                                                  | []                                                                                                                                                                    | Defines the grouping of the table items.                                                                                                                                                                                                                                                                                           |
+| `header-props`           | unknown                                                                                                                                                                                     | undefined                                                                                                                                                             | MISSING DESCRIPTION (edit in github)                                                                                                                                                                                                                                                                                               |
+| `headers`                | { readonly key?: 'data-table-group' \| 'data-table-select' \| 'data-table-expand' \| (string & {}) \| undefined readonly value?: SelectItemKey<Record<string, any>> readonly title?: string | An array of objects that each describe a header column.                                                                                                               |
+| `height`                 | string \| number                                                                                                                                                                            | undefined                                                                                                                                                             | Use the height prop to set the height of the table.                                                                                                                                                                                                                                                                                |
+| `hide-default-body`      | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | MISSING DESCRIPTION (edit in github)                                                                                                                                                                                                                                                                                               |
+| `hide-default-footer`    | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | MISSING DESCRIPTION (edit in github)                                                                                                                                                                                                                                                                                               |
+| `hide-default-header`    | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | MISSING DESCRIPTION (edit in github)                                                                                                                                                                                                                                                                                               |
+| `hide-no-data`           | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open.                                                                                                 |
+| `hover`                  | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Will add a hover effect to a table’s row when the mouse is over it.                                                                                                                                                                                                                                                                |
+| `items`                  | any[]                                                                                                                                                                                       | []                                                                                                                                                                    | An array of strings or objects used for automatically generating children components.                                                                                                                                                                                                                                              |
+| `item-selectable`        | SelectItemKey<any>                                                                                                                                                                          | null                                                                                                                                                                  | Property on supplied items that indicates whether the item is selectable.                                                                                                                                                                                                                                                          |
+| `items-length`           | string \| number                                                                                                                                                                            | undefined                                                                                                                                                             | Number of all items.                                                                                                                                                                                                                                                                                                               |
+| `items-per-page`         | string \| number                                                                                                                                                                            | 10                                                                                                                                                                    | The number of items to display on each page.                                                                                                                                                                                                                                                                                       |
+| `items-per-page-options` | (number \| { title: string; value: number })[]                                                                                                                                              | [{value: 10, title: '10'}, {value: 25, title: '25'}, {value: 50, title: '50'}, {value: 100, title: '100'}, {value: -1, title: '$vuetify.dataFooter.itemsPerPageAll'}] | Array of options to show in the items-per-page dropdown.                                                                                                                                                                                                                                                                           |
+| `items-per-page-text`    | string                                                                                                                                                                                      | '$vuetify.dataFooter.itemsPerPageText'                                                                                                                                | Text for items-per-page dropdown.                                                                                                                                                                                                                                                                                                  |
+| `item-value`             | SelectItemKey<any>                                                                                                                                                                          | 'id'                                                                                                                                                                  | Property on supplied items that contains its value.                                                                                                                                                                                                                                                                                |
+| `last-icon`              | any                                                                                                                                                                                         | '$last'                                                                                                                                                               | Last icon.                                                                                                                                                                                                                                                                                                                         |
+| `last-page-label`        | string                                                                                                                                                                                      | '$vuetify.dataFooter.lastPage'                                                                                                                                        | Label for last page.                                                                                                                                                                                                                                                                                                               |
+| `loading`                | string \| boolean                                                                                                                                                                           | false                                                                                                                                                                 | Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it’s supported by the component) or the primary color. |
+| `loading-text`           | string                                                                                                                                                                                      | '$vuetify.dataIterator.loadingText'                                                                                                                                   | Text shown when the data is loading.                                                                                                                                                                                                                                                                                               |
+| `mobile`                 | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Determines the display mode of the component. If true, the component will be displayed in mobile mode. If false, the component will be displayed in desktop mode. If null, will be based on the current mobile-breakpoint.                                                                                                         |
+| `mobile-breakpoint`      | number \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl'                                                                                                                                     | undefined                                                                                                                                                             | Overrides the display configuration default screen size that the component should be considered in mobile.                                                                                                                                                                                                                         |
+| `model-value`            | unknown                                                                                                                                                                                     | []                                                                                                                                                                    | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array.                                                                                                                                                                                                                      |
+| `multi-sort`             | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Allows sorting by multiple columns.                                                                                                                                                                                                                                                                                                |
+| `must-sort`              | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Forces sorting on the column(s).                                                                                                                                                                                                                                                                                                   |
+| `next-icon`              | any                                                                                                                                                                                         | '$next'                                                                                                                                                               | Next icon.                                                                                                                                                                                                                                                                                                                         |
+| `next-page-label`        | string                                                                                                                                                                                      | '$vuetify.dataFooter.nextPage'                                                                                                                                        | Label for next page.                                                                                                                                                                                                                                                                                                               |
+| `no-data-text`           | string                                                                                                                                                                                      | '$vuetify.noDataText'                                                                                                                                                 | Text shown when no items are provided to the component.                                                                                                                                                                                                                                                                            |
+| `page`                   | string \| number                                                                                                                                                                            | 1                                                                                                                                                                     | The current displayed page number (1-indexed).                                                                                                                                                                                                                                                                                     |
+| `page-text`              | string                                                                                                                                                                                      | '$vuetify.dataFooter.pageText'                                                                                                                                        | Label for page number.                                                                                                                                                                                                                                                                                                             |
+| `prev-icon`              | any                                                                                                                                                                                         | '$prev'                                                                                                                                                               | Previous icon.                                                                                                                                                                                                                                                                                                                     |
+| `prev-page-label`        | string                                                                                                                                                                                      | '$vuetify.dataFooter.prevPage'                                                                                                                                        | Label for previous page.                                                                                                                                                                                                                                                                                                           |
+| `return-object`          | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Changes the selection behavior to return the object directly rather than the value specified with item-value.                                                                                                                                                                                                                      |
+| `row-props`              | Record<string, any> \| ((data: Pick<ItemKeySlot<any>, 'item' \| 'index' \| 'internalItem'>) => Record<string, any>)                                                                         | undefined                                                                                                                                                             | An object of additional props to be passed to each `<tr>` in the table body. Also accepts a function that will be called for each row.                                                                                                                                                                                             |
+| `search`                 | string                                                                                                                                                                                      | undefined                                                                                                                                                             | Text input used to filter items.                                                                                                                                                                                                                                                                                                   |
+| `select-strategy`        | 'page' \| 'single' \| 'all'                                                                                                                                                                 | 'page'                                                                                                                                                                | Defines the strategy of selecting items in the list. Possible values are: ‘single’ (only one item can be selected at a time), ‘page’ (‘Select all’ button will select only items on the current page), ‘all’ (‘Select all’ button will select all items in the list).                                                              |
+| `show-current-page`      | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Show current page number between prev/next icons.                                                                                                                                                                                                                                                                                  |
+| `show-expand`            | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Shows the expand icon.                                                                                                                                                                                                                                                                                                             |
+| `show-select`            | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Shows the column with checkboxes for selecting items in the list.                                                                                                                                                                                                                                                                  |
+| `sort-asc-icon`          | any                                                                                                                                                                                         | '$sortAsc'                                                                                                                                                            | Icon used for ascending sort button.                                                                                                                                                                                                                                                                                               |
+| `sort-by`                | SortItem[]                                                                                                                                                                                  | []                                                                                                                                                                    | Array of column keys and sort orders that determines the sort order of the table.                                                                                                                                                                                                                                                  |
+| `sort-desc-icon`         | any                                                                                                                                                                                         | '$sortDesc'                                                                                                                                                           | Icon used for descending sort button.                                                                                                                                                                                                                                                                                              |
+| `sticky`                 | boolean                                                                                                                                                                                     | false                                                                                                                                                                 | Sticks the header to the top of the table.                                                                                                                                                                                                                                                                                         |
+| `tag`                    | string                                                                                                                                                                                      | 'div'                                                                                                                                                                 | Specify a custom tag used on the root element.                                                                                                                                                                                                                                                                                     |
+| `theme`                  | string                                                                                                                                                                                      | undefined                                                                                                                                                             | Specify a theme for this component and all of its children.                                                                                                                                                                                                                                                                        |
+| `value-comparator`       | (a: any, b: any) => boolean                                                                                                                                                                 | undefined                                                                                                                                                             | Apply a custom comparison algorithm to compare model-value and values contains in the items prop.                                                                                                                                                                                                                                  |
+| `width`                  | string \| number                                                                                                                                                                            | undefined                                                                                                                                                             | Sets the width for the component.                                                                                                                                                                                                                                                                                                  |
+
+### Slots
+
+| Slot Name      | Description                                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `header.id`    | Slot for customizing the header of a column with key `id`.                                                                  |
+| `headers`      | Slot for customizing the headers row. Receives `columns`, `isSorted`, `getSortIcon`, and `toggleSort` as scoped slot props. |
+| `item`         | Slot for customizing an item row. Receives `item` as a scoped slot prop.                                                    |
+| `item.actions` | Slot for customizing actions for each item. Receives `item` as a scoped slot prop.                                          |
+| `group-header` | Slot for customizing the group header. Receives `item`, `columns`, `toggleGroup`, and `isGroupOpen` as scoped slot props.   |
+| `top`          | Slot for placing content above the table.                                                                                   |
+| `activator`    | Slot for customizing the activator button of a row.                                                                         |
+| `expanded-row` | Slot for customizing the expanded row content. Receives `item` and `columns` as scoped slot props.                          |
+| `loading`      | Slot for customizing the loading state.                                                                                     |
+
+### Events
+
+| Event                  | Description                                                            |
+| ---------------------- | ---------------------------------------------------------------------- |
+| `@update:expanded`     | Emits when the expanded property of the options prop is updated.       |
+| `@update:groupBy`      | Emits when the group-by property of the options property is updated.   |
+| `@update:itemsPerPage` | Emits when the items-per-page property of the options prop is updated. |
+| `@update:modelValue`   | Emits when the component’s model changes.                              |
+| `@update:options`      | Emits when one of the options properties is updated.                   |
+| `@update:page`         | Emits when the page property of the options prop is updated.           |
+| `@update:sortBy`       | Emits when the sort-by property of the options prop is updated.        |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranServersideTable v-model="selectedItems" v-model:items-per-page="itemsPerPage" :headers="headers" :items="serverItems" :items-length="totalItems" :loading="loading" :search="search" item-value="name" show-select @update:options="loadItems"> </BaranServersideTable>
+</template>
+
+<script setup>
+import { ref } from "vue";
+
+import { ref } from "vue";
+
+const selectedItems = ref([]);
+
+// Desserts array
+const desserts = [
+	{
+		name: "Frozen Yogurt",
+		calories: 159,
+		fat: 6.0,
+		carbs: 24,
+		protein: 4.0,
+		iron: "1",
+	},
+	{
+		name: "Jelly bean",
+		calories: 375,
+		fat: 0.0,
+		carbs: 94,
+		protein: 0.0,
+		iron: "0",
+	},
+	{
+		name: "KitKat",
+		calories: 518,
+		fat: 26.0,
+		carbs: 65,
+		protein: 7,
+		iron: "6",
+	},
+	{
+		name: "Eclair",
+		calories: 262,
+		fat: 16.0,
+		carbs: 23,
+		protein: 6.0,
+		iron: "7",
+	},
+	{
+		name: "Gingerbread",
+		calories: 356,
+		fat: 16.0,
+		carbs: 49,
+		protein: 3.9,
+		iron: "16",
+	},
+	{
+		name: "Ice cream sandwich",
+		calories: 237,
+		fat: 9.0,
+		carbs: 37,
+		protein: 4.3,
+		iron: "1",
+	},
+	{
+		name: "Lollipop",
+		calories: 392,
+		fat: 0.2,
+		carbs: 98,
+		protein: 0,
+		iron: "2",
+	},
+	{
+		name: "Cupcake",
+		calories: 305,
+		fat: 3.7,
+		carbs: 67,
+		protein: 4.3,
+		iron: "8",
+	},
+	{
+		name: "Honeycomb",
+		calories: 408,
+		fat: 3.2,
+		carbs: 87,
+		protein: 6.5,
+		iron: "45",
+	},
+	{
+		name: "Donut",
+		calories: 452,
+		fat: 25.0,
+		carbs: 51,
+		protein: 4.9,
+		iron: "22",
+	},
+];
+
+// FakeAPI for fetching data
+const FakeAPI = {
+	async fetch({ page, itemsPerPage, sortBy }) {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				const start = (page - 1) * itemsPerPage;
+				const end = start + itemsPerPage;
+				const items = desserts.slice();
+
+				if (sortBy.length) {
+					const sortKey = sortBy[0].key;
+					const sortOrder = sortBy[0].order;
+					items.sort((a, b) => {
+						const aValue = a[sortKey];
+						const bValue = b[sortKey];
+						return sortOrder === "desc" ? bValue - aValue : aValue - bValue;
+					});
+				}
+
+				const paginated = items.slice(start, end);
+
+				resolve({ items: paginated, total: items.length });
+			}, 500);
+		});
+	},
+};
+
+// Reactive variables
+const itemsPerPage = ref(5);
+const headers = ref([
+	{
+		title: "Dessert (100g serving)",
+		align: "start",
+		sortable: false,
+		key: "name",
+	},
+	{ title: "Calories", key: "calories", align: "end" },
+	{ title: "Fat (g)", key: "fat", align: "end" },
+	{ title: "Carbs (g)", key: "carbs", align: "end" },
+	{ title: "Protein (g)", key: "protein", align: "end" },
+	{ title: "Iron (%)", key: "iron", align: "end" },
+]);
+const search = ref("");
+const serverItems = ref([]);
+const loading = ref(true);
+const totalItems = ref(0);
+
+// Method to load items
+const loadItems = ({ page, itemsPerPage, sortBy }) => {
+	loading.value = true;
+	FakeAPI.fetch({ page, itemsPerPage, sortBy }).then(({ items, total }) => {
+		serverItems.value = items;
+		totalItems.value = total;
+		loading.value = false;
+	});
+};
 </script>
 ```

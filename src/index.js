@@ -23,6 +23,27 @@ import BaranSwitch from './components/BaranSwitch.vue';
 import BaranTable from './components/BaranTable.vue';
 import BaranTextbox from './components/BaranTextbox.vue';
 import BaranTabs from './components/BaranTabs.vue';
+// P2
+import BaranAlert from './components/BaranAlert.vue';
+import BaranAvatar from './components/BaranAvatar.vue';
+import BaranBadge from './components/BaranBadge.vue';
+import BaranBanner from './components/BaranBanner.vue';
+import BaranBreadcrumbs from './components/BaranBreadcrumbs.vue';
+import BaranHover from './components/BaranHover.vue';
+import BaranInfiniteScroll from './components/BaranInfiniteScroll.vue';
+import BaranPagination from './components/BaranPagination.vue';
+import BaranProgressCircular from './components/BaranProgressCircular.vue';
+import BaranProgressLinear from './components/BaranProgressLinear.vue';
+import BaranRating from './components/BaranRating.vue';
+import BaranServersideTable from './components/BaranServersideTable.vue';
+import BaranSkeletonLoader from './components/BaranSkeletonLoader.vue';
+import BaranSlider from './components/BaranSlider.vue';
+import BaranSnackbar from './components/BaranSnackbar.vue';
+import BaranSparkline from './components/BaranSparkline.vue';
+import BaranTextarea from './components/BaranTextarea.vue';
+import BaranTimeline from './components/BaranTimeline.vue';
+import BaranTimelineItem from './components/BaranTimelineItem.vue';
+import BaranTooltip from './components/BaranTooltip.vue';
 
 const components = {
     BaranButton,
@@ -50,7 +71,27 @@ const components = {
     BaranSelect,
     BaranSidebar,
     BaranSwitch,
-    BaranTabs
+    BaranTabs,
+    BaranAlert,
+    BaranAvatar,
+    BaranBadge,
+    BaranBanner,
+    BaranBreadcrumbs,
+    BaranHover,
+    BaranInfiniteScroll,
+    BaranPagination,
+    BaranProgressCircular,
+    BaranProgressLinear,
+    BaranRating,
+    BaranServersideTable,
+    BaranSkeletonLoader,
+    BaranSlider,
+    BaranSnackbar,
+    BaranSparkline,
+    BaranTextarea,
+    BaranTimeline,
+    BaranTimelineItem,
+    BaranTooltip,
 };
 
 export default {
