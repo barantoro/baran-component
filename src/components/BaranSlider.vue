@@ -1,5 +1,5 @@
 <template>
-    <v-slider>
+    <v-slider v-bind="computedProps">
         <template v-if="$slots['prepend']" #prepend>
 			<slot name="prepend"></slot>
 		</template>
@@ -14,7 +14,7 @@ import { defineProps, computed } from 'vue';
 
 const props = defineProps({ });
 
-const paginationProps = computed(() => {
+const computedProps = computed(() => {
 	return {
 		...props,
 	};

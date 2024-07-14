@@ -101,34 +101,34 @@ The `BaranCard` component is a versatile card component with a customizable butt
 
 ### Props
 
-| Prop             | Type    | Default | Description                                                                         |
-| ---------------- | ------- | ------- | ----------------------------------------------------------------------------------- |
-| text             | String  | ''      | The main text content of the card.                                                  |
-| buttonText       | String  | Click   | The text displayed on the button.                                                   |
-| buttonBackground | String  | #7367f0 | The background color of the button.                                                 |
-| buttonColor      | String  | #fff    | The text color of the button.                                                       |
-| showButton       | Boolean | false   | Whether to show the button.                                                         |
-| title            | String  | ''      | The title of the card.                                                              |
-| target           | String  | ''      | The target attribute for the link, if `href` is provided.                           |
-| subtitle         | String  | ''      | The subtitle of the card.                                                           |
-| variant          | String  | ''      | The variant of the card (`outlined`, `tonal`, `elevated`, `flat`, `text`, `plain`). |
-| loading          | Boolean | false   | Whether the card shows a loading state.                                             |
-| hover            | Boolean | false   | Whether the card has a hover effect.                                                |
-| href             | String  | ''      | The link URL for the card.                                                          |
-| rounded          | String  | xs      | The border radius of the card (e.g., `xs`, `sm`, `md`, `lg`, `xl`).                 |
-| elevation        | Number  | 1       | The elevation (shadow) level of the card.                                           |
-| image            | String  | ''      | The image URL for the card.                                                         |
-| color            | String  | ''      | The color of the card.                                                              |
-| disabled         | Boolean | false   | Whether the card is disabled.                                                       |
-| prependIcon      | String  | ''      | The icon to prepend to the card content.                                            |
-| appendIcon       | String  | ''      | The icon to append to the card content.                                             |
-| density          | String  | ''      | The density of the card (`comfortable`, `compact`).                                 |
-| width            | String  | ''      | The width of the card.                                                              |
-| maxWidth         | String  | ''      | The maximum width of the card.                                                      |
-| minWidth         | String  | ''      | The minimum width of the card.                                                      |
-| height           | String  | ''      | The height of the card.                                                             |
-| maxHeight        | String  | ''      | The maximum height of the card.                                                     |
-| minHeight        | String  | ''      | The minimum height of the card                                                      |
+| Prop               | Type    | Default         | Description                                                                         |
+| ------------------ | ------- | --------------- | ----------------------------------------------------------------------------------- |
+| `text`             | String  | `''`            | The main text content of the card.                                                  |
+| `buttonText`       | String  | `Click`         | The text displayed on the button.                                                   |
+| `buttonBackground` | String  | `#7367f0`       | The background color of the button.                                                 |
+| `buttonColor`      | String  | `#fff`          | The text color of the button.                                                       |
+| `showButton`       | Boolean | `false`         | Whether to show the button.                                                         |
+| `title`            | String  | `''`            | The title of the card.                                                              |
+| `target`           | String  | `''`            | The target attribute for the link, if `href` is provided.                           |
+| `subtitle`         | String  | `''`            | The subtitle of the card.                                                           |
+| `variant`          | String  | `''`            | The variant of the card (`outlined`, `tonal`, `elevated`, `flat`, `text`, `plain`). |
+| `loading`          | Boolean | `false`         | Whether the card shows a loading state.                                             |
+| `hover`            | Boolean | `false`         | Whether the card has a hover effect.                                                |
+| `href`             | String  | `''`            | The link URL for the card.                                                          |
+| `rounded`          | String  | `xs`            | The border radius of the card (e.g., `xs`, `sm`, `md`, `lg`, `xl`).                 |
+| `elevation`        | Number  | `1`             | The elevation (shadow) level of the card.                                           |
+| `image`            | String  | `''`            | The image URL for the card.                                                         |
+| `color`            | String  | `''`            | The color of the card.                                                              |
+| `disabled`         | Boolean | `false`         | Whether the card is disabled.                                                       |
+| `prependIcon`      | String  | `''`            | The icon to prepend to the card content.                                            |
+| `appendIcon`       | String  | `''`            | The icon to append to the card content.                                             |
+| `density`          | String  | `'comfortable'` | The density of the card (`comfortable`, `compact`).                                 |
+| `width`            | String  | `''`            | The width of the card.                                                              |
+| `maxWidth`         | String  | `''`            | The maximum width of the card.                                                      |
+| `minWidth`         | String  | `''`            | The minimum width of the card.                                                      |
+| `height`           | String  | `''`            | The height of the card.                                                             |
+| `maxHeight`        | String  | `''`            | The maximum height of the card.                                                     |
+| `minHeight`        | String  | `''`            | The minimum height of the card                                                      |
 
 ### Slots
 
@@ -141,9 +141,9 @@ The `BaranCard` component is a versatile card component with a customizable butt
 
 ### Events
 
-| Event  | Description                               |
-| ------ | ----------------------------------------- |
-| @click | Event emitted when the button is clicked. |
+| Event    | Description                               |
+| -------- | ----------------------------------------- |
+| `@click` | Event emitted when the button is clicked. |
 
 ### Example Usage
 
@@ -184,19 +184,19 @@ The `BaranChips` component represents a small interactive element used to repres
 
 ### Props
 
-| Prop        | Type    | Default   | Description                                                           |
-| ----------- | ------- | --------- | --------------------------------------------------------------------- |
-| title       | String  | 'Chip'    | The text content displayed within the chip.                           |
-| color       | String  | '#7367f0' | The background color of the chip.                                     |
-| elevation   | Number  | 0         | Elevation level of the chip.                                          |
-| size        | String  | 'default' | Size of the chip (`small`, `default`, `large`).                       |
-| variant     | String  | 'tonal'   | Visual variant of the chip (`outlined`, `elevated`, `text`, `plain`). |
-| prependIcon | String  | ''        | Icon to prepend before the chip text.                                 |
-| appendIcon  | String  | ''        | Icon to append after the chip text.                                   |
-| closable    | Boolean | false     | If true, displays a close icon for removing the chip.                 |
-| label       | Boolean | false     | If true, renders the chip as a label style.                           |
-| disabled    | Boolean | false     | If true, disables interactions with the chip.                         |
-| density     | String  | ''        | Density of the chip (`comfortable`, `compact`).                       |
+| Prop          | Type    | Default     | Description                                                           |
+| ------------- | ------- | ----------- | --------------------------------------------------------------------- |
+| `title`       | String  | `'Chip'`    | The text content displayed within the chip.                           |
+| `color`       | String  | `'#7367f0'` | The background color of the chip.                                     |
+| `elevation`   | Number  | `0`         | Elevation level of the chip.                                          |
+| `size`        | String  | `'default'` | Size of the chip (`small`, `default`, `large`).                       |
+| `variant`     | String  | `'tonal'`   | Visual variant of the chip (`outlined`, `elevated`, `text`, `plain`). |
+| `prependIcon` | String  | `''`        | Icon to prepend before the chip text.                                 |
+| `appendIcon`  | String  | `''`        | Icon to append after the chip text.                                   |
+| `closable`    | Boolean | `false `    | If true, displays a close icon for removing the chip.                 |
+| `label`       | Boolean | `false`     | If true, renders the chip as a label style.                           |
+| `disabled`    | Boolean | `false`     | If true, disables interactions with the chip.                         |
+| `density`     | String  | `''`        | Density of the chip (`comfortable`, `compact`).                       |
 
 ### Slots
 
@@ -209,7 +209,7 @@ The `BaranChips` component represents a small interactive element used to repres
 
 | Event Name | Description                         | Payload    |
 | ---------- | ----------------------------------- | ---------- |
-| click      | Triggered when the chip is clicked. | MouseEvent |
+| `click`    | Triggered when the chip is clicked. | MouseEvent |
 
 ### Example Usage
 
@@ -223,7 +223,7 @@ The `BaranChips` component represents a small interactive element used to repres
 </template>
 
 <script setup>
-import Chip from "@/components/Chip.vue";
+import Chip from "baran-component/Chip.vue";
 
 const handleChipClick = (event) => {
 	console.log("Chip clicked!", event);
@@ -243,15 +243,15 @@ The `BaranExpansionPanel` component allows for displaying collapsible panels wit
 
 ### Props
 
-| Prop      | Type    | Default   | Description                                                                        |
-| --------- | ------- | --------- | ---------------------------------------------------------------------------------- |
-| items     | Array   | See below | Array of objects defining each panel's title and text content.                     |
-| variant   | String  | 'default' | Variant style of the expansion panels (`default`, `accordion`, `inset`, `popout`). |
-| rounded   | String  | 'xs'      | Rounded corner size of the panels.                                                 |
-| elevation | Number  | 1         | Elevation level of the panels.                                                     |
-| readonly  | Boolean | false     | Whether the panels are readonly.                                                   |
-| color     | String  | ''        | Color of the expansion panels.                                                     |
-| disabled  | Boolean | false     | Whether the panels are disabled.                                                   |
+| Prop        | Type    | Default     | Description                                                                        |
+| ----------- | ------- | ----------- | ---------------------------------------------------------------------------------- |
+| `items`     | Array   | `See below` | Array of objects defining each panel's title and text content.                     |
+| `variant`   | String  | `'default`' | Variant style of the expansion panels (`default`, `accordion`, `inset`, `popout`). |
+| `rounded`   | String  | `'xs'`      | Rounded corner size of the panels.                                                 |
+| `elevation` | Number  | `1`         | Elevation level of the panels.                                                     |
+| `readonly`  | Boolean | `false`     | Whether the panels are readonly.                                                   |
+| `color`     | String  | `''`        | Color of the expansion panels.                                                     |
+| `disabled`  | Boolean | `false`     | Whether the panels are disabled.                                                   |
 
 ### Example Usage
 
@@ -295,39 +295,39 @@ The `BaranDialog` component provides a dialog with an activator slot for flexibi
 
 ### Props
 
-| Prop            | Type    | Default          | Description                                                   |
-| --------------- | ------- | ---------------- | ------------------------------------------------------------- |
-| title           | String  | 'Title'          | Title of the dialog.                                          |
-| text            | String  | 'Lorem ipsum...' | Text content displayed within the dialog.                     |
-| closeButtonText | String  | 'Close'          | Text for the close button inside the dialog.                  |
-| rounded         | String  | 'xs'             | Rounded corner size of the dialog.                            |
-| buttonText      | String  | 'Open Modal'     | Text displayed on the activator button triggering the dialog. |
-| buttonColor     | String  | '#7367f0'        | Color of the activator button.                                |
-| buttonElevation | Number  | 2                | Elevation level of the activator button.                      |
-| persistent      | Boolean | false            | Whether the dialog persists after being closed.               |
-| transition      | String  | ''               | Transition name for dialog animation.                         |
-| scrollable      | Boolean | false            | Whether the dialog content is scrollable.                     |
-| fullscreen      | Boolean | false            | Whether the dialog should occupy the full screen.             |
-| width           | String  | ''               | Width of the dialog.                                          |
-| maxWidth        | String  | ''               | Maximum width of the dialog.                                  |
-| minWidth        | String  | ''               | Minimum width of the dialog.                                  |
-| height          | String  | ''               | Height of the dialog.                                         |
-| maxHeight       | String  | ''               | Maximum height of the dialog.                                 |
-| minHeight       | String  | ''               | Minimum height of the dialog.                                 |
-| buttonVariant   | String  | ''               | Variant style of the activator button.                        |
-| buttonDisabled  | Boolean | false            | Whether the activator button is disabled.                     |
-| buttonDensity   | String  | 'comfortable'    | Density of the activator button.                              |
-| buttonClass     | String  | ''               | Custom CSS classes for the activator button.                  |
-| buttonSize      | String  | 'default'        | Size of the activator button.                                 |
-| buttonBlock     | Boolean | false            | Whether the activator button spans full width.                |
-| buttonRounded   | String  | 'xs'             | Rounded corner size of the activator button.                  |
-| buttonLoading   | Boolean | false            | Whether the activator button is in a loading state.           |
-| buttonWidth     | String  | ''               | Width of the activator button.                                |
-| buttonMaxWidth  | String  | ''               | Maximum width of the activator button.                        |
-| buttonMinWidth  | String  | ''               | Minimum width of the activator button.                        |
-| buttonHeight    | String  | ''               | Height of the activator button.                               |
-| buttonMaxHeight | String  | ''               | Maximum height of the activator button.                       |
-| buttonMinHeight | String  | ''               | Minimum height of the activator button.                       |
+| Prop              | Type    | Default            | Description                                                   |
+| ----------------- | ------- | ------------------ | ------------------------------------------------------------- |
+| `title`           | String  | `'Title'`          | Title of the dialog.                                          |
+| `text`            | String  | `'Lorem ipsum...'` | Text content displayed within the dialog.                     |
+| `closeButtonText` | String  | `'Close'`          | Text for the close button inside the dialog.                  |
+| `rounded`         | String  | `'xs'`             | Rounded corner size of the dialog.                            |
+| `buttonText`      | String  | `'Open Modal'`     | Text displayed on the activator button triggering the dialog. |
+| `buttonColor`     | String  | `'#7367f0'`        | Color of the activator button.                                |
+| `buttonElevation` | Number  | `2`                | Elevation level of the activator button.                      |
+| `persistent`      | Boolean | `false`            | Whether the dialog persists after being closed.               |
+| `transition`      | String  | `''`               | Transition name for dialog animation.                         |
+| `scrollable`      | Boolean | `false`            | Whether the dialog content is scrollable.                     |
+| `fullscreen`      | Boolean | `false`            | Whether the dialog should occupy the full screen.             |
+| `width`           | String  | `''`               | Width of the dialog.                                          |
+| `maxWidth`        | String  | `''`               | Maximum width of the dialog.                                  |
+| `minWidth`        | String  | `''`               | Minimum width of the dialog.                                  |
+| `height`          | String  | `''`               | Height of the dialog.                                         |
+| `maxHeight`       | String  | `''`               | Maximum height of the dialog.                                 |
+| `minHeight`       | String  | `''`               | Minimum height of the dialog.                                 |
+| `buttonVariant`   | String  | `''`               | Variant style of the activator button.                        |
+| `buttonDisabled`  | Boolean | `false`            | Whether the activator button is disabled.                     |
+| `buttonDensity`   | String  | `'comfortable'`    | Density of the activator button.                              |
+| `buttonClass`     | String  | `''`               | Custom CSS classes for the activator button.                  |
+| `buttonSize`      | String  | `'default'`        | Size of the activator button.                                 |
+| `buttonBlock`     | Boolean | `false`            | Whether the activator button spans full width.                |
+| `buttonRounded`   | String  | `'xs'`             | Rounded corner size of the activator button.                  |
+| `buttonLoading`   | Boolean | `false`            | Whether the activator button is in a loading state.           |
+| `buttonWidth`     | String  | `''`               | Width of the activator button.                                |
+| `buttonMaxWidth`  | String  | `''`               | Maximum width of the activator button.                        |
+| `buttonMinWidth`  | String  | `''`               | Minimum width of the activator button.                        |
+| `buttonHeight`    | String  | `''`               | Height of the activator button.                               |
+| `buttonMaxHeight` | String  | `''`               | Maximum height of the activator button.                       |
+| `buttonMinHeight` | String  | `''`               | Minimum height of the activator button.                       |
 
 ### Slots
 
@@ -359,21 +359,21 @@ The `BaranList` component renders a list of items with optional sub-groups, allo
 
 ### Props
 
-| Prop          | Type    | Default       | Description                                                               |
-| ------------- | ------- | ------------- | ------------------------------------------------------------------------- |
-| lines         | String  | 'one'         | Number of lines for list items (one or two).                              |
-| items         | Array   | []            | Array of items to render in the list.                                     |
-| density       | String  | 'comfortable' | Density of the list items (comfortable or compact).                       |
-| elevation     | Number  | 0             | Elevation level of the list.                                              |
-| variant       | String  | ''            | Variant style of the list (outlined, tonal, elevated, flat, text, plain). |
-| disabled      | Boolean | false         | Whether the list is disabled.                                             |
-| listItemClass | String  | ''            | Custom CSS classes for each list item.                                    |
-| width         | String  | ''            | Width of the list wrapper.                                                |
-| maxWidth      | String  | ''            | Maximum width of the list wrapper.                                        |
-| minWidth      | String  | ''            | Minimum width of the list wrapper.                                        |
-| height        | String  | ''            | Height of the list wrapper.                                               |
-| maxHeight     | String  | ''            | Maximum height of the list wrapper.                                       |
-| minHeight     | String  | ''            | Minimum height of the list wrapper.                                       |
+| Prop            | Type    | Default         | Description                                                               |
+| --------------- | ------- | --------------- | ------------------------------------------------------------------------- |
+| `lines`         | String  | `'one'`         | Number of lines for list items (one or two).                              |
+| `items`         | Array   | `[]`            | Array of items to render in the list.                                     |
+| `density`       | String  | `'comfortable'` | Density of the list items (comfortable or compact).                       |
+| `elevation`     | Number  | `0`             | Elevation level of the list.                                              |
+| `variant`       | String  | `''`            | Variant style of the list (outlined, tonal, elevated, flat, text, plain). |
+| `disabled`      | Boolean | `false`         | Whether the list is disabled.                                             |
+| `listItemClass` | String  | `''`            | Custom CSS classes for each list item.                                    |
+| `width`         | String  | `''`            | Width of the list wrapper.                                                |
+| `maxWidth`      | String  | `''`            | Maximum width of the list wrapper.                                        |
+| `minWidth`      | String  | `''`            | Minimum width of the list wrapper.                                        |
+| `height`        | String  | `''`            | Height of the list wrapper.                                               |
+| `maxHeight`     | String  | `''`            | Maximum height of the list wrapper.                                       |
+| `minHeight`     | String  | `''`            | Minimum height of the list wrapper.                                       |
 
 ### Example Usage
 
@@ -442,21 +442,21 @@ The `BaranTabs` component is a customizable tab component with support for icons
 
 ### Props
 
-| Prop      | Type    | Default                                                                                                                                                  | Description                                                                                     |
-| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| items     | Array   | `[{ id: 1, tabText: "1st Tab", tabContent: "Content for 1st Tab" }, { id: 2, tabText: "2nd Tab", tabContent: "Content for 2nd Tab", icon: "$vuetify" }]` | Array of tab items, each containing an `id`, `tabText`, `tabContent`, and optionally an `icon`. |
-| bgColor   | String  | #7367f0                                                                                                                                                  | Background color for the tab component.                                                         |
-| alignTabs | String  | start                                                                                                                                                    | Alignment of the tabs (start, center, end).                                                     |
-| rounded   | String  | xs                                                                                                                                                       | Border radius for the tab component (xs, sm, md, lg, xl).                                       |
-| elevation | Number  | 2                                                                                                                                                        | Elevation for the tab component (range from 0 to 24).                                           |
-| density   | String  | comfortable                                                                                                                                              | Density of the tabs (comfortable, compact).                                                     |
-| disabled  | Boolean | false                                                                                                                                                    | Whether the tabs are disabled.                                                                  |
-| width     | String  |                                                                                                                                                          | The width of the tabs wrapper.                                                                  |
-| maxWidth  | String  |                                                                                                                                                          | The maximum width of the tabs wrapper.                                                          |
-| minWidth  | String  |                                                                                                                                                          | The minimum width of the tabs wrapper.                                                          |
-| height    | String  |                                                                                                                                                          | The height of the tabs wrapper.                                                                 |
-| maxHeight | String  |                                                                                                                                                          | The maximum height of the tabs wrapper.                                                         |
-| minHeight | String  |                                                                                                                                                          | The minimum height of the tabs wrapper.                                                         |
+| Prop        | Type    | Default                                                                                                                                                  | Description                                                                                     |
+| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `items`     | Array   | `[{ id: 1, tabText: "1st Tab", tabContent: "Content for 1st Tab" }, { id: 2, tabText: "2nd Tab", tabContent: "Content for 2nd Tab", icon: "$vuetify" }]` | Array of tab items, each containing an `id`, `tabText`, `tabContent`, and optionally an `icon`. |
+| `bgColor`   | String  | `#7367f0`                                                                                                                                                | Background color for the tab component.                                                         |
+| `alignTabs` | String  | `start`                                                                                                                                                  | Alignment of the tabs (start, center, end).                                                     |
+| `rounded`   | String  | `xs`                                                                                                                                                     | Border radius for the tab component (xs, sm, md, lg, xl).                                       |
+| `elevation` | Number  | `2`                                                                                                                                                      | Elevation for the tab component (range from 0 to 24).                                           |
+| `density`   | String  | `comfortable`                                                                                                                                            | Density of the tabs (comfortable, compact).                                                     |
+| `disabled`  | Boolean | `false`                                                                                                                                                  | Whether the tabs are disabled.                                                                  |
+| `width`     | String  | `undefined`                                                                                                                                              | The width of the tabs wrapper.                                                                  |
+| `maxWidth`  | String  | `undefined`                                                                                                                                              | The maximum width of the tabs wrapper.                                                          |
+| `minWidth`  | String  | `undefined`                                                                                                                                              | The minimum width of the tabs wrapper.                                                          |
+| `height`    | String  | `undefined`                                                                                                                                              | The height of the tabs wrapper.                                                                 |
+| `maxHeight` | String  | `undefined`                                                                                                                                              | The maximum height of the tabs wrapper.                                                         |
+| `minHeight` | String  | `undefined`                                                                                                                                              | The minimum height of the tabs wrapper.                                                         |
 
 ### Slots
 
@@ -495,14 +495,14 @@ The `BaranSpeedDial` component provides a customizable speed dial menu with vari
 
 ### Props
 
-| Prop     | Type   | Default              | Description                                                              |
-| -------- | ------ | -------------------- | ------------------------------------------------------------------------ |
-| items    | Array  | See Example          | An array of objects, each representing an item in the speed dial menu.   |
-| position | Array  | ['bottom', 'center'] | The position of the speed dial menu (horizontal and vertical alignment). |
-| icon     | String | 'mdi-translate'      | The icon for the speed dial activator button.                            |
-| color    | String | '#7367f0'            | The color of the speed dial activator button.                            |
-| variant  | String | 'tonal'              | The variant style of the activator button.                               |
-| density  | String | 'comfortable'        | The density of the activator button.                                     |
+| Prop       | Type   | Default                | Description                                                              |
+| ---------- | ------ | ---------------------- | ------------------------------------------------------------------------ |
+| `items`    | Array  | `See Example`          | An array of objects, each representing an item in the speed dial menu.   |
+| `position` | Array  | `['bottom', 'center']` | The position of the speed dial menu (horizontal and vertical alignment). |
+| `icon`     | String | `'mdi-translate'`      | The icon for the speed dial activator button.                            |
+| `color`    | String | `'#7367f0'`            | The color of the speed dial activator button.                            |
+| `variant`  | String | `'tonal'`              | The variant style of the activator button.                               |
+| `density`  | String | `'comfortable'`        | The density of the activator button.                                     |
 
 ### Slots
 
@@ -557,30 +557,30 @@ The `BaranTextbox` component is a customizable text field component with various
 
 ### Props
 
-| Prop              | Type             | Default          | Description                                                                   |
-| ----------------- | ---------------- | ---------------- | ----------------------------------------------------------------------------- |
-| `label`           | String           | 'Text'           | The label of the text field.                                                  |
-| `value`           | [String, Number] | ''               | The value of the text field.                                                  |
-| `variant`         | String           | 'outlined'       | The variant of the text field (e.g., outlined, underlined, solo, etc.).       |
-| `density`         | String           | 'compact'        | The density of the text field (e.g., comfortable, compact).                   |
-| `prependIcon`     | String           | ''               | The icon to prepend to the text field.                                        |
-| `appendIcon`      | String           | ''               | The icon to append to the text field.                                         |
-| `appendInnerIcon` | String           | ''               | The inner icon to append to the text field.                                   |
-| `clearable`       | Boolean          | false            | Whether the text field is clearable.                                          |
-| `type`            | String           | 'text'           | The type of the input (e.g., text, password, email).                          |
-| `placeholder`     | String           | 'Type something' | The placeholder text.                                                         |
-| `hint`            | String           | ''               | Hint text to display.                                                         |
-| `persistentHint`  | Boolean          | false            | Whether the hint text should always be visible.                               |
-| `disabled`        | Boolean          | false            | Whether the text field is disabled.                                           |
-| `readonly`        | Boolean          | false            | Whether the text field is read-only.                                          |
-| `rules`           | Array            | `[]`             | Array of validation rules.                                                    |
-| `prefix`          | String           | ''               | Prefix text to display inside the text field.                                 |
-| `suffix`          | String           | ''               | Suffix text to display inside the text field.                                 |
-| `maxlength`       | [String, Number] | ''               | Maximum length of the input.                                                  |
-| `counter`         | Boolean          | false            | Whether to display the character counter.                                     |
-| `singleLine`      | Boolean          | false            | Whether the text field is single-line.                                        |
-| `money`           | Object           | `{}`             | Input mask rules.                                                             |
-| `moneyCurrency`   | String           | ''               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
+| Prop              | Type             | Default            | Description                                                                   |
+| ----------------- | ---------------- | ------------------ | ----------------------------------------------------------------------------- |
+| `label`           | String           | `'Text'`           | The label of the text field.                                                  |
+| `value`           | [String, Number] | `''`               | The value of the text field.                                                  |
+| `variant`         | String           | `'outlined'`       | The variant of the text field (e.g., outlined, underlined, solo, etc.).       |
+| `density`         | String           | `'compact'`        | The density of the text field (e.g., comfortable, compact).                   |
+| `prependIcon`     | String           | `''`               | The icon to prepend to the text field.                                        |
+| `appendIcon`      | String           | `''`               | The icon to append to the text field.                                         |
+| `appendInnerIcon` | String           | `''`               | The inner icon to append to the text field.                                   |
+| `clearable`       | Boolean          | `false`            | Whether the text field is clearable.                                          |
+| `type`            | String           | `'text'`           | The type of the input (e.g., text, password, email).                          |
+| `placeholder`     | String           | `'Type something'` | The placeholder text.                                                         |
+| `hint`            | String           | `''`               | Hint text to display.                                                         |
+| `persistentHint`  | Boolean          | `false`            | Whether the hint text should always be visible.                               |
+| `disabled`        | Boolean          | `false`            | Whether the text field is disabled.                                           |
+| `readonly`        | Boolean          | `false`            | Whether the text field is read-only.                                          |
+| `rules`           | Array            | `[]`               | Array of validation rules.                                                    |
+| `prefix`          | String           | `''`               | Prefix text to display inside the text field.                                 |
+| `suffix`          | String           | `''`               | Suffix text to display inside the text field.                                 |
+| `maxlength`       | [String, Number] | `''`               | Maximum length of the input.                                                  |
+| `counter`         | Boolean          | `false`            | Whether to display the character counter.                                     |
+| `singleLine`      | Boolean          | `false`            | Whether the text field is single-line.                                        |
+| `money`           | Object           | `{}`               | Input mask rules.                                                             |
+| `moneyCurrency`   | String           | `''`               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
 
 ### Slots
 
@@ -631,20 +631,20 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 
 ### Props
 
-| Prop           | Type    | Default                        | Description                                                                                       |
-| -------------- | ------- | ------------------------------ | ------------------------------------------------------------------------------------------------- |
-| items          | Array   | ['Item 1', 'Item 2', 'Item 3'] | Array of items to display in the combobox.                                                        |
-| label          | String  | 'Select'                       | Label displayed above the combobox.                                                               |
-| placeholder    | String  | 'Select an item'               | Placeholder text displayed when no item is selected.                                              |
-| density        | String  | 'compact'                      | Density of the combobox ('comfortable' or 'compact').                                             |
-| multiple       | Boolean | false                          | Whether multiple items can be selected.                                                           |
-| chips          | Boolean | false                          | Whether to use chips for selected items display.                                                  |
-| readonly       | Boolean | false                          | Whether the combobox is in readonly mode.                                                         |
-| hint           | String  | ''                             | Hint text displayed below the combobox.                                                           |
-| hideSelected   | Boolean | false                          | Whether to hide the selected item(s) from the dropdown list.                                      |
-| variant        | String  | 'outlined'                     | Variant style of the combobox ('outlined', 'underlined', 'solo', 'solo-filled', 'solo-inverted'). |
-| persistentHint | Boolean | false                          | Whether the hint text is persistent (visible when the combobox is focused).                       |
-| hideNoData     | Boolean | true                           | Whether to show a message when no matching items are found.                                       |
+| Prop             | Type    | Default                          | Description                                                                                       |
+| ---------------- | ------- | -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `items`          | Array   | `['Item 1', 'Item 2', 'Item 3']` | Array of items to display in the combobox.                                                        |
+| `label`          | String  | `'Select'`                       | Label displayed above the combobox.                                                               |
+| `placeholder`    | String  | `'Select an item'`               | Placeholder text displayed when no item is selected.                                              |
+| `density`        | String  | `'compact'`                      | Density of the combobox ('comfortable' or 'compact').                                             |
+| `multiple`       | Boolean | `false`                          | Whether multiple items can be selected.                                                           |
+| `chips`          | Boolean | `false`                          | Whether to use chips for selected items display.                                                  |
+| `readonly`       | Boolean | `false`                          | Whether the combobox is in readonly mode.                                                         |
+| `hint`           | String  | `''`                             | Hint text displayed below the combobox.                                                           |
+| `hideSelected`   | Boolean | `false`                          | Whether to hide the selected item(s) from the dropdown list.                                      |
+| `variant`        | String  | `'outlined'`                     | Variant style of the combobox ('outlined', 'underlined', 'solo', 'solo-filled', 'solo-inverted'). |
+| `persistentHint` | Boolean | `false`                          | Whether the hint text is persistent (visible when the combobox is focused).                       |
+| `hideNoData`     | Boolean | `true`                           | Whether to show a message when no matching items are found.                                       |
 
 ### Slots
 
@@ -673,7 +673,7 @@ The `BaranCombobox` component provides a customizable combobox interface for sel
 </template>
 
 <script setup>
-import BaranCombobox from "@/components/BaranCombobox.vue";
+import BaranCombobox from "baran-component/BaranCombobox.vue";
 </script>
 
 <style>
@@ -691,29 +691,29 @@ The `BaranFileInput` component allows users to upload files with customizable op
 
 ### Props
 
-| Prop             | Type    | Default          | Description                                                                          |
-| ---------------- | ------- | ---------------- | ------------------------------------------------------------------------------------ |
-| rules            | Array   | []               | Validation rules for file input (array of validation functions).                     |
-| accept           | String  | ''               | File types accepted by the input (comma-separated MIME types).                       |
-| variant          | String  | 'outlined'       | Variant style of the input (outlined, underlined, solo, solo-filled, solo-inverted). |
-| clearable        | Boolean | false            | Whether the input can be cleared.                                                    |
-| chips            | Boolean | false            | Whether to use chips for selected files.                                             |
-| multiple         | Boolean | false            | Whether multiple files can be selected.                                              |
-| prependInnerIcon | String  | ''               | Icon prepended inside the input.                                                     |
-| label            | String  | 'File'           | Label text for the input.                                                            |
-| appendInnerIcon  | String  | 'mdi-attachment' | Icon appended inside the input.                                                      |
-| loading          | Boolean | false            | Whether the input is in loading state.                                               |
-| color            | String  | ''               | Color of the input.                                                                  |
-| disabled         | Boolean | false            | Whether the input is disabled.                                                       |
-| prependIcon      | String  | ''               | Icon prepended outside the input.                                                    |
-| appendIcon       | String  | ''               | Icon appended outside the input.                                                     |
-| density          | String  | 'compact'        | Density of the input (comfortable or compact).                                       |
-| rounded          | String  | 'xs'             | Rounded corner size of the input.                                                    |
-| readonly         | Boolean | false            | Whether the input is readonly.                                                       |
-| persistentHint   | Boolean | false            | Whether to show hint persistently.                                                   |
-| hint             | String  | ''               | Hint text for the input.                                                             |
-| counter          | Boolean | false            | Whether to show file counter.                                                        |
-| showSize         | Boolean | false            | Whether to show file size.                                                           |
+| Prop               | Type    | Default            | Description                                                                          |
+| ------------------ | ------- | ------------------ | ------------------------------------------------------------------------------------ |
+| `rules`            | Array   | `[]`               | Validation rules for file input (array of validation functions).                     |
+| `accept`           | String  | `''`               | File types accepted by the input (comma-separated MIME types).                       |
+| `variant`          | String  | `'outlined'`       | Variant style of the input (outlined, underlined, solo, solo-filled, solo-inverted). |
+| `clearable`        | Boolean | `false`            | Whether the input can be cleared.                                                    |
+| `chips`            | Boolean | `false`            | Whether to use chips for selected files.                                             |
+| `multiple`         | Boolean | `false`            | Whether multiple files can be selected.                                              |
+| `prependInnerIcon` | String  | `''`               | Icon prepended inside the input.                                                     |
+| `label`            | String  | `'File'`           | Label text for the input.                                                            |
+| `appendInnerIcon`  | String  | `'mdi-attachment'` | Icon appended inside the input.                                                      |
+| `loading`          | Boolean | `false`            | Whether the input is in loading state.                                               |
+| `color`            | String  | `''`               | Color of the input.                                                                  |
+| `disabled`         | Boolean | `false`            | Whether the input is disabled.                                                       |
+| `prependIcon`      | String  | `''`               | Icon prepended outside the input.                                                    |
+| `appendIcon`       | String  | `''`               | Icon appended outside the input.                                                     |
+| `density`          | String  | `'compact'`        | Density of the input (comfortable or compact).                                       |
+| `rounded`          | String  | `'xs'`             | Rounded corner size of the input.                                                    |
+| `readonly`         | Boolean | `false`            | Whether the input is readonly.                                                       |
+| `persistentHint`   | Boolean | `false`            | Whether to show hint persistently.                                                   |
+| `hint`             | String  | `''`               | Hint text for the input.                                                             |
+| `counter`          | Boolean | `false`            | Whether to show file counter.                                                        |
+| `showSize`         | Boolean | `false`            | Whether to show file size.                                                           |
 
 ### Example Usage
 
@@ -764,30 +764,30 @@ The `BaranSelect` component provides a customizable select dropdown with various
 
 ### Props
 
-| Prop             | Type    | Default     | Description                                                                         |
-| ---------------- | ------- | ----------- | ----------------------------------------------------------------------------------- |
-| items            | Array   | See Example | An array of items to populate the select options.                                   |
-| label            | String  | 'Select'    | The label displayed above the select dropdown.                                      |
-| variant          | String  | 'outlined'  | The variant of the select (outlined, underlined, solo, solo-filled, solo-inverted). |
-| clearable        | Boolean | false       | Whether the select allows clearing the selected value.                              |
-| chips            | Boolean | false       | Whether to use chips for multiple selections.                                       |
-| multiple         | Boolean | false       | Whether multiple items can be selected.                                             |
-| prependInnerIcon | String  | ''          | The icon to prepend inside the select input.                                        |
-| appendInnerIcon  | String  | ''          | The icon to append inside the select input.                                         |
-| loading          | Boolean | false       | Whether the select is in a loading state.                                           |
-| color            | String  | ''          | The color of the select.                                                            |
-| disabled         | Boolean | false       | Whether the select is disabled.                                                     |
-| prependIcon      | String  | ''          | The icon to prepend to the select.                                                  |
-| appendIcon       | String  | ''          | The icon to append to the select.                                                   |
-| density          | String  | 'compact'   | The density of the select ('comfortable', 'compact').                               |
-| rounded          | String  | 'xs'        | The border radius of the select.                                                    |
-| readonly         | Boolean | false       | Whether the select is readonly.                                                     |
-| persistentHint   | Boolean | false       | Whether the hint text is persistent.                                                |
-| returnObject     | Boolean | false       | Whether to return selected items as objects instead of values.                      |
-| singleLine       | Boolean | false       | Whether to display the select as a single line.                                     |
-| hint             | String  | ''          | Hint text displayed below the select.                                               |
-| itemTitle        | String  | ''          | The property name for the title of items in the select dropdown.                    |
-| itemValue        | String  | ''          | The property name for the value of items in the select dropdown.                    |
+| Prop               | Type    | Default       | Description                                                                         |
+| ------------------ | ------- | ------------- | ----------------------------------------------------------------------------------- |
+| `items`            | Array   | `See Example` | An array of items to populate the select options.                                   |
+| `label`            | String  | `'Select'`    | The label displayed above the select dropdown.                                      |
+| `variant`          | String  | `'outlined'`  | The variant of the select (outlined, underlined, solo, solo-filled, solo-inverted). |
+| `clearable`        | Boolean | `false`       | Whether the select allows clearing the selected value.                              |
+| `chips`            | Boolean | `false`       | Whether to use chips for multiple selections.                                       |
+| `multiple`         | Boolean | `false`       | Whether multiple items can be selected.                                             |
+| `prependInnerIcon` | String  | `''`          | The icon to prepend inside the select input.                                        |
+| `appendInnerIcon`  | String  | `''`          | The icon to append inside the select input.                                         |
+| `loading`          | Boolean | `false`       | Whether the select is in a loading state.                                           |
+| `color`            | String  | `''`          | The color of the select.                                                            |
+| `disabled`         | Boolean | `false`       | Whether the select is disabled.                                                     |
+| `prependIcon`      | String  | `''`          | The icon to prepend to the select.                                                  |
+| `appendIcon`       | String  | `''`          | The icon to append to the select.                                                   |
+| `density`          | String  | `'compact'`   | The density of the select ('comfortable', 'compact').                               |
+| `rounded`          | String  | `'xs'`        | The border radius of the select.                                                    |
+| `readonly`         | Boolean | `false`       | Whether the select is readonly.                                                     |
+| `persistentHint`   | Boolean | `false`       | Whether the hint text is persistent.                                                |
+| `returnObject`     | Boolean | `false`       | Whether to return selected items as objects instead of values.                      |
+| `singleLine`       | Boolean | `false`       | Whether to display the select as a single line.                                     |
+| `hint`             | String  | `''`          | Hint text displayed below the select.                                               |
+| `itemTitle`        | String  | `''`          | The property name for the title of items in the select dropdown.                    |
+| `itemValue`        | String  | `''`          | The property name for the value of items in the select dropdown.                    |
 
 ### Example Usage
 
@@ -809,24 +809,24 @@ The `BaranNumberInput` component integrates the Vuetify VNumberInput to provide 
 
 ### Props
 
-| Prop           | Type    | Default    | Description                                                                        |
-| -------------- | ------- | ---------- | ---------------------------------------------------------------------------------- |
-| controlVariant | String  | 'stacked'  | The variant of the control (stacked, standard, enclosed).                          |
-| rounded        | String  | 'xs'       | The rounded corners size of the input (xs, sm, md, lg).                            |
-| label          | String  | 'Number'   | The label of the number input field.                                               |
-| variant        | String  | 'outlined' | The variant style of the input (outlined, filled, solo, solo-inverted, solo-full). |
-| loading        | Boolean | false      | Whether the number input is in loading state.                                      |
-| color          | String  | ''         | The color of the input.                                                            |
-| disabled       | Boolean | false      | Whether the number input is disabled.                                              |
-| prependIcon    | String  | ''         | The icon to prepend to the input field.                                            |
-| appendIcon     | String  | ''         | The icon to append to the input field.                                             |
-| density        | String  | 'compact'  | The density of the input (comfortable, compact).                                   |
-| hideInput      | Boolean | false      | Whether to hide the input field.                                                   |
-| inset          | Boolean | false      | Whether the input is inset.                                                        |
-| reverse        | Boolean | false      | Whether to reverse the input layout.                                               |
-| min            | Number  | undefined  | The minimum value allowed in the input.                                            |
-| max            | Number  | undefined  | The maximum value allowed in the input.                                            |
-| step           | Number  | undefined  | The step value for incrementing/decrementing the input value.                      |
+| Prop             | Type    | Default      | Description                                                                        |
+| ---------------- | ------- | ------------ | ---------------------------------------------------------------------------------- |
+| `controlVariant` | String  | `'stacked'`  | The variant of the control (stacked, standard, enclosed).                          |
+| `rounded`        | String  | `'xs'`       | The rounded corners size of the input (xs, sm, md, lg).                            |
+| `label`          | String  | `'Number'`   | The label of the number input field.                                               |
+| `variant`        | String  | `'outlined'` | The variant style of the input (outlined, filled, solo, solo-inverted, solo-full). |
+| `loading`        | Boolean | `false`      | Whether the number input is in loading state.                                      |
+| `color`          | String  | `''`         | The color of the input.                                                            |
+| `disabled`       | Boolean | `false`      | Whether the number input is disabled.                                              |
+| `prependIcon`    | String  | `''`         | The icon to prepend to the input field.                                            |
+| `appendIcon`     | String  | `''`         | The icon to append to the input field.                                             |
+| `density`        | String  | `'compact'`  | The density of the input (comfortable, compact).                                   |
+| `hideInput`      | Boolean | `false`      | Whether to hide the input field.                                                   |
+| `inset`          | Boolean | `false`      | Whether the input is inset.                                                        |
+| `reverse`        | Boolean | `false`      | Whether to reverse the input layout.                                               |
+| `min`            | Number  | `undefined`  | The minimum value allowed in the input.                                            |
+| `max`            | Number  | `undefined`  | The maximum value allowed in the input.                                            |
+| `step`           | Number  | `undefined`  | The step value for incrementing/decrementing the input value.                      |
 
 ### Example Usage
 
@@ -862,22 +862,22 @@ The `BaranOTPInput` component provides an input field for entering OTP (One-Time
 
 ### Props
 
-| Prop            | Type    | Default    | Description                                                     |
-| --------------- | ------- | ---------- | --------------------------------------------------------------- |
-| length          | Number  | 6          | The length of the OTP input.                                    |
-| variant         | String  | 'outlined' | The variant style of the input (solo, solo-filled, underlined). |
-| backgroundColor | String  | ''         | The background color of the OTP input.                          |
-| disabled        | Boolean | false      | Whether the OTP input is disabled.                              |
-| loading         | Boolean | false      | Whether the OTP input is in loading state.                      |
-| focusAll        | Boolean | false      | Whether to focus all OTP input fields.                          |
-| placeholder     | String  | '-'        | The placeholder text for the OTP input fields.                  |
-| divider         | String  | ''         | Divider character between OTP input fields.                     |
-| width           | String  | ''         | The width of the OTP input.                                     |
-| maxWidth        | String  | ''         | The maximum width of the OTP input.                             |
-| minWidth        | String  | ''         | The minimum width of the OTP input.                             |
-| height          | String  | ''         | The height of the OTP input.                                    |
-| maxHeight       | String  | ''         | The maximum height of the OTP input.                            |
-| minHeight       | String  | ''         | The minimum height of the OTP input.                            |
+| Prop              | Type    | Default      | Description                                                     |
+| ----------------- | ------- | ------------ | --------------------------------------------------------------- |
+| `length`          | Number  | `6`          | The length of the OTP input.                                    |
+| `variant`         | String  | `'outlined'` | The variant style of the input (solo, solo-filled, underlined). |
+| `backgroundColor` | String  | `''`         | The background color of the OTP input.                          |
+| `disabled`        | Boolean | `false`      | Whether the OTP input is disabled.                              |
+| `loading`         | Boolean | `false`      | Whether the OTP input is in loading state.                      |
+| `focusAll`        | Boolean | `false`      | Whether to focus all OTP input fields.                          |
+| `placeholder`     | String  | `'-'`        | The placeholder text for the OTP input fields.                  |
+| `divider`         | String  | `''`         | Divider character between OTP input fields.                     |
+| `width`           | String  | `''`         | The width of the OTP input.                                     |
+| `maxWidth`        | String  | `''`         | The maximum width of the OTP input.                             |
+| `minWidth`        | String  | `''`         | The minimum width of the OTP input.                             |
+| `height`          | String  | `''`         | The height of the OTP input.                                    |
+| `maxHeight`       | String  | `''`         | The maximum height of the OTP input.                            |
+| `minHeight`       | String  | `''`         | The minimum height of the OTP input.                            |
 
 ### Events
 
@@ -921,7 +921,7 @@ The `BaranCheckbox` component is a customizable checkbox with various props and 
 
 <script setup>
 import { ref } from "vue";
-import BaranCheckbox from "my-component-library/BaranCheckbox.vue";
+import BaranCheckbox from "baran-component/BaranCheckbox.vue";
 
 const isChecked = ref(false);
 const isDisabled = ref(false);
@@ -934,18 +934,18 @@ The `BaranSwitch` component is a customizable switch with various props and even
 
 ### Props
 
-| Prop          | Type    | Default   | Description                                                    |
-| ------------- | ------- | --------- | -------------------------------------------------------------- |
-| label         | String  | 'Switch'  | The label text displayed next to the switch.                   |
-| indeterminate | Boolean | true      | Whether the switch is in an indeterminate state.               |
-| disabled      | Boolean | false     | Whether the switch is disabled.                                |
-| loading       | Boolean | false     | Whether the switch is in a loading state.                      |
-| prependIcon   | String  | ''        | The icon to prepend to the switch.                             |
-| appendIcon    | String  | ''        | The icon to append to the switch.                              |
-| inset         | Boolean | false     | Whether the switch is inset (positioned inside its container). |
-| color         | String  | '#7367f0' | The color of the switch.                                       |
-| falseValue    | String  | false     | The value of the switch when it's unchecked.                   |
-| trueValue     | String  | true      | The value of the switch when it's checked.                     |
+| Prop            | Type    | Default     | Description                                                    |
+| --------------- | ------- | ----------- | -------------------------------------------------------------- |
+| `label`         | String  | `'Switch'`  | The label text displayed next to the switch.                   |
+| `indeterminate` | Boolean | `true`      | Whether the switch is in an indeterminate state.               |
+| `disabled`      | Boolean | `false`     | Whether the switch is disabled.                                |
+| `loading`       | Boolean | `false`     | Whether the switch is in a loading state.                      |
+| `prependIcon`   | String  | `''`        | The icon to prepend to the switch.                             |
+| `appendIcon`    | String  | `''`        | The icon to append to the switch.                              |
+| `inset`         | Boolean | `false`     | Whether the switch is inset (positioned inside its container). |
+| `color`         | String  | `'#7367f0'` | The color of the switch.                                       |
+| `falseValue`    | String  | `false`     | The value of the switch when it's unchecked.                   |
+| `trueValue`     | String  | `true`      | The value of the switch when it's checked.                     |
 
 ### Slots
 
@@ -985,16 +985,12 @@ The `BaranRadio` component allows selection from a group of radio buttons, with 
 
 ### Props
 
-| Prop   | Type    | Default     | Description                                                                  |
-| ------ | ------- | ----------- | ---------------------------------------------------------------------------- |
-| items  | Array   | See Example | An array of objects representing the radio buttons and their configurations. |
-| color  | String  | '#7367f0'   | The color of the radio buttons.                                              |
-| inline | Boolean | false       | Whether the radio buttons should display inline.                             |
-| label  | String  | ''          | The label for the radio group.                                               |
-
-### Events
-
-The BaranRadio component does not emit any events directly.
+| Prop     | Type    | Default       | Description                                                                  |
+| -------- | ------- | ------------- | ---------------------------------------------------------------------------- |
+| `items`  | Array   | `See Example` | An array of objects representing the radio buttons and their configurations. |
+| `color`  | String  | `'#7367f0`'   | The color of the radio buttons.                                              |
+| `inline` | Boolean | `false`       | Whether the radio buttons should display inline.                             |
+| `label`  | String  | `''`          | The label for the radio group.                                               |
 
 ### Example Usage
 
@@ -1022,20 +1018,20 @@ The `BaranColorPicker` component allows users to select colors with various conf
 
 ### Props
 
-| Prop              | Type    | Default | Description                                                                                        |
-| ----------------- | ------- | ------- | -------------------------------------------------------------------------------------------------- |
-| disabled          | Boolean | false   | Disables the color picker.                                                                         |
-| showSwatches      | Boolean | false   | Shows color swatches in the color picker.                                                          |
-| hideCanvas        | Boolean | false   | Hides the color canvas in the color picker.                                                        |
-| hideInputs        | Boolean | false   | Hides color value input fields in the color picker.                                                |
-| elevation         | Number  | 2       | Elevation level of the color picker.                                                               |
-| swatchesMaxHeight | Number  | 0       | Maximum height of the color swatches. If set to 0, height is auto-calculated based on swatch size. |
-| width             | String  | ''      | Width of the color picker.                                                                         |
-| maxWidth          | String  | ''      | Maximum width of the color picker.                                                                 |
-| minWidth          | String  | ''      | Minimum width of the color picker.                                                                 |
-| height            | String  | ''      | Height of the color picker.                                                                        |
-| maxHeight         | String  | ''      | Maximum height of the color picker.                                                                |
-| minHeight         | String  | ''      | Minimum height of the color picker.                                                                |
+| Prop                | Type    | Default | Description                                                                                        |
+| ------------------- | ------- | ------- | -------------------------------------------------------------------------------------------------- |
+| `disabled`          | Boolean | `false` | Disables the color picker.                                                                         |
+| `showSwatches`      | Boolean | `false` | Shows color swatches in the color picker.                                                          |
+| `hideCanvas`        | Boolean | `false` | Hides the color canvas in the color picker.                                                        |
+| `hideInputs`        | Boolean | `false` | Hides color value input fields in the color picker.                                                |
+| `elevation`         | Number  | `2`     | Elevation level of the color picker.                                                               |
+| `swatchesMaxHeight` | Number  | `0`     | Maximum height of the color swatches. If set to 0, height is auto-calculated based on swatch size. |
+| `width`             | String  | `''`    | Width of the color picker.                                                                         |
+| `maxWidth`          | String  | `''`    | Maximum width of the color picker.                                                                 |
+| `minWidth`          | String  | `''`    | Minimum width of the color picker.                                                                 |
+| `height`            | String  | `''`    | Height of the color picker.                                                                        |
+| `maxHeight`         | String  | `''`    | Maximum height of the color picker.                                                                |
+| `minHeight`         | String  | `''`    | Minimum height of the color picker.                                                                |
 
 ### Example Usage
 
@@ -1045,7 +1041,7 @@ The `BaranColorPicker` component allows users to select colors with various conf
 </template>
 
 <script setup>
-import ColorPicker from "@/components/ColorPicker.vue";
+import ColorPicker from "baran-component/ColorPicker.vue";
 </script>
 ```
 
@@ -1055,21 +1051,21 @@ The `BaranDatePicker` component encapsulates a date picker with customizable pro
 
 ### Props
 
-| Prop               | Type    | Default   | Description                                         |
-| ------------------ | ------- | --------- | --------------------------------------------------- |
-| color              | String  | '#7367f0' | Color theme of the date picker.                     |
-| disabled           | Boolean | false     | Whether the date picker is disabled.                |
-| showAdjacentMonths | Boolean | false     | Whether to show adjacent months in the date picker. |
-| elevation          | Number  | 2         | Elevation level of the date picker.                 |
-| rounded            | String  | ''        | Rounded corner size of the date picker.             |
-| width              | String  | ''        | Width of the date picker.                           |
-| maxWidth           | String  | ''        | Maximum width of the date picker.                   |
-| minWidth           | String  | ''        | Minimum width of the date picker.                   |
-| height             | String  | ''        | Height of the date picker.                          |
-| maxHeight          | String  | ''        | Maximum height of the date picker.                  |
-| minHeight          | String  | ''        | Minimum height of the date picker.                  |
-| min                | String  | ''        | Minimum selectable date (format: 'YYYY-MM-DD').     |
-| max                | String  | ''        | Maximum selectable date (format: 'YYYY-MM-DD').     |
+| Prop                 | Type    | Default     | Description                                         |
+| -------------------- | ------- | ----------- | --------------------------------------------------- |
+| `color`              | String  | `'#7367f0'` | Color theme of the date picker.                     |
+| `disabled`           | Boolean | `false`     | Whether the date picker is disabled.                |
+| `showAdjacentMonths` | Boolean | `false`     | Whether to show adjacent months in the date picker. |
+| `elevation`          | Number  | `2`         | Elevation level of the date picker.                 |
+| `rounded`            | String  | `''`        | Rounded corner size of the date picker.             |
+| `width`              | String  | `''`        | Width of the date picker.                           |
+| `maxWidth`           | String  | `''`        | Maximum width of the date picker.                   |
+| `minWidth`           | String  | `''`        | Minimum width of the date picker.                   |
+| `height`             | String  | `''`        | Height of the date picker.                          |
+| `maxHeight`          | String  | `''`        | Maximum height of the date picker.                  |
+| `minHeight`          | String  | `''`        | Minimum height of the date picker.                  |
+| `min`                | String  | `''`        | Minimum selectable date (format: 'YYYY-MM-DD').     |
+| `max`                | String  | `''`        | Maximum selectable date (format: 'YYYY-MM-DD').     |
 
 ### Example Usage
 
@@ -1079,7 +1075,7 @@ The `BaranDatePicker` component encapsulates a date picker with customizable pro
 </template>
 
 <script setup>
-import BaranDatePicker from "@/components/BaranDatePicker.vue";
+import BaranDatePicker from "baran-component/BaranDatePicker.vue";
 </script>
 
 <style>
@@ -1097,52 +1093,52 @@ The `BaranTable` component is a versatile data table with search functionality, 
 
 ### Props
 
-| Prop                   | Type                                          | Default                                                                                                                                                                                          | Description                                                                                                                                                                                                                        |
-| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| headers                | Array                                         | `[{ key: 'id', title: 'INVOICE ID' }, { key: 'name', title: 'RECIPIENT NAME' }, { key: 'date', title: 'DATE' }, { key: 'amount', title: 'AMOUNT' }, { key: 'status', title: 'STATUS' }]`         | Array of header objects, each containing a `key` and `title`.                                                                                                                                                                      |
-| items                  | Array                                         | `[{ id: 1, name: 'Eric Cartman', date: '23 Jun, 2024', amount: '$119.99', status: 'Completed' }, { id: 2, name: 'Kenny McCormick', date: '14 Jun, 2024', amount: '$39.99', status: 'Pending' }]` | Array of item objects to display in the table.                                                                                                                                                                                     |
-| theme                  | String                                        | light                                                                                                                                                                                            | The theme of the table (light, dark).                                                                                                                                                                                              |
-| items-per-page         | Number                                        | 5                                                                                                                                                                                                | Number of items to display per page.                                                                                                                                                                                               |
-| sort-by                | Array                                         | `[]`                                                                                                                                                                                             | Array of sorting options.                                                                                                                                                                                                          |
-| density                | String                                        | compact                                                                                                                                                                                          | Density of the table (comfortable, compact).                                                                                                                                                                                       |
-| hide-default-footer    | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default footer.                                                                                                                                                                                                |
-| hide-default-header    | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default header.                                                                                                                                                                                                |
-| hide-default-body      | Boolean                                       | false                                                                                                                                                                                            | Whether to hide the default body.                                                                                                                                                                                                  |
-| height                 | String                                        |                                                                                                                                                                                                  | Height of the table.                                                                                                                                                                                                               |
-| fixed-header           | Boolean                                       | false                                                                                                                                                                                            | Whether the header should be fixed. Make sure specify height.                                                                                                                                                                      |
-| show-select            | Boolean                                       | false                                                                                                                                                                                            | Whether to show selection checkboxes.                                                                                                                                                                                              |
-| selectableKey          | String                                        |                                                                                                                                                                                                  | The key used to determine if an item is selectable.                                                                                                                                                                                |
-| select-strategy        | String                                        | page                                                                                                                                                                                             | The strategy for item selection. `page`, `single`, `all`                                                                                                                                                                           |
-| multi-sort             | Boolean                                       | false                                                                                                                                                                                            | Whether to allow multiple column sorting.                                                                                                                                                                                          |
-| groupBy                | Boolean                                       | false                                                                                                                                                                                            | Whether to enable grouping of items.                                                                                                                                                                                               |
-| loading                | Boolean                                       | false                                                                                                                                                                                            | Whether to show the loading state.                                                                                                                                                                                                 |
-| disable-sort           | Boolean                                       | false                                                                                                                                                                                            | Disables sorting completely.                                                                                                                                                                                                       |
-| expanded               | string[]                                      | []                                                                                                                                                                                               | Whether the item is expanded or not.                                                                                                                                                                                               |
-| expand-on-click        | boolean                                       | false                                                                                                                                                                                            | Expands item when the row is clicked.                                                                                                                                                                                              |
-| filter-keys            | string - string[]                             | undefined                                                                                                                                                                                        | Array of specific keys to filter on the item.                                                                                                                                                                                      |
-| first-icon             | string                                        | '$first'                                                                                                                                                                                         | First icon.                                                                                                                                                                                                                        |
-| first-page-label       | string                                        | '$vuetify.dataFooter.firstPage'                                                                                                                                                                  | Label for first page.                                                                                                                                                                                                              |
-| fixed-footer           | boolean                                       | false                                                                                                                                                                                            | Use the fixed-footer prop together with the height prop to fix the footer to the bottom of the table.                                                                                                                              |
-| hide-no-data           | boolean                                       | false                                                                                                                                                                                            | Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open. |
-| hover                  | boolean                                       | false                                                                                                                                                                                            | Adds a hover effects to a table rows.                                                                                                                                                                                              |
-| items-per-page-options | (number - { title: string; value: number })[] | `[ {value: 10, title: '10'}, {value: 25, title: '25'}, {value: 50, title: '50'}, {value: 100, title: '100'}, {value: -1, title: '$vuetify.dataFooter.itemsPerPageAll'} ]`                        | Array of options to show in the items-per-page dropdown.                                                                                                                                                                           |
-| items-per-page-text    | string                                        | '$vuetify.dataFooter.itemsPerPageText'                                                                                                                                                           | Text for items-per-page dropdown.                                                                                                                                                                                                  |
-| item-value             | SelectItemKey<any>                            | 'id'                                                                                                                                                                                             | Property on supplied items that contains its value.                                                                                                                                                                                |
-| last-icon              | string                                        | '$last'                                                                                                                                                                                          | Last icon.                                                                                                                                                                                                                         |
-| last-page-label        | string                                        | '$vuetify.dataFooter.lastPage'                                                                                                                                                                   | Label for last page.                                                                                                                                                                                                               |
-| next-icon              | string                                        | '$next'                                                                                                                                                                                          | Next icon.                                                                                                                                                                                                                         |
-| next-page-label        | string                                        | '$vuetify.dataFooter.nextPage'                                                                                                                                                                   | Label for next page.                                                                                                                                                                                                               |
-| page-text              | string                                        | '$vuetify.dataFooter.pageText'                                                                                                                                                                   | Label for page number.                                                                                                                                                                                                             |
-| prev-icon              | string                                        | '$prev'                                                                                                                                                                                          | Previous icon.                                                                                                                                                                                                                     |
-| prev-page-label        | string                                        | '$vuetify.dataFooter.prevPage'                                                                                                                                                                   | Label for previous page.                                                                                                                                                                                                           |
-| return-object          | boolean                                       | false                                                                                                                                                                                            | Changes the selection behavior to return the object directly rather than the value specified with item-value.                                                                                                                      |
-| search                 | string                                        | undefined                                                                                                                                                                                        | Text input used to filter items.                                                                                                                                                                                                   |
-| show-current-page      | boolean                                       | false                                                                                                                                                                                            | Show current page number between prev/next icons.                                                                                                                                                                                  |
-| show-expand            | boolean                                       | false                                                                                                                                                                                            | Shows the expand toggle in default rows.                                                                                                                                                                                           |
-| sort-asc-icon          | any                                           | '$sortAsc'                                                                                                                                                                                       | Icon used for ascending sort button.                                                                                                                                                                                               |
-| sort-desc-icon         | any                                           | '$sortDesc'                                                                                                                                                                                      | Icon used for descending sort button.                                                                                                                                                                                              |
-| sticky                 | boolean                                       | false                                                                                                                                                                                            | Sticks the header to the top of the table.                                                                                                                                                                                         |
-| tag                    | string                                        | 'div'                                                                                                                                                                                            | Specify a custom tag used on the root element.                                                                                                                                                                                     |
+| Prop                     | Type                                          | Default                                                                                                                                                                                          | Description                                                                                                                                                                                                                        |
+| ------------------------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `headers`                | Array                                         | `[{ key: 'id', title: 'INVOICE ID' }, { key: 'name', title: 'RECIPIENT NAME' }, { key: 'date', title: 'DATE' }, { key: 'amount', title: 'AMOUNT' }, { key: 'status', title: 'STATUS' }]`         | Array of header objects, each containing a `key` and `title`.                                                                                                                                                                      |
+| `items`                  | Array                                         | `[{ id: 1, name: 'Eric Cartman', date: '23 Jun, 2024', amount: '$119.99', status: 'Completed' }, { id: 2, name: 'Kenny McCormick', date: '14 Jun, 2024', amount: '$39.99', status: 'Pending' }]` | Array of item objects to display in the table.                                                                                                                                                                                     |
+| `theme`                  | String                                        | `light`                                                                                                                                                                                          | The theme of the table (light, dark).                                                                                                                                                                                              |
+| `items-per-page`         | Number                                        | `5`                                                                                                                                                                                              | Number of items to display per page.                                                                                                                                                                                               |
+| `sort-by`                | Array                                         | `[]`                                                                                                                                                                                             | Array of sorting options.                                                                                                                                                                                                          |
+| `density`                | String                                        | `compact`                                                                                                                                                                                        | Density of the table (comfortable, compact).                                                                                                                                                                                       |
+| `hide-default-footer`    | Boolean                                       | `false`                                                                                                                                                                                          | Whether to hide the default footer.                                                                                                                                                                                                |
+| `hide-default-header`    | Boolean                                       | `false`                                                                                                                                                                                          | Whether to hide the default header.                                                                                                                                                                                                |
+| `hide-default-body`      | Boolean                                       | `false`                                                                                                                                                                                          | Whether to hide the default body.                                                                                                                                                                                                  |
+| `height`                 | String                                        | ``                                                                                                                                                                                               | Height of the table.                                                                                                                                                                                                               |
+| `fixed-header`           | Boolean                                       | `falseæ                                                                                                                                                                                          | Whether the header should be fixed. Make sure specify height.                                                                                                                                                                      |
+| `show-select`            | Boolean                                       | `false`                                                                                                                                                                                          | Whether to show selection checkboxes.                                                                                                                                                                                              |
+| `selectableKey`          | String                                        | ``                                                                                                                                                                                               | The key used to determine if an item is selectable.                                                                                                                                                                                |
+| `select-strategy`        | String                                        | `page`                                                                                                                                                                                           | The strategy for item selection. `page`, `single`, `all`                                                                                                                                                                           |
+| `multi-sort`             | Boolean                                       | `false`                                                                                                                                                                                          | Whether to allow multiple column sorting.                                                                                                                                                                                          |
+| `groupBy`                | Boolean                                       | `false`                                                                                                                                                                                          | Whether to enable grouping of items.                                                                                                                                                                                               |
+| `loading`                | Boolean                                       | `false`                                                                                                                                                                                          | Whether to show the loading state.                                                                                                                                                                                                 |
+| `disable-sort`           | Boolean                                       | `false`                                                                                                                                                                                          | Disables sorting completely.                                                                                                                                                                                                       |
+| `expanded`               | string[]                                      | `[]`                                                                                                                                                                                             | Whether the item is expanded or not.                                                                                                                                                                                               |
+| `expand-on-click`        | boolean                                       | `false`                                                                                                                                                                                          | Expands item when the row is clicked.                                                                                                                                                                                              |
+| `filter-keys`            | string - string[]                             | `undefined`                                                                                                                                                                                      | Array of specific keys to filter on the item.                                                                                                                                                                                      |
+| `first-icon`             | string                                        | `'$first'`                                                                                                                                                                                       | First icon.                                                                                                                                                                                                                        |
+| `first-page-label`       | string                                        | `'$vuetify.dataFooter.firstPage'`                                                                                                                                                                | Label for first page.                                                                                                                                                                                                              |
+| `fixed-footer`           | boolean                                       | `false`                                                                                                                                                                                          | Use the fixed-footer prop together with the height prop to fix the footer to the bottom of the table.                                                                                                                              |
+| `hide-no-data`           | boolean                                       | `false`                                                                                                                                                                                          | Hides the menu when there are no options to show. Useful for preventing the menu from opening before results are fetched asynchronously. Also has the effect of opening the menu when the items array changes if not already open. |
+| `hover`                  | boolean                                       | `false`                                                                                                                                                                                          | Adds a hover effects to a table rows.                                                                                                                                                                                              |
+| `items-per-page-options` | (number - { title: string; value: number })[] | `[ {value: 10, title: '10'}, {value: 25, title: '25'}, {value: 50, title: '50'}, {value: 100, title: '100'}, {value: -1, title: '$vuetify.dataFooter.itemsPerPageAll'} ]`                        | Array of options to show in the items-per-page dropdown.                                                                                                                                                                           |
+| `items-per-page-text`    | string                                        | `'$vuetify.dataFooter.itemsPerPageText'`                                                                                                                                                         | Text for items-per-page dropdown.                                                                                                                                                                                                  |
+| `item-value`             | SelectItemKey<any>                            | `'id'`                                                                                                                                                                                           | Property on supplied items that contains its value.                                                                                                                                                                                |
+| `last-icon`              | string                                        | `'$last'`                                                                                                                                                                                        | Last icon.                                                                                                                                                                                                                         |
+| `last-page-label`        | string                                        | `'$vuetify.dataFooter.lastPage'`                                                                                                                                                                 | Label for last page.                                                                                                                                                                                                               |
+| `next-icon`              | string                                        | `'$next'`                                                                                                                                                                                        | Next icon.                                                                                                                                                                                                                         |
+| `next-page-label`        | string                                        | `'$vuetify.dataFooter.nextPage'`                                                                                                                                                                 | Label for next page.                                                                                                                                                                                                               |
+| `page-text`              | string                                        | `'$vuetify.dataFooter.pageText'`                                                                                                                                                                 | Label for page number.                                                                                                                                                                                                             |
+| `prev-icon`              | string                                        | `'$prev'`                                                                                                                                                                                        | Previous icon.                                                                                                                                                                                                                     |
+| `prev-page-label`        | string                                        | `'$vuetify.dataFooter.prevPage'`                                                                                                                                                                 | Label for previous page.                                                                                                                                                                                                           |
+| `return-object`          | boolean                                       | `false`                                                                                                                                                                                          | Changes the selection behavior to return the object directly rather than the value specified with item-value.                                                                                                                      |
+| `search`                 | string                                        | `undefined`                                                                                                                                                                                      | Text input used to filter items.                                                                                                                                                                                                   |
+| `show-current-page`      | boolean                                       | `false`                                                                                                                                                                                          | Show current page number between prev/next icons.                                                                                                                                                                                  |
+| `show-expand`            | boolean                                       | `false`                                                                                                                                                                                          | Shows the expand toggle in default rows.                                                                                                                                                                                           |
+| `sort-asc-icon`          | any                                           | `'$sortAsc'`                                                                                                                                                                                     | Icon used for ascending sort button.                                                                                                                                                                                               |
+| `sort-desc-icon`         | any                                           | `'$sortDesc'`                                                                                                                                                                                    | Icon used for descending sort button.                                                                                                                                                                                              |
+| `sticky`                 | boolean                                       | `false`                                                                                                                                                                                          | Sticks the header to the top of the table.                                                                                                                                                                                         |
+| `tag`                    | string                                        | `'div'`                                                                                                                                                                                          | Specify a custom tag used on the root element.                                                                                                                                                                                     |
 
 ### Slots
 
@@ -1233,23 +1229,23 @@ The `BaranCarousel` component is a versatile carousel that can display images, t
 
 ### Props
 
-| Prop                    | Type    | Default                                                                         | Description                                                                        |
-| ----------------------- | ------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| type                    | String  | mix                                                                             | The type of carousel items to display (`image`, `text`, `mix`).                    |
-| images                  | Array   | [Array of default image URLs]                                                   | An array of image URLs for the carousel.                                           |
-| texts                   | Array   | ['I ❤️ South Park', 'I ❤️ South Park', ...]                                     | An array of text items for the carousel.                                           |
-| colors                  | Array   | ['indigo', 'warning', 'pink darken-2', 'red lighten-1', 'deep-purple accent-4'] | An array of colors for the background of text items.                               |
-| items                   | Array   | [Array of default items with images, titles, and texts]                         | An array of objects containing images, titles, and texts for mixed carousel items. |
-| fontSize                | Number  | 14                                                                              | The font size of the text in the carousel items.                                   |
-| titleSize               | Number  | 22                                                                              | The font size of the title in the carousel items.                                  |
-| textBackground          | String  | rgba(115, 103, 240, .8)                                                         | The background color of the text in mixed carousel items.                          |
-| textColor               | String  | #fff                                                                            | The color of the text in the carousel items.                                       |
-| height                  | String  | 100%                                                                            | The height of the carousel.                                                        |
-| showArrows              | String  | hover                                                                           | When to show the navigation arrows (`always`, `hover`, `never`).                   |
-| delimiterIcon           | String  | mdi-circle                                                                      | The icon used for the carousel delimiters.                                         |
-| cycle                   | Boolean | true                                                                            | Whether the carousel should automatically cycle through items.                     |
-| hideDelimiterBackground | Boolean | true                                                                            | Whether to hide the background of the delimiter icons.                             |
-| hideDelimiters          | Boolean | false                                                                           | Whether to hide the delimiter icons.                                               |
+| Prop                      | Type    | Default                                                                           | Description                                                                        |
+| ------------------------- | ------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `type`                    | String  | `mix`                                                                             | The type of carousel items to display (`image`, `text`, `mix`).                    |
+| `images`                  | Array   | `[Array of default image URLs]`                                                   | An array of image URLs for the carousel.                                           |
+| `texts`                   | Array   | `['I ❤️ South Park', 'I ❤️ South Park', ...]`                                     | An array of text items for the carousel.                                           |
+| `colors`                  | Array   | `['indigo', 'warning', 'pink darken-2', 'red lighten-1', 'deep-purple accent-4']` | An array of colors for the background of text items.                               |
+| `items`                   | Array   | `[Array of default items with images, titles, and texts]`                         | An array of objects containing images, titles, and texts for mixed carousel items. |
+| `fontSize`                | Number  | `14`                                                                              | The font size of the text in the carousel items.                                   |
+| `titleSize`               | Number  | `22`                                                                              | The font size of the title in the carousel items.                                  |
+| `textBackground`          | String  | `rgba(115, 103, 240, .8)`                                                         | The background color of the text in mixed carousel items.                          |
+| `textColor`               | String  | `#fff`                                                                            | The color of the text in the carousel items.                                       |
+| `height`                  | String  | `100%`                                                                            | The height of the carousel.                                                        |
+| `showArrows`              | String  | `hover`                                                                           | When to show the navigation arrows (`always`, `hover`, `never`).                   |
+| `delimiterIcon`           | String  | `mdi-circle`                                                                      | The icon used for the carousel delimiters.                                         |
+| `cycle`                   | Boolean | `true`                                                                            | Whether the carousel should automatically cycle through items.                     |
+| `hideDelimiterBackground` | Boolean | `true`                                                                            | Whether to hide the background of the delimiter icons.                             |
+| `hideDelimiters`          | Boolean | `false`                                                                           | Whether to hide the delimiter icons.                                               |
 
 ### Example Usage
 
@@ -1287,36 +1283,36 @@ The `BaranCarousel` component is a versatile carousel that can display images, t
 
 ## AvatarMenu Component
 
-The AvatarMenu component is a dropdown menu activated by clicking on an avatar image. It includes a navigation drawer with a list of items and integrates with Vue Router for navigation.
+The `BaranAvatarMenu` component is a dropdown menu activated by clicking on an avatar image. It includes a navigation drawer with a list of items and integrates with Vue Router for navigation.
 
 ### Props
 
-| Prop       | Type   | Default                                                                                                                                            | Description                                             |
-| ---------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| items      | Array  | `[{ text: 'Profile', icon: 'mdi-account-outline', href: '/components' }, { text: 'Billing', icon: 'mdi-note-text-outline', href: '/components' }]` | The list of navigation items with text, icon, and href. |
-| image      | String | `https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png`                                                                                   | The URL of the avatar image.                            |
-| name       | String | `Baran Toro`                                                                                                                                       | The name to be displayed in the menu.                   |
-| title      | String | `Frontend Developer`                                                                                                                               | The title to be displayed in the menu.                  |
-| menuHeight | Number | `225`                                                                                                                                              | The height of the main menu section.                    |
+| Prop         | Type   | Default                                                                                                                                            | Description                                             |
+| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `items`      | Array  | `[{ text: 'Profile', icon: 'mdi-account-outline', href: '/components' }, { text: 'Billing', icon: 'mdi-note-text-outline', href: '/components' }]` | The list of navigation items with text, icon, and href. |
+| `image`      | String | `https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png`                                                                                   | The URL of the avatar image.                            |
+| `name`       | String | `Baran Toro`                                                                                                                                       | The name to be displayed in the menu.                   |
+| `title`      | String | `Frontend Developer`                                                                                                                               | The title to be displayed in the menu.                  |
+| `menuHeight` | Number | `225`                                                                                                                                              | The height of the main menu section.                    |
 
 ### Slots
 
-| Slot      | Description                    |
-| --------- | ------------------------------ |
-| activator | Slot for the avatar activator. |
-| prepend   | Slot for prepending an icon.   |
+| Slot        | Description                    |
+| ----------- | ------------------------------ |
+| `activator` | Slot for the avatar activator. |
+| `prepend`   | Slot for prepending an icon.   |
 
 ### Events
 
-| Event  | Description                                                              |
-| ------ | ------------------------------------------------------------------------ |
-| @click | Event emitted when a menu item is clicked, navigates to the item's href. |
+| Event    | Description                                                              |
+| -------- | ------------------------------------------------------------------------ |
+| `@click` | Event emitted when a menu item is clicked, navigates to the item's href. |
 
 ### Example Usage
 
 ```vue
 <template>
-	<AvatarMenu :items="menuItems" image="https://example.com/avatar.jpg" name="John Doe" title="Software Engineer" :menuHeight="300" />
+	<BaranAvatarMenu :items="menuItems" image="https://example.com/avatar.jpg" name="John Doe" title="Software Engineer" :menuHeight="300" />
 </template>
 
 <script setup>
@@ -1345,12 +1341,12 @@ The BaranSidebar component provides a sidebar navigation with collapsible menu i
 
 ### Props
 
-| Prop             | Type   | Default   | Description                                                               |
-| ---------------- | ------ | --------- | ------------------------------------------------------------------------- |
-| logo             | String | ''        | The URL or path to the main logo image.                                   |
-| miniLogo         | String | ''        | The URL or path to the mini version of the logo image.                    |
-| menu             | Array  | []        | An array of objects representing the menu items and their configurations. |
-| currentPathColor | String | '#7367f0' | The color used to highlight the current active menu item.                 |
+| Prop               | Type   | Default     | Description                                                               |
+| ------------------ | ------ | ----------- | ------------------------------------------------------------------------- |
+| `logo`             | String | `''`        | The URL or path to the main logo image.                                   |
+| `miniLogo`         | String | `''`        | The URL or path to the mini version of the logo image.                    |
+| `menu`             | Array  | `[]`        | An array of objects representing the menu items and their configurations. |
+| `currentPathColor` | String | `'#7367f0'` | The color used to highlight the current active menu item.                 |
 
 ### Events
 
@@ -1392,53 +1388,53 @@ The `BaranChartWidget` component is a flexible and customizable chart component 
 
 ### Props
 
-| Prop       | Type   | Default | Description                                                           |
-| ---------- | ------ | ------- | --------------------------------------------------------------------- |
-| chartProps | Object |         | Configuration object for the ApexCharts chart. This prop is required. |
-| series     | Array  | `[]`    | Data series for the chart.                                            |
-| bgColor    | String | `#fff`  | Background color of the card.                                         |
-| elevation  | Number | `0`     | Elevation of the card (range from 0 to 24).                           |
+| Prop         | Type   | Default | Description                                                           |
+| ------------ | ------ | ------- | --------------------------------------------------------------------- |
+| `chartProps` | Object | `{}`    | Configuration object for the ApexCharts chart. This prop is required. |
+| `series`     | Array  | `[]`    | Data series for the chart.                                            |
+| `bgColor`    | String | `#fff`  | Background color of the card.                                         |
+| `elevation`  | Number | `0`     | Elevation of the card (range from 0 to 24).                           |
 
 ### `chartProps` Object Properties
 
-| Property               | Type    | Description                                                  |
-| ---------------------- | ------- | ------------------------------------------------------------ |
-| chartId                | String  | Unique identifier for the chart.                             |
-| chartType              | String  | Type of the chart (e.g., `line`, `bar`, `pie`).              |
-| toolbarShow            | Boolean | Whether to show the chart toolbar.                           |
-| fillColors             | Array   | Colors for filling the chart.                                |
-| fillType               | String  | Fill type (e.g., `solid`, `gradient`).                       |
-| gradientShade          | String  | Gradient shade type (e.g., `light`, `dark`).                 |
-| gradientType           | String  | Gradient type (e.g., `vertical`, `horizontal`).              |
-| gradientShadeIntensity | Number  | Intensity of the gradient shade.                             |
-| gradientOpacityFrom    | Number  | Starting opacity for the gradient.                           |
-| gradientOpacityTo      | Number  | Ending opacity for the gradient.                             |
-| gridShow               | Boolean | Whether to show the grid.                                    |
-| gridPadding            | Object  | Padding for the grid.                                        |
-| xaxisLabelsShow        | Boolean | Whether to show labels on the x-axis.                        |
-| xaxisCategories        | Array   | Categories for the x-axis.                                   |
-| xaxisAxisBorderShow    | Boolean | Whether to show the x-axis border.                           |
-| xaxisAxisTicksShow     | Boolean | Whether to show ticks on the x-axis.                         |
-| dataLabelsEnabled      | Boolean | Whether to enable data labels.                               |
-| strokeCurve            | String  | Curve type for the stroke (e.g., `smooth`, `straight`).      |
-| strokeWidth            | Number  | Width of the stroke.                                         |
-| titleText              | String  | Title text of the chart.                                     |
-| titleAlign             | String  | Alignment of the title (e.g., `left`, `center`, `right`).    |
-| titleMargin            | Number  | Margin for the title.                                        |
-| titleOffsetX           | Number  | Horizontal offset for the title.                             |
-| titleOffsetY           | Number  | Vertical offset for the title.                               |
-| titleFloating          | Boolean | Whether the title is floating.                               |
-| titleStyle             | Object  | Style object for the title.                                  |
-| subtitleText           | String  | Subtitle text of the chart.                                  |
-| subtitleAlign          | String  | Alignment of the subtitle (e.g., `left`, `center`, `right`). |
-| subtitleMargin         | Number  | Margin for the subtitle.                                     |
-| subtitleOffsetX        | Number  | Horizontal offset for the subtitle.                          |
-| subtitleOffsetY        | Number  | Vertical offset for the subtitle.                            |
-| subtitleFloating       | Boolean | Whether the subtitle is floating.                            |
-| subtitleStyle          | Object  | Style object for the subtitle.                               |
-| yaxisLabelsShow        | Boolean | Whether to show labels on the y-axis.                        |
-| legendShow             | Boolean | Whether to show the legend.                                  |
-| responsiveOptions      | Array   | Array of responsive options.                                 |
+| Property                 | Type    | Description                                                  |
+| ------------------------ | ------- | ------------------------------------------------------------ |
+| `chartId`                | String  | Unique identifier for the chart.                             |
+| `chartType`              | String  | Type of the chart (e.g., `line`, `bar`, `pie`).              |
+| `toolbarShow`            | Boolean | Whether to show the chart toolbar.                           |
+| `fillColors`             | Array   | Colors for filling the chart.                                |
+| `fillType`               | String  | Fill type (e.g., `solid`, `gradient`).                       |
+| `gradientShade`          | String  | Gradient shade type (e.g., `light`, `dark`).                 |
+| `gradientType`           | String  | Gradient type (e.g., `vertical`, `horizontal`).              |
+| `gradientShadeIntensity` | Number  | Intensity of the gradient shade.                             |
+| `gradientOpacityFrom`    | Number  | Starting opacity for the gradient.                           |
+| `gradientOpacityTo`      | Number  | Ending opacity for the gradient.                             |
+| `gridShow`               | Boolean | Whether to show the grid.                                    |
+| `gridPadding`            | Object  | Padding for the grid.                                        |
+| `xaxisLabelsShow`        | Boolean | Whether to show labels on the x-axis.                        |
+| `xaxisCategories`        | Array   | Categories for the x-axis.                                   |
+| `xaxisAxisBorderShow`    | Boolean | Whether to show the x-axis border.                           |
+| `xaxisAxisTicksShow`     | Boolean | Whether to show ticks on the x-axis.                         |
+| `dataLabelsEnabled`      | Boolean | Whether to enable data labels.                               |
+| `strokeCurve`            | String  | Curve type for the stroke (e.g., `smooth`, `straight`).      |
+| `strokeWidth`            | Number  | Width of the stroke.                                         |
+| `titleText`              | String  | Title text of the chart.                                     |
+| `titleAlign`             | String  | Alignment of the title (e.g., `left`, `center`, `right`).    |
+| `titleMargin`            | Number  | Margin for the title.                                        |
+| `titleOffsetX`           | Number  | Horizontal offset for the title.                             |
+| `titleOffsetY`           | Number  | Vertical offset for the title.                               |
+| `titleFloating`          | Boolean | Whether the title is floating.                               |
+| `titleStyle`             | Object  | Style object for the title.                                  |
+| `subtitleText`           | String  | Subtitle text of the chart.                                  |
+| `subtitleAlign`          | String  | Alignment of the subtitle (e.g., `left`, `center`, `right`). |
+| `subtitleMargin`         | Number  | Margin for the subtitle.                                     |
+| `subtitleOffsetX`        | Number  | Horizontal offset for the subtitle.                          |
+| `subtitleOffsetY`        | Number  | Vertical offset for the subtitle.                            |
+| `subtitleFloating`       | Boolean | Whether the subtitle is floating.                            |
+| `subtitleStyle`          | Object  | Style object for the subtitle.                               |
+| `yaxisLabelsShow`        | Boolean | Whether to show labels on the y-axis.                        |
+| `legendShow`             | Boolean | Whether to show the legend.                                  |
+| `responsiveOptions`      | Array   | Array of responsive options.                                 |
 
 ### Example Usage
 
@@ -1554,7 +1550,7 @@ The `BaranTooltip` component is a customizable tooltip with various props and ev
 </template>
 
 <script setup>
-import BaranTooltip from "my-component-library/BaranTooltip.vue";
+import BaranTooltip from "baran-component/BaranTooltip.vue";
 </script>
 ```
 
@@ -1602,7 +1598,7 @@ The `BaranBreadcrumbs` component is a customizable breadcrumb with various props
 </template>
 
 <script setup>
-import BaranBreadcrumbs from "my-component-library/BaranBreadcrumbs.vue";
+import BaranBreadcrumbs from "baran-component/BaranBreadcrumbs.vue";
 </script>
 ```
 
@@ -1652,7 +1648,7 @@ The `BaranPagination` component is a customizable pagination with various props 
 </template>
 
 <script setup>
-import BaranPagination from "my-component-library/BaranPagination.vue";
+import BaranPagination from "baran-component/BaranPagination.vue";
 
 const currenctPage = ref(1);
 </script>
@@ -1736,7 +1732,7 @@ The `BaranSlider` component is a customizable slider with various props and even
 
 <script setup>
 import { ref } from "vue";
-import BaranSlider from "my-component-library/BaranSlider.vue";
+import BaranSlider from "baran-component/BaranSlider.vue";
 const volume = ref(0);
 </script>
 ```
@@ -1814,7 +1810,7 @@ The `BaranTextarea` component is a customizable textarea with various props and 
 
 <script setup>
 import { ref } from "vue";
-import BaranTextarea from "my-component-library/BaranTextarea.vue";
+import BaranTextarea from "baran-component/BaranTextarea.vue";
 const value = ref("");
 </script>
 ```
@@ -1881,7 +1877,7 @@ The `BaranInfiniteScroll` component displays a potentially infinite list, by loa
 
 <script setup>
 import { ref } from "vue";
-import BaranInfiniteScroll from "my-component-library/BaranInfiniteScroll.vue";
+import BaranInfiniteScroll from "baran-component/BaranInfiniteScroll.vue";
 
 const items = ref(Array.from({ length: 30 }, (k, v) => v + 1));
 
@@ -1933,7 +1929,7 @@ The `BaranSparkline` component can be used to create simple graphs, like GitHub�
 
 <script setup>
 import { ref } from "vue";
-import BaranSparkline from "my-component-library/BaranSparkline.vue";
+import BaranSparkline from "baran-component/BaranSparkline.vue";
 
 const gradients = [["#222"], ["#42b3f4"], ["red", "orange", "yellow"], ["purple", "violet"], ["#00c6ff", "#F0F", "#FF0"], ["#f72047", "#ffd200", "#1feaea"]];
 </script>
@@ -1998,7 +1994,7 @@ The `BaranAlert` component is used to convey important information to the user t
 </template>
 
 <script setup>
-import BaranAlert from "my-component-library/BaranAlert.vue";
+import BaranAlert from "baran-component/BaranAlert.vue";
 </script>
 ```
 
@@ -2040,7 +2036,7 @@ The `BaranBadge` component superscripts or subscripts an avatar-like icon or tex
 </template>
 
 <script setup>
-import BaranBadge from "my-component-library/BaranBadge.vue";
+import BaranBadge from "baran-component/BaranBadge.vue";
 </script>
 ```
 
@@ -2100,7 +2096,7 @@ The `BaranBanner` component is used as a middle-interrupting message to the user
 </template>
 
 <script setup>
-import BaranBanner from "my-component-library/BaranBanner.vue";
+import BaranBanner from "baran-component/BaranBanner.vue";
 </script>
 ```
 
@@ -2134,7 +2130,7 @@ The `BaranSkeletonLoader` component provides a simple way to display loading pla
 </template>
 
 <script setup>
-import BaranSkeletonLoader from "my-component-library/BaranSkeletonLoader.vue";
+import BaranSkeletonLoader from "baran-component/BaranSkeletonLoader.vue";
 </script>
 ```
 
@@ -2198,7 +2194,7 @@ The `BaranSnackbar` component provides a simple way to display loading placehold
 
 <script setup>
 import { ref } from "vue";
-import BaranSnackbar from "my-component-library/BaranSnackbar.vue";
+import BaranSnackbar from "baran-component/BaranSnackbar.vue";
 
 const snackbar = ref(false);
 </script>
@@ -2242,7 +2238,7 @@ The `BaranRating` component is a specialized but important piece in building use
 
 <script setup>
 import { ref } from "vue";
-import BaranRating from "my-component-library/BaranRating.vue";
+import BaranRating from "baran-component/BaranRating.vue";
 
 const itemLabels = ref(["😞", "", "", "", "😀"]);
 </script>
@@ -2298,7 +2294,7 @@ The `BaranTimeline` is useful for stylistically displaying chronological informa
 
 <script setup>
 import { ref } from "vue";
-import BaranTimeline from "my-component-library/BaranTimeline.vue";
+import BaranTimeline from "baran-component/BaranTimeline.vue";
 
 const years = ref([
 	{
@@ -2379,7 +2375,7 @@ The `BaranTimelineItem` is sub-component used to display a single timeline item.
 
 <script setup>
 import { ref } from "vue";
-import BaranTimeline from "my-component-library/BaranTimeline.vue";
+import BaranTimeline from "baran-component/BaranTimeline.vue";
 
 const years = ref([
 	{
@@ -2437,8 +2433,8 @@ The `BaranHover` component provides a simple interface for handling hover states
 </template>
 
 <script setup>
-import BaranHover from "my-component-library/BaranHover.vue";
-import BaranCard from "my-component-library/BaranCard.vue";
+import BaranHover from "baran-component/BaranHover.vue";
+import BaranCard from "baran-component/BaranCard.vue";
 </script>
 ```
 
@@ -2478,7 +2474,7 @@ The `BaranProgressCircular` component is used to convey data circularly to users
 </template>
 
 <script setup>
-import BaranProgressCircular from "my-component-library/BaranProgressCircular.vue";
+import BaranProgressCircular from "baran-component/BaranProgressCircular.vue";
 </script>
 ```
 
@@ -2531,7 +2527,7 @@ The `BaranProgressLinear` component is used to convey data visually to users. It
 
 <script setup>
 import { ref } from "vue";
-import BaranProgressLinear from "my-component-library/BaranProgressLinear.vue";
+import BaranProgressLinear from "baran-component/BaranProgressLinear.vue";
 
 const progress = ref(50);
 </script>
@@ -2573,7 +2569,7 @@ The `BaranAvatar` component is typically used to display circular user profile p
 </template>
 
 <script setup>
-import BaranAvatar from "my-component-library/BaranAvatar.vue";
+import BaranAvatar from "baran-component/BaranAvatar.vue";
 </script>
 ```
 
