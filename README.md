@@ -165,9 +165,9 @@ The `BaranCard` component is a versatile card component with a customizable butt
 		:rounded="'md'"
 	>
 		<template #prepend>
-			<v-avatar size="56">
+			<BaranAvatar size="56">
 				<img src="https://example.com/avatar.jpg" alt="Avatar" />
-			</v-avatar>
+			</BaranAvatar>
 		</template>
 		<template #append>
 			<v-icon>mdi-heart</v-icon>
@@ -239,54 +239,108 @@ const handleChipClick = (event) => {
 
 ## Expansion Panels Component
 
-The `BaranExpansionPanel` component allows for displaying collapsible panels with customizable options.
+The `BaranExpansionPanels` component allows for displaying collapsible panels with customizable options.
 
 ### Props
 
-| Prop        | Type    | Default     | Description                                                                        |
-| ----------- | ------- | ----------- | ---------------------------------------------------------------------------------- |
-| `items`     | Array   | `See below` | Array of objects defining each panel's title and text content.                     |
-| `variant`   | String  | `'default`' | Variant style of the expansion panels (`default`, `accordion`, `inset`, `popout`). |
-| `rounded`   | String  | `'xs'`      | Rounded corner size of the panels.                                                 |
-| `elevation` | Number  | `1`         | Elevation level of the panels.                                                     |
-| `readonly`  | Boolean | `false`     | Whether the panels are readonly.                                                   |
-| `color`     | String  | `''`        | Color of the expansion panels.                                                     |
-| `disabled`  | Boolean | `false`     | Whether the panels are disabled.                                                   |
+| Prop             | Type                                                    | Default       | Description                                                                                                       |
+| ---------------- | ------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `bg-color`       | String                                                  | `undefined`   | Applies specified color to the control’s background - supports utility colors or CSS color values.                |
+| `collapse-icon`  | Any                                                     | `'$collapse'` | Icon used when the expansion panel is in a collapsable state.                                                     |
+| `color`          | String                                                  | `undefined`   | Applies specified color to the control - supports utility colors or CSS color values.                             |
+| `disabled`       | Boolean                                                 | `false`       | Puts all children components into a disabled state.                                                               |
+| `eager`          | Boolean                                                 | `false`       | Forces the component’s content to render when it mounts - useful for SEO.                                         |
+| `elevation`      | String \| Number                                        | `undefined`   | Designates an elevation applied to the component between 0 and 24.                                                |
+| `expand-icon`    | Any                                                     | `'$expand'`   | Icon used when the expansion panel is in an expandable state.                                                     |
+| `flat`           | Boolean                                                 | `false`       | Removes the expansion-panel’s elevation and borders.                                                              |
+| `focusable`      | Boolean                                                 | `false`       | Makes the expansion-panel headers focusable.                                                                      |
+| `hide-actions`   | Boolean                                                 | `false`       | Hide the expand icon in the content title.                                                                        |
+| `mandatory`      | Boolean \| `'force'`                                    | `false`       | Forces at least one item to always be selected (if available).                                                    |
+| `max`            | Number                                                  | `undefined`   | Sets a maximum number of selections that can be made.                                                             |
+| `model-value`    | Any                                                     | `undefined`   | The v-model value of the component - if component supports the multiple prop, this defaults to an array.          |
+| `multiple`       | Boolean                                                 | `false`       | Allows one to select multiple items.                                                                              |
+| `readonly`       | Boolean                                                 | `false`       | Makes the entire expansion-panel read only.                                                                       |
+| `ripple`         | Boolean \| { class: string }                            | `false`       | Applies the v-ripple directive.                                                                                   |
+| `rounded`        | String \| Number \| Boolean                             | `undefined`   | Designates the border-radius applied to the component - can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. |
+| `selected-class` | String                                                  | `undefined`   | Configure the active CSS class applied when an item is selected.                                                  |
+| `static`         | Boolean                                                 | `false`       | Remove title size expansion when selected.                                                                        |
+| `tag`            | String                                                  | `'div'`       | Specify a custom tag used on the root element.                                                                    |
+| `theme`          | String                                                  | `undefined`   | Specify a theme for this component and all of its children.                                                       |
+| `tile`           | Boolean                                                 | `false`       | Removes the border-radius.                                                                                        |
+| `variant`        | `'default'` \| `'accordion'` \| `'inset'` \| `'popout'` | `'default'`   | Applies a distinct style to the component.                                                                        |
 
 ### Example Usage
 
 ```vue
 <template>
-	<BaranExpansionPanel :items="panelItems" variant="accordion" rounded="md" :elevation="3" :readonly="false" color="#7367f0" class="custom-expansion-panels" />
+	<BaranExpansionPanels variant="accordion" rounded="md" :elevation="3">
+		<BaranExpansionPanel>
+			<template v-slot:title> Title Slot </template>
+			<template v-slot:text> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </template>
+		</BaranExpansionPanel>
+		<BaranExpansionPanel title="Title" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
+		</BaranExpansionPanel>
+	</BaranExpansionPanels>
 </template>
 
-<script setup>
-import { ref } from "vue";
+<script setup></script>
 
-const panelItems = ref([
-	{
-		title: "Panel 1",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	},
-	{
-		title: "Panel 2",
-		text: "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.",
-	},
-]);
-</script>
+<style></style>
+```
 
-<style>
-.custom-expansion-panels .v-expansion-panel-title {
-	color: var(--title);
-}
-.custom-expansion-panels .v-expansion-panel-title--active {
-	color: var(--primary);
-	font-weight: 600;
-}
-.custom-expansion-panels .v-expansion-panel-text {
-	color: var(--text);
-}
-</style>
+## Expansion Panel Component
+
+The `BaranExpansionPanel` is sub-component used to display a single expansion panel item.
+
+### Props
+
+| Prop             | Type                         | Default       | Description                                                                                                       |
+| ---------------- | ---------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `bg-color`       | String                       | `undefined`   | Applies specified color to the control’s background - supports utility colors or CSS color values.                |
+| `collapse-icon`  | Any                          | `'$collapse'` | Icon used when the expansion panel is in a collapsable state.                                                     |
+| `color`          | String                       | `undefined`   | Applies specified color to the control - supports utility colors or CSS color values.                             |
+| `disabled`       | Boolean                      | `false`       | Disables the expansion-panel content.                                                                             |
+| `eager`          | Boolean                      | `false`       | Forces the component’s content to render when it mounts - useful for SEO.                                         |
+| `elevation`      | String \| Number             | `undefined`   | Designates an elevation applied to the component between 0 and 24.                                                |
+| `expand-icon`    | Any                          | `'$expand'`   | Icon used when the expansion panel is in an expandable state.                                                     |
+| `focusable`      | Boolean                      | `false`       | MISSING DESCRIPTION (edit in github).                                                                             |
+| `hide-actions`   | Boolean                      | `false`       | Hide the expand icon in the content title.                                                                        |
+| `readonly`       | Boolean                      | `false`       | Makes the expansion-panel content read only.                                                                      |
+| `ripple`         | Boolean \| { class: string } | `false`       | Applies the v-ripple directive.                                                                                   |
+| `rounded`        | String \| Number \| Boolean  | `undefined`   | Designates the border-radius applied to the component - can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. |
+| `selected-class` | String                       | `undefined`   | Configure the active CSS class applied when an item is selected.                                                  |
+| `static`         | Boolean                      | `false`       | Remove title size expansion when selected.                                                                        |
+| `tag`            | String                       | `'div'`       | Specify a custom tag used on the root element.                                                                    |
+| `text`           | String                       | `undefined`   | Specify content text for the component.                                                                           |
+| `tile`           | Boolean                      | `false`       | Removes any applied border-radius from the component.                                                             |
+| `title`          | String                       | `undefined`   | Specify a title text for the component.                                                                           |
+| `value`          | Any                          | `undefined`   | Controls the opened/closed state of content.                                                                      |
+
+### Slots
+
+| Slot Name | Description           |
+| --------- | --------------------- |
+| `default` | The default Vue slot. |
+| `title`   | Slot for title.       |
+| `text`    | Slot for text.        |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranExpansionPanels variant="accordion" rounded="md" :elevation="3">
+		<BaranExpansionPanel>
+			<template v-slot:title> Title Slot </template>
+			<template v-slot:text> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </template>
+		</BaranExpansionPanel>
+		<BaranExpansionPanel title="Title" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
+		</BaranExpansionPanel>
+	</BaranExpansionPanels>
+</template>
+
+<script setup></script>
+
+<style></style>
 ```
 
 ## Dialog Component
@@ -359,80 +413,179 @@ The `BaranList` component renders a list of items with optional sub-groups, allo
 
 ### Props
 
-| Prop            | Type    | Default         | Description                                                               |
-| --------------- | ------- | --------------- | ------------------------------------------------------------------------- |
-| `lines`         | String  | `'one'`         | Number of lines for list items (one or two).                              |
-| `items`         | Array   | `[]`            | Array of items to render in the list.                                     |
-| `density`       | String  | `'comfortable'` | Density of the list items (comfortable or compact).                       |
-| `elevation`     | Number  | `0`             | Elevation level of the list.                                              |
-| `variant`       | String  | `''`            | Variant style of the list (outlined, tonal, elevated, flat, text, plain). |
-| `disabled`      | Boolean | `false`         | Whether the list is disabled.                                             |
-| `listItemClass` | String  | `''`            | Custom CSS classes for each list item.                                    |
-| `width`         | String  | `''`            | Width of the list wrapper.                                                |
-| `maxWidth`      | String  | `''`            | Maximum width of the list wrapper.                                        |
-| `minWidth`      | String  | `''`            | Minimum width of the list wrapper.                                        |
-| `height`        | String  | `''`            | Height of the list wrapper.                                               |
-| `maxHeight`     | String  | `''`            | Maximum height of the list wrapper.                                       |
-| `minHeight`     | String  | `''`            | Minimum height of the list wrapper.                                       |
+| Prop               | Type                                                                           | Default         | Description                                                                                                       |
+| ------------------ | ------------------------------------------------------------------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `activatable`      | Boolean                                                                        | `false`         | MISSING DESCRIPTION (edit in github).                                                                             |
+| `activated`        | Any                                                                            | `undefined`     | Array of ids of activated nodes.                                                                                  |
+| `active-class`     | String                                                                         | `undefined`     | The class applied to the component when it is in an active state.                                                 |
+| `active-color`     | String                                                                         | `undefined`     | The applied color when the component is in an active state.                                                       |
+| `base-color`       | String                                                                         | `undefined`     | Sets the color of component when not focused.                                                                     |
+| `bg-color`         | String                                                                         | `undefined`     | Applies specified color to the control’s background - supports utility colors or CSS color values.                |
+| `border`           | String \| Number \| Boolean                                                    | `false`         | Designates the border-radius applied to the component - can be xs, sm, md, lg, xl.                                |
+| `collapse-icon`    | String                                                                         | `undefined`     | MISSING DESCRIPTION (edit in github).                                                                             |
+| `color`            | String                                                                         | `undefined`     | Applies specified color to the control - supports utility colors or CSS color values.                             |
+| `density`          | `'default'` \| `'comfortable'` \| `'compact'`                                  | `'comfortable'` | Adjusts the vertical height used by the component.                                                                |
+| `disabled`         | Boolean                                                                        | `false`         | Puts all children inputs into a disabled state.                                                                   |
+| `elevation`        | String \| Number                                                               | `undefined`     | Designates an elevation applied to the component between 0 and 24.                                                |
+| `expand-icon`      | String                                                                         | `undefined`     | MISSING DESCRIPTION (edit in github).                                                                             |
+| `height`           | String \| Number                                                               | `undefined`     | Sets the height for the component.                                                                                |
+| `item-children`    | SelectItemKey\<any>                                                            | `'children'`    | Property on supplied items that contains its children.                                                            |
+| `item-props`       | SelectItemKey\<any>                                                            | `'props'`       | Props object that will be applied to each item component.                                                         |
+| `items`            | Any[]                                                                          | `[]`            | Can be an array of objects or strings.                                                                            |
+| `item-title`       | SelectItemKey\<any>                                                            | `'title'`       | Property on supplied items that contains its title.                                                               |
+| `item-type`        | String                                                                         | `'type'`        | Designates the key on the supplied items that is used for determining the nodes type.                             |
+| `item-value`       | SelectItemKey\<any>                                                            | `'value'`       | Property on supplied items that contains its value.                                                               |
+| `lines`            | Boolean \| `'one'` \| `'two'` \| `'three'`                                     | `'one'`         | Designates a minimum-height for all children v-list-item components.                                              |
+| `mandatory`        | Boolean                                                                        | `false`         | Forces at least one item to always be selected (if available).                                                    |
+| `max-height`       | String \| Number                                                               | `undefined`     | Sets the maximum height for the component.                                                                        |
+| `max-width`        | String \| Number                                                               | `undefined`     | Sets the maximum width for the component.                                                                         |
+| `min-height`       | String \| Number                                                               | `undefined`     | Sets the minimum height for the component.                                                                        |
+| `min-width`        | String \| Number                                                               | `undefined`     | Sets the minimum width for the component.                                                                         |
+| `nav`              | Boolean                                                                        | `false`         | An alternative styling that reduces v-list-item width and rounds the corners.                                     |
+| `opened`           | Unknown                                                                        | `undefined`     | An array containing the values of currently opened groups.                                                        |
+| `open-strategy`    | `'single'` \| `'multiple'` \| `'list'` \| OpenStrategy                         | `'list'`        | Affects how items with children behave when expanded.                                                             |
+| `return-object`    | Boolean                                                                        | `false`         | Changes the selection behavior to return the object directly rather than the value specified with item-value.     |
+| `rounded`          | String \| Number \| Boolean                                                    | `undefined`     | Designates the border-radius applied to the component - can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. |
+| `selectable`       | Boolean                                                                        | `false`         | MISSING DESCRIPTION (edit in github).                                                                             |
+| `selected`         | Unknown                                                                        | `undefined`     | An array containing the values of currently selected items.                                                       |
+| `slim`             | Boolean                                                                        | `false`         | Reduces horizontal spacing for badges, icons, tooltips, and avatars within slim list items.                       |
+| `tag`              | String                                                                         | `'div'`         | Specify a custom tag used on the root element.                                                                    |
+| `theme`            | String                                                                         | `undefined`     | Specify a theme for this component and all of its children.                                                       |
+| `tile`             | Boolean                                                                        | `false`         | Removes any applied border-radius from the component.                                                             |
+| `value-comparator` | (a: any, b: any) => Boolean                                                    | `undefined`     | Apply a custom comparison algorithm to compare model-value and values contains in the items prop.                 |
+| `variant`          | `'flat'` \| `'elevated'` \| `'tonal'` \| `'outlined'` \| `'text'` \| `'plain'` | `'text'`        | Applies a distinct style to the component.                                                                        |
+| `width`            | String \| Number                                                               | `undefined`     | Sets the width for the component.                                                                                 |
+
+### Slots
+
+| Slot Name | Description           |
+| --------- | --------------------- |
+| `default` | The default Vue slot. |
 
 ### Example Usage
 
 ```vue
 <template>
-	<BaranList lines="two" :items="listItems" density="compact" elevation="3" variant="outlined" :disabled="false" class="custom-list" width="100%" :maxWidth="'800px'" :minHeight="'300px'">
-		<template v-slot:list-item="{ item }">
-			<v-list-item-content>
-				<v-list-item-title>{{ item.title }}</v-list-item-title>
-				<v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
-			</v-list-item-content>
-		</template>
-		<template v-slot:sub-item="{ item }">
-			<v-list-item-content>
-				<v-list-item-title>{{ item.title }}</v-list-item-title>
-				<v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
-			</v-list-item-content>
-		</template>
+	<BaranList :items="items"></BaranList>
+</template>
+
+<script setup>
+const items = [
+	{ type: "subheader", title: "Group #1" },
+	{
+		title: "Item #1",
+		value: 1,
+	},
+	{
+		title: "Item #2",
+		value: 2,
+	},
+	{
+		title: "Item #3",
+		value: 3,
+	},
+	{ type: "divider" },
+	{ type: "subheader", title: "Group #2" },
+	{
+		title: "Item #4",
+		value: 4,
+	},
+	{
+		title: "Item #5",
+		value: 5,
+	},
+	{
+		title: "Item #6",
+		value: 6,
+	},
+];
+</script>
+```
+
+## List Item Component
+
+The `BaranListItem` is sub-component used to display a single list item.
+
+### Props
+
+| Prop               | Type                                                                           | Default         | Description                                                                                                       |
+| ------------------ | ------------------------------------------------------------------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `activatable`      | Boolean                                                                        | `false`         | MISSING DESCRIPTION (edit in github).                                                                             |
+| `activated`        | Any                                                                            | `undefined`     | Array of ids of activated nodes.                                                                                  |
+| `active-class`     | String                                                                         | `undefined`     | The class applied to the component when it is in an active state.                                                 |
+| `active-color`     | String                                                                         | `undefined`     | The applied color when the component is in an active state.                                                       |
+| `base-color`       | String                                                                         | `undefined`     | Sets the color of component when not focused.                                                                     |
+| `bg-color`         | String                                                                         | `undefined`     | Applies specified color to the control’s background - supports utility colors or CSS color values.                |
+| `border`           | String \| Number \| Boolean                                                    | `false`         | Designates the border-radius applied to the component - can be xs, sm, md, lg, xl.                                |
+| `collapse-icon`    | String                                                                         | `undefined`     | MISSING DESCRIPTION (edit in github).                                                                             |
+| `color`            | String                                                                         | `undefined`     | Applies specified color to the control - supports utility colors or CSS color values.                             |
+| `density`          | `'default'` \| `'comfortable'` \| `'compact'`                                  | `'comfortable'` | Adjusts the vertical height used by the component.                                                                |
+| `disabled`         | Boolean                                                                        | `false`         | Puts all children inputs into a disabled state.                                                                   |
+| `elevation`        | String \| Number                                                               | `undefined`     | Designates an elevation applied to the component between 0 and 24.                                                |
+| `expand-icon`      | String                                                                         | `undefined`     | MISSING DESCRIPTION (edit in github).                                                                             |
+| `height`           | String \| Number                                                               | `undefined`     | Sets the height for the component.                                                                                |
+| `item-children`    | SelectItemKey\<any>                                                            | `'children'`    | Property on supplied items that contains its children.                                                            |
+| `item-props`       | SelectItemKey\<any>                                                            | `'props'`       | Props object that will be applied to each item component.                                                         |
+| `items`            | Any[]                                                                          | `[]`            | Can be an array of objects or strings.                                                                            |
+| `item-title`       | SelectItemKey\<any>                                                            | `'title'`       | Property on supplied items that contains its title.                                                               |
+| `item-type`        | String                                                                         | `'type'`        | Designates the key on the supplied items that is used for determining the nodes type.                             |
+| `item-value`       | SelectItemKey\<any>                                                            | `'value'`       | Property on supplied items that contains its value.                                                               |
+| `lines`            | Boolean \| `'one'` \| `'two'` \| `'three'`                                     | `'one'`         | Designates a minimum-height for all children v-list-item components.                                              |
+| `mandatory`        | Boolean                                                                        | `false`         | Forces at least one item to always be selected (if available).                                                    |
+| `max-height`       | String \| Number                                                               | `undefined`     | Sets the maximum height for the component.                                                                        |
+| `max-width`        | String \| Number                                                               | `undefined`     | Sets the maximum width for the component.                                                                         |
+| `min-height`       | String \| Number                                                               | `undefined`     | Sets the minimum height for the component.                                                                        |
+| `min-width`        | String \| Number                                                               | `undefined`     | Sets the minimum width for the component.                                                                         |
+| `nav`              | Boolean                                                                        | `false`         | An alternative styling that reduces v-list-item width and rounds the corners.                                     |
+| `opened`           | Unknown                                                                        | `undefined`     | An array containing the values of currently opened groups.                                                        |
+| `open-strategy`    | `'single'` \| `'multiple'` \| `'list'` \| OpenStrategy                         | `'list'`        | Affects how items with children behave when expanded.                                                             |
+| `return-object`    | Boolean                                                                        | `false`         | Changes the selection behavior to return the object directly rather than the value specified with item-value.     |
+| `rounded`          | String \| Number \| Boolean                                                    | `undefined`     | Designates the border-radius applied to the component - can be 0, xs, sm, true, lg, xl, pill, circle, and shaped. |
+| `selectable`       | Boolean                                                                        | `false`         | MISSING DESCRIPTION (edit in github).                                                                             |
+| `selected`         | Unknown                                                                        | `undefined`     | An array containing the values of currently selected items.                                                       |
+| `slim`             | Boolean                                                                        | `false`         | Reduces horizontal spacing for badges, icons, tooltips, and avatars within slim list items.                       |
+| `tag`              | String                                                                         | `'div'`         | Specify a custom tag used on the root element.                                                                    |
+| `theme`            | String                                                                         | `undefined`     | Specify a theme for this component and all of its children.                                                       |
+| `tile`             | Boolean                                                                        | `false`         | Removes any applied border-radius from the component.                                                             |
+| `value-comparator` | (a: any, b: any) => Boolean                                                    | `undefined`     | Apply a custom comparison algorithm to compare model-value and values contains in the items prop.                 |
+| `variant`          | `'flat'` \| `'elevated'` \| `'tonal'` \| `'outlined'` \| `'text'` \| `'plain'` | `'text'`        | Applies a distinct style to the component.                                                                        |
+| `width`            | String \| Number                                                               | `undefined`     | Sets the width for the component.                                                                                 |
+
+### Slots
+
+| Slot Name  | Description                            |
+| ---------- | -------------------------------------- |
+| ``         | The default Vue slot.                  |
+| `prepend`  | Slot for customizing the prepend icon. |
+| `append`   | Slot for customizing the append icon.  |
+| `title`    | Slot for customizing the title.        |
+| `subtitle` | Slot for customizing the subtitle.     |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranList>
+		<BaranListItem v-for="(item, i) in items" :key="i" :value="item" color="primary" rounded="xl">
+			<template v-slot:prepend>
+				<v-icon :icon="item.icon"></v-icon>
+			</template>
+			<template v-slot:title>
+				{{ item.text }}
+			</template>
+			<template v-slot:subtitle>
+				{{ item.text }}
+			</template>
+		</BaranListItem>
 	</BaranList>
 </template>
 
 <script setup>
-const listItems = ref([
-	{
-		title: "Item 1",
-		subtitle: "Description of Item 1",
-	},
-	{
-		title: "Item 2",
-		subtitle: "Description of Item 2",
-		prependAvatar: "https://example.com/avatar.jpg",
-	},
-	{
-		title: "Item 3",
-		subtitle: "Description of Item 3",
-		prependIcon: "mdi-account",
-	},
-	{
-		title: "Item 4",
-		subtitle: "Description of Item 4",
-		appendIcon: "mdi-check",
-	},
-	{
-		title: "Item 5",
-		subtitle: "Description of Item 5",
-		subItems: [
-			{
-				title: "Sub-item 1",
-				subtitle: "Description of Sub-item 1",
-				prependIcon: "mdi-subdirectory-arrow-right",
-			},
-			{
-				title: "Sub-item 2",
-				subtitle: "Description of Sub-item 2",
-				prependIcon: "mdi-subdirectory-arrow-right",
-			},
-		],
-	},
-]);
+const items = [
+	{ text: "Real-Time", icon: "mdi-clock" },
+	{ text: "Audience", icon: "mdi-account" },
+	{ text: "Conversions", icon: "mdi-flag" },
+];
 </script>
 ```
 
@@ -557,30 +710,31 @@ The `BaranTextbox` component is a customizable text field component with various
 
 ### Props
 
-| Prop              | Type             | Default            | Description                                                                   |
-| ----------------- | ---------------- | ------------------ | ----------------------------------------------------------------------------- |
-| `label`           | String           | `'Text'`           | The label of the text field.                                                  |
-| `value`           | [String, Number] | `''`               | The value of the text field.                                                  |
-| `variant`         | String           | `'outlined'`       | The variant of the text field (e.g., outlined, underlined, solo, etc.).       |
-| `density`         | String           | `'compact'`        | The density of the text field (e.g., comfortable, compact).                   |
-| `prependIcon`     | String           | `''`               | The icon to prepend to the text field.                                        |
-| `appendIcon`      | String           | `''`               | The icon to append to the text field.                                         |
-| `appendInnerIcon` | String           | `''`               | The inner icon to append to the text field.                                   |
-| `clearable`       | Boolean          | `false`            | Whether the text field is clearable.                                          |
-| `type`            | String           | `'text'`           | The type of the input (e.g., text, password, email).                          |
-| `placeholder`     | String           | `'Type something'` | The placeholder text.                                                         |
-| `hint`            | String           | `''`               | Hint text to display.                                                         |
-| `persistentHint`  | Boolean          | `false`            | Whether the hint text should always be visible.                               |
-| `disabled`        | Boolean          | `false`            | Whether the text field is disabled.                                           |
-| `readonly`        | Boolean          | `false`            | Whether the text field is read-only.                                          |
-| `rules`           | Array            | `[]`               | Array of validation rules.                                                    |
-| `prefix`          | String           | `''`               | Prefix text to display inside the text field.                                 |
-| `suffix`          | String           | `''`               | Suffix text to display inside the text field.                                 |
-| `maxlength`       | [String, Number] | `''`               | Maximum length of the input.                                                  |
-| `counter`         | Boolean          | `false`            | Whether to display the character counter.                                     |
-| `singleLine`      | Boolean          | `false`            | Whether the text field is single-line.                                        |
-| `money`           | Object           | `{}`               | Input mask rules.                                                             |
-| `moneyCurrency`   | String           | `''`               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
+| Prop                  | Type             | Default            | Description                                                                   |
+| --------------------- | ---------------- | ------------------ | ----------------------------------------------------------------------------- |
+| `label`               | String           | `'Text'`           | The label of the text field.                                                  |
+| `value`               | [String, Number] | `''`               | The value of the text field.                                                  |
+| `variant`             | String           | `'outlined'`       | The variant of the text field (e.g., outlined, underlined, solo, etc.).       |
+| `density`             | String           | `'compact'`        | The density of the text field (e.g., comfortable, compact).                   |
+| `prependIcon`         | String           | `''`               | The icon to prepend to the text field.                                        |
+| `appendIcon`          | String           | `''`               | The icon to append to the text field.                                         |
+| `appendInnerIcon`     | String           | `''`               | The inner icon to append to the text field.                                   |
+| `clearable`           | Boolean          | `false`            | Whether the text field is clearable.                                          |
+| `type`                | String           | `'text'`           | The type of the input (e.g., text, password, email).                          |
+| `placeholder`         | String           | `'Type something'` | The placeholder text.                                                         |
+| `hint`                | String           | `''`               | Hint text to display.                                                         |
+| `persistentHint`      | Boolean          | `false`            | Whether the hint text should always be visible.                               |
+| `disabled`            | Boolean          | `false`            | Whether the text field is disabled.                                           |
+| `readonly`            | Boolean          | `false`            | Whether the text field is read-only.                                          |
+| `rules`               | Array            | `[]`               | Array of validation rules.                                                    |
+| `prefix`              | String           | `''`               | Prefix text to display inside the text field.                                 |
+| `suffix`              | String           | `''`               | Suffix text to display inside the text field.                                 |
+| `maxlength`           | [String, Number] | `''`               | Maximum length of the input.                                                  |
+| `counter`             | Boolean          | `false`            | Whether to display the character counter.                                     |
+| `singleLine`          | Boolean          | `false`            | Whether the text field is single-line.                                        |
+| `money`               | Object           | `{}`               | Input mask rules.                                                             |
+| `moneyCurrency`       | String           | `''`               | Pre-defined input mask rules for money currencies. `EUR`, `TRY`, `USD`, `GBP` |
+| `customMoneyCurrency` | Boolean          | `false`            | Whether the use pre-defined input mask or custom input mask.                  |
 
 ### Slots
 
@@ -608,18 +762,25 @@ The `BaranTextbox` component is a customizable text field component with various
 			<v-icon>mdi-information</v-icon>
 		</template>
 	</BaranTextbox>
+
+	<!-- Pre-defined input mask -->
+	<BaranTextbox moneyCurrency="EUR"></BaranTextbox>
+
+	<!-- Custom input mask -->
+	<BaranTextbox :money="jpyMask" :customMoneyCurrency="true"></BaranTextbox>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
 const inputValue = ref("");
-const money = ref({
-	decimal: ",",
-	thousands: ".",
-	prefix: "€ ",
-	suffix: " #",
-	precision: 2,
+
+const jpyMask = ref({
+	decimal: "",
+	thousands: ",",
+	prefix: "¥ ",
+	suffix: " ",
+	precision: 0,
 	masked: false,
 });
 </script>
@@ -981,34 +1142,125 @@ const isDisabled = ref(false);
 
 ## Radio Group Component
 
-The `BaranRadio` component allows selection from a group of radio buttons, with support for custom HTML labels and various configurations.
+The `BaranRadioGroup` component allows selection from a group of radio buttons, with support for custom HTML labels and various configurations.
 
 ### Props
 
-| Prop     | Type    | Default       | Description                                                                  |
-| -------- | ------- | ------------- | ---------------------------------------------------------------------------- |
-| `items`  | Array   | `See Example` | An array of objects representing the radio buttons and their configurations. |
-| `color`  | String  | `'#7367f0`'   | The color of the radio buttons.                                              |
-| `inline` | Boolean | `false`       | Whether the radio buttons should display inline.                             |
-| `label`  | String  | `''`          | The label for the radio group.                                               |
+| Prop                | Type                                                                                                                                    | Default        | Description                                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------- |
+| `append-icon`       | Any                                                                                                                                     | `undefined`    | Creates a v-icon component after default content in the append slot.                                          |
+| `center-affix`      | Boolean                                                                                                                                 | `false`        | Vertically align append and prepend in the center.                                                            |
+| `color`             | String                                                                                                                                  | `undefined`    | Applies specified color to the control - supports utility colors or CSS color values.                         |
+| `defaults-target`   | String                                                                                                                                  | `undefined`    | The target component to provide defaults values for.                                                          |
+| `density`           | `'default'` \| `'comfortable'` \| `'compact'`                                                                                           | `'default'`    | Adjusts the vertical height used by the component.                                                            |
+| `direction`         | `'horizontal'` \| `'vertical'`                                                                                                          | `'horizontal'` | Changes the direction of the input.                                                                           |
+| `disabled`          | Boolean                                                                                                                                 | `null`         | Removes the ability to click or target the component.                                                         |
+| `error`             | Boolean                                                                                                                                 | `false`        | Puts the input in a manual error state.                                                                       |
+| `error-messages`    | String \| String[]                                                                                                                      | `[]`           | Puts the input in an error state and passes through custom error messages.                                    |
+| `false-icon`        | Any                                                                                                                                     | `'$radioOff'`  | The icon used when inactive.                                                                                  |
+| `focused`           | Boolean                                                                                                                                 | `false`        | Forces a focused state styling on the component.                                                              |
+| `height`            | String \| Number                                                                                                                        | `'auto'`       | Sets the height of the input.                                                                                 |
+| `hide-details`      | Boolean \| `'auto'`                                                                                                                     | `false`        | Hides hint and validation errors.                                                                             |
+| `hide-spin-buttons` | Boolean                                                                                                                                 | `false`        | Hides spin buttons on the input when type is set to number.                                                   |
+| `hint`              | String                                                                                                                                  | `undefined`    | Displays hint text below the input when focused.                                                              |
+| `id`                | String                                                                                                                                  | `undefined`    | Sets the DOM id on the component.                                                                             |
+| `inline`            | Boolean                                                                                                                                 | `false`        | Displays radio buttons in row.                                                                                |
+| `label`             | String                                                                                                                                  | `undefined`    | Sets the text of the v-label or v-field-label component.                                                      |
+| `max-errors`        | String \| Number                                                                                                                        | `1`            | Control the maximum number of shown errors from validation.                                                   |
+| `max-width`         | String \| Number                                                                                                                        | `undefined`    | Sets the maximum width for the component.                                                                     |
+| `messages`          | String \| String[]                                                                                                                      | `[]`           | Displays a list of messages or a single message if using a string.                                            |
+| `min-width`         | String \| Number                                                                                                                        | `undefined`    | Sets the minimum width for the component.                                                                     |
+| `model-value`       | Unknown                                                                                                                                 | `undefined`    | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array. |
+| `name`              | String                                                                                                                                  | `undefined`    | Sets the component’s name attribute.                                                                          |
+| `persistent-hint`   | Boolean                                                                                                                                 | `false`        | Forces hint to always be visible.                                                                             |
+| `prepend-icon`      | Any                                                                                                                                     | `undefined`    | Prepends an icon to the component, uses the same syntax as v-icon.                                            |
+| `readonly`          | Boolean                                                                                                                                 | `null`         | Puts input in readonly state.                                                                                 |
+| `ripple`            | Boolean \| { class: string }                                                                                                            | `true`         | Applies the v-ripple directive.                                                                               |
+| `rules`             | ValidationRule[]                                                                                                                        | `[]`           | Accepts a mixed array of types function, boolean and string.                                                  |
+| `theme`             | String                                                                                                                                  | `undefined`    | Specify a theme for this component and all of its children.                                                   |
+| `true-icon`         | Any                                                                                                                                     | `'$radioOn'`   | The icon used when active.                                                                                    |
+| `type`              | String                                                                                                                                  | `'radio'`      | Provides the default type for children selection controls.                                                    |
+| `validate-on`       | 'blur' \| 'input' \| 'submit' \| 'blur lazy' \| 'input lazy' \| 'submit lazy' \| 'lazy blur' \| 'lazy input' \| 'lazy submit' \| 'lazy' | `undefined`    | Change what type of event triggers validation to run.                                                         |
+| `validation-value`  | Any                                                                                                                                     | `undefined`    | The value used when applying validation rules.                                                                |
+| `value-comparator`  | (a: any, b: any) => Boolean                                                                                                             | `undefined`    | Apply a custom comparison algorithm to compare model-value and values contains in the items prop.             |
+| `width`             | String \| Number                                                                                                                        | `undefined`    | Sets the width for the component.                                                                             |
 
 ### Example Usage
 
 ```vue
 <template>
-	<BaranRadio :items="radioItems" color="#42b983" :inline="true" group-label="Select an option" />
+	<BaranRadioGroup color="#42b983" :inline="true" v-model="radios">
+		<BaranRadio label="Radio Label" value="1"></BaranRadio>
+
+		<BaranRadio value="2">
+			<template v-slot:label>
+				<b>Custom HTML Label</b>
+			</template>
+		</BaranRadio>
+	</BaranRadioGroup>
 </template>
 
 <script setup>
 import { ref } from "vue";
+const radios = ref(null);
+</script>
+```
 
-const radioItems = ref([
-	{ value: 1, label: "Option 1" },
-	{
-		value: 2,
-		slotHTML: '<div>Option 2 <strong class="text-primary">with custom HTML</strong></div>',
-	},
-]);
+## Radio Component
+
+The `BaranRadio` component is a simple radio button.
+
+### Props
+
+| Prop               | Type                                          | Default       | Description                                                                                                   |
+| ------------------ | --------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------- |
+| `base-color`       | String                                        | `undefined`   | Sets the color of the input when it is not focused.                                                           |
+| `color`            | String                                        | `undefined`   | Applies specified color to the control - supports utility colors or CSS color values.                         |
+| `defaults-target`  | String                                        | `undefined`   | The target component to provide defaults values for.                                                          |
+| `density`          | `'default'` \| `'comfortable'` \| `'compact'` | `'default'`   | Adjusts the vertical height used by the component.                                                            |
+| `disabled`         | Boolean                                       | `null`        | Removes the ability to click or target the component.                                                         |
+| `error`            | Boolean                                       | `false`       | Puts the input in a manual error state.                                                                       |
+| `false-icon`       | Any                                           | `'$radioOff'` | The icon used when inactive.                                                                                  |
+| `false-value`      | Any                                           | `undefined`   | Sets value for falsy state.                                                                                   |
+| `id`               | String                                        | `undefined`   | Sets the DOM id on the component.                                                                             |
+| `inline`           | Boolean                                       | `false`       | Puts children inputs into a row.                                                                              |
+| `label`            | String                                        | `undefined`   | Sets the text of the v-label or v-field-label component.                                                      |
+| `model-value`      | Any                                           | `undefined`   | The v-model value of the component. If component supports the multiple prop, this defaults to an empty array. |
+| `multiple`         | Boolean                                       | `null`        | Changes select to multiple. Accepts array for value.                                                          |
+| `name`             | String                                        | `undefined`   | Sets the component’s name attribute.                                                                          |
+| `readonly`         | Boolean                                       | `null`        | Puts input in readonly state.                                                                                 |
+| `ripple`           | Boolean \| { class: string }                  | `true`        | Applies the v-ripple directive.                                                                               |
+| `theme`            | String                                        | `undefined`   | Specify a theme for this component and all of its children.                                                   |
+| `true-icon`        | Any                                           | `'$radioOn'`  | The icon used when active.                                                                                    |
+| `true-value`       | Any                                           | `undefined`   | Sets value for truthy state.                                                                                  |
+| `type`             | String                                        | `undefined`   | Provides the default type for children selection controls.                                                    |
+| `value`            | Any                                           | `undefined`   | The value used when the component is selected in a group. If not provided, a unique ID will be used.          |
+| `value-comparator` | (a: any, b: any) => Boolean                   | `undefined`   | Apply a custom comparison algorithm to compare model-value and values contains in the items prop.             |
+
+### Slots
+
+| Slot Name | Description                          |
+| --------- | ------------------------------------ |
+| `label`   | Slot for customizing radio's label. |
+
+### Example Usage
+
+```vue
+<template>
+	<BaranRadioGroup color="#42b983" :inline="true" v-model="radios">
+		<BaranRadio label="Radio Label" value="1"></BaranRadio>
+
+		<BaranRadio value="2">
+			<template v-slot:label>
+				<b>Custom HTML Label</b>
+			</template>
+		</BaranRadio>
+	</BaranRadioGroup>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const radios = ref(null);
 </script>
 ```
 

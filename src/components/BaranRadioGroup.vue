@@ -1,9 +1,7 @@
 <template>
-	<v-radio v-bind="computedProps">
-		<template v-if="$slots['label']" #label>
-			<slot name="label"></slot>
-		</template>
-	</v-radio>
+	<v-radio-group v-bind="computedProps" class="baran-radio-group">
+		<slot></slot>
+	</v-radio-group>
 </template>
 
 <script setup>

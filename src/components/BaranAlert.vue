@@ -35,6 +35,7 @@ const props = defineProps({
 
 const computedProps = computed(() => {
 	const variantOptions = [ "default", "outlined", "underlined", "solo", "solo-filled", "solo-inverted", ];
+	
 	return {
 		...props,
 		variant: variantOptions.includes(props.variant) ? props.variant : 'tonal',

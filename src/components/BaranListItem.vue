@@ -1,19 +1,26 @@
 <template>
-	<v-list v-bind="computedProps" class="baran-list-wrapper">
-		<template v-if="$slots['default']" #default>
-			<slot name="default"></slot>
+	<v-list-item v-bind="computedProps">
+		<slot></slot>
+        <template v-if="$slots['prepend']" #prepend>
+			<slot name="prepend"></slot>
 		</template>
-	</v-list>
+        <template v-if="$slots['append']" #append>
+			<slot name="append"></slot>
+		</template>
+        <template v-if="$slots['title']" #title>
+			<slot name="title"></slot>
+		</template>
+
+		<template v-if="$slots['subtitle']" #subtitle>
+			<slot name="subtitle"></slot>
+		</template>
+	</v-list-item>
 </template>
 
 <script setup>
 import { defineProps, computed } from "vue";
 
 const props = defineProps({
-	items: {
-		type: Array,
-		default: () => []
-	},
 	density: {
 		type: String,
 		default: "comfortable",
@@ -35,7 +42,6 @@ const computedProps = computed(() => {
 		 
 	};
 });
- 
 </script>
 
 <style>

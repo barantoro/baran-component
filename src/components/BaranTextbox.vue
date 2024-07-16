@@ -55,6 +55,10 @@ const props = defineProps({
 		type: String,
 		default: ''
 	},
+	customMoneyCurrency: {
+		type: Boolean,
+		default: false
+	},
 	money: {
 		type: Object,
 		default: () => {}
@@ -62,53 +66,29 @@ const props = defineProps({
 });
 
 const money = ref(props.money);
- 
-watch(() => props.moneyCurrency, (newVal) => {
-	if (newVal === 'EUR') {
-    	money.value = {
-			decimal: ',',
-			thousands: '.',
-			prefix: '€ ',
-			suffix: '',
-			precision: 2,
-			masked: false
-      	};
-    } else if (newVal === 'TRY') {
-		money.value = {
-			decimal: ',',
-			thousands: '.',
-			prefix: '₺ ',
-			suffix: '',
-			precision: 2,
-			masked: false
-		};
-    } else if (newVal === 'USD') {
-      money.value = {
-        decimal: '.',
-        thousands: ',',
-        prefix: '$ ',
-        suffix: '',
-        precision: 2,
-        masked: false
-      };
-    } else if (newVal === 'GBP') {
-		money.value = {
-			decimal: '.',
-			thousands: ',',
-			prefix: '£ ',
-			suffix: '',
-			precision: 2,
-			masked: false
-		};
-    } else {
-		money.value = undefined
-    }
-  },
-  { immediate: true } // Runs watcher at first
-);
+
+const currencySettings = {
+	EUR: { decimal: ',', thousands: '.', prefix: '€ ', suffix: '', precision: 2, masked: false },
+	TRY: { decimal: ',', thousands: '.', prefix: '₺ ', suffix: '', precision: 2, masked: false },
+	USD: { decimal: '.', thousands: ',', prefix: '$ ', suffix: '', precision: 2, masked: false },
+	GBP: { decimal: '.', thousands: ',', prefix: '£ ', suffix: '', precision: 2, masked: false }
+};
+
+watch(() => props.customMoneyCurrency, (newVal) => {
+	if (!newVal) {
+		watchMoneyCurrency();
+	}
+}, { immediate: true });
+
+function watchMoneyCurrency() {
+	watch(() => props.moneyCurrency, (newVal) => {
+		money.value = currencySettings[newVal] || undefined;
+	}, { immediate: true });
+}
 
 const computedProps = computed(() => {
 	const variantOptions = [ "outlined", "underlined", "solo", "solo-filled", "solo-inverted", "plain", ];
+	
 	return {
 		...props,
 		variant: variantOptions.includes(props.variant) ? props.variant : 'outlined',

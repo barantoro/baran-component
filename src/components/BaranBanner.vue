@@ -25,6 +25,7 @@ const props = defineProps({
 
 const computedProps = computed(() => {
 	const densityOptions = ["comfortable", "compact"];
+	
 	return {
 		...props,
 		density: densityOptions.includes(props.density) ? props.density : 'default',

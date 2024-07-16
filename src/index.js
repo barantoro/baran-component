@@ -10,11 +10,14 @@ import BaranColorPicker from './components/BaranColorPicker.vue';
 import BaranCombobox from './components/BaranCombobox.vue';
 import BaranDatePicker from './components/BaranDatePicker.vue';
 import BaranDialog from './components/BaranDialog.vue';
+import BaranExpansionPanels from './components/BaranExpansionPanels.vue';
 import BaranExpansionPanel from './components/BaranExpansionPanel.vue';
 import BaranFileInput from './components/BaranFileInput.vue';
 import BaranList from './components/BaranList.vue';
+import BaranListItem from './components/BaranListItem.vue';
 import BaranNumberInput from './components/BaranNumberInput.vue';
 import BaranOTPInput from './components/BaranOTPInput.vue';
+import BaranRadioGroup from './components/BaranRadioGroup.vue';
 import BaranRadio from './components/BaranRadio.vue';
 import BaranSelect from './components/BaranSelect.vue';
 import BaranSidebar from './components/BaranSidebar.vue';
@@ -62,11 +65,14 @@ const components = {
     BaranColorPicker,
     BaranDatePicker,
     BaranDialog,
+    BaranExpansionPanels,
     BaranExpansionPanel,
     BaranFileInput,
     BaranList,
+    BaranListItem,
     BaranNumberInput,
     BaranOTPInput,
+    BaranRadioGroup,
     BaranRadio,
     BaranSelect,
     BaranSidebar,
