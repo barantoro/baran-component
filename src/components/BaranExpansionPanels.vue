@@ -1,5 +1,5 @@
 <template>
-	<v-expansion-panels v-bind="expansionPanelProps">
+	<v-expansion-panels v-bind="computedProps">
 		<slot></slot>
 	</v-expansion-panels>
 </template>
@@ -15,15 +15,20 @@ const props = defineProps({
 	rounded: {
 		type: String,
 		default: "xs",
+	},
+	bgColor: {
+		type: String,
+		default: undefined
 	}
 });
 
-const expansionPanelProps = computed(() => {
+const computedProps = computed(() => {
 	const variantOptions = ["default", "accordion", "inset", "popout"];
 
 	return {
 		...props,
 		variant: variantOptions.includes(props.variant) ? props.variant : "default",
+		bgColor: undefined
 	};
 });
 </script>

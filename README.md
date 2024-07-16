@@ -245,7 +245,7 @@ The `BaranExpansionPanels` component allows for displaying collapsible panels wi
 
 | Prop             | Type                                                    | Default       | Description                                                                                                       |
 | ---------------- | ------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `bg-color`       | String                                                  | `undefined`   | Applies specified color to the control’s background - supports utility colors or CSS color values.                |
+| `bg-color`       | String                                                  | `undefined`   | Restricted                                                                                                        |
 | `collapse-icon`  | Any                                                     | `'$collapse'` | Icon used when the expansion panel is in a collapsable state.                                                     |
 | `color`          | String                                                  | `undefined`   | Applies specified color to the control - supports utility colors or CSS color values.                             |
 | `disabled`       | Boolean                                                 | `false`       | Puts all children components into a disabled state.                                                               |
@@ -1239,8 +1239,8 @@ The `BaranRadio` component is a simple radio button.
 
 ### Slots
 
-| Slot Name | Description                          |
-| --------- | ------------------------------------ |
+| Slot Name | Description                         |
+| --------- | ----------------------------------- |
 | `label`   | Slot for customizing radio's label. |
 
 ### Example Usage
