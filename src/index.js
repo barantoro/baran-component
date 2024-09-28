@@ -48,6 +48,8 @@ import BaranTimeline from './components/BaranTimeline.vue';
 import BaranTimelineItem from './components/BaranTimelineItem.vue';
 import BaranTooltip from './components/BaranTooltip.vue';
 
+import BaranStepper from './components/BaranStepper.vue';
+
 const components = {
     BaranButton,
     BaranCheckbox,
@@ -98,6 +100,7 @@ const components = {
     BaranTimeline,
     BaranTimelineItem,
     BaranTooltip,
+    BaranStepper
 };
 
 export default {
